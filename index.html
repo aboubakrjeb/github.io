@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboubakr Jebbari - Portfolio website</title>
+    <!-- Bootstrap CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"> -->
+    <link href="./css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .jumbotron {
+            padding: 2rem 1rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+        }
+        
+        .project-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .profile-img {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        footer {
+            padding: 20px 0;
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aboubakr Jebbari</a>
+            <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse btn-sm" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#over-mij">Over mij</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projecten">Projecten</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="jumbotron text-center bg-light">
+        <div class="container">
+            <img src="./assets/IMG-20250405-WA0013(1).jpg" alt="Your Profile Picture" class="profile-img mb-4" loading="lazy" />
+            <h1 class="display-4">Aboubakr Jebbari</h1>
+            <p class="lead">Web Ontwikkelaar & geïnteresseerd in theologie en filosofie</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-sm" disabled>Download Resume</a>
+                <a href="#contact" class="btn btn-outline-secondary btn-sm">Contacteer Mij</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Over Section -->
+    <section id="over-mij" class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-4">Over Mij</h2>
+                    <p class="lead">Hallo! Ik ben een WordPress-ontwikkelaar met een passie voor het creëren van strakke, functionele en visueel aantrekkelijke websites. Met ervaring in thema-aanpassingen en plugin-ontwikkeling help ik bedrijven om hun online aanwezigheid effectief op te bouwen.</p>
+                    <p>Ik ben gespecialiseerd in het bouwen van aangepaste WordPress-oplossingen die niet alleen mooi zijn, maar ook geoptimaliseerd voor prestaties en gebruikerservaring. Mijn aanpak combineert technische expertise met creatief ontwerp om websites te leveren die opvallen..</p>
+                    <p>
+                        Naast dat heb ik ook interesse in theologie, geschiedenis en filosofie en lees graag erover!
+                    </p>
+                    <div class="row mt-5">
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="bg-light p-4 rounded shadow-sm h-100">
+                                <i class="fas fa-laptop-code fa-2x text-primary mb-3"></i>
+                                <h4>WordPress Development</h4>
+                                <p class="mb-0">Custom themes, plugins, and site optimization</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="bg-light p-4 rounded shadow-sm h-100">
+                                <i class="fas fa-paint-brush fa-2x text-primary mb-3"></i>
+                                <h4>UI/UX Design</h4>
+                                <p class="mb-0">User-friendly interfaces with modern aesthetics</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="bg-light p-4 rounded shadow-sm h-100">
+                                <i class="fas fa-mobile-alt fa-2x text-primary mb-3"></i>
+                                <h4>Responsive Design</h4>
+                                <p class="mb-0">Mobile-friendly websites that work on all devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projecten Section -->
+    <section id="projecten" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">My Projecten</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-lg-6">
+                    <div class="card project-card shadow">
+                        <img src="./assets/Screenshot 2025-05-14 at 14.15.57.png" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h4 class="card-title">Bilal Berkane Portfolio website</h4>
+                            <p class="card-text">Dit is een portfolio website die ik heb gebouwd voor een kennis van mij die architect is, waarin staat aan welke projecten hij  heeft gewerkt, en bij elke project is een foto en een beschrijving erover!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="https://bilalberkane.nl/" class="btn btn-sm btn-outline-primary" target="_new">View Live</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
+                                </div>
+                                <small class="text-muted">WordPress, Elementor</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-lg-6">
+                    <div class="card project-card shadow">
+                        <img src="./assets/Screenshot 2025-05-14 at 14.16.26.png" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h4 class="card-title">Ozerlogistics nieuwe website</h4>
+                            <p class="card-text">Dit is bedrijfswebsite voor een logitische bedrijf in Rotterdam, genaamd<b> Ozer logistics</b>, waarbij de oude website vernieuwd moest worden en in een frisse jasje gestopt moest worden</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="https://www.ozertransport.nl/" class="btn btn-sm btn-outline-primary" target="_new">View Live</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
+                                </div>
+                                <small class="text-muted">WordPress, Elementor</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Get In Touch</h2>
+                    <p class="lead mb-5">Interesse om samen te werken? Neem gerust contact met mij op :) </p>
+                    
+                    <div class="row">
+                        <div class="col-2"></div>
+                        
+                        <div class="col-8 mb-6">
+                            <div class="bg-light p-4 rounded shadow-sm h-100">
+                                <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                                <h4>Email</h4>
+                                <p class="mb-0"><a href="mailto:aboujeb1991@gmail.com" class="text-decoration-none">aboujeb1991@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                        
+                    </div>
+                    
+                    <div class="mt-5">
+                        <a href="https://github.com/yourusername" class="mx-2 text-light" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" class="mx-2 text-light" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="https://twitter.com/yourusername" class="mx-2 text-light" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025<span class="date-ar"></span> Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+     <script src="https://kit.fontawesome.com/948d7ef5f5.js" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js" type="text/javascript"></script>
+</body>
+</html>
