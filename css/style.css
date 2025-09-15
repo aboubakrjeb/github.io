@@ -5,10 +5,46 @@
 }
 body,
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   /* font-family: "Roboto Thin", sans-serif;
   font-family: "Roboto Light", sans-serif;
   font-family: "Roboto Medium", sans-serif;
   font-family: "Roboto Black", sans-serif; */
+}
+/* this style is copied from the claude ai generated code */
+.jumbotron {
+  padding: 4rem 1rem;
+  /* background-color: #e9ecef; */
+  border-radius: 0.3rem;
+}
+
+.project-card {
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-img {
+  max-width: 200px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  padding: 60px 0;
+}
+
+footer {
+  padding: 20px 0;
+  /* background-color: #343a40; */
+  /* color: white; */
+}
+/* this style is copied from the claude ai generated code */
+nav {
+  box-shadow: 0 0px 5px 0 rgba(0,0,0,.2);
 }
