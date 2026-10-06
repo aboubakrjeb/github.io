@@ -1,36 +1,591 @@
-/* @import url("https://fonts.cdnfonts.com/css/roboto"); */
-/* @import url('https://fonts.cdnfonts.com/css/plush-trial'); */
-@import url('./all.min.css');
-@import url('https://fonts.cdnfonts.com/css/alegreya');
-
-
-/* @font-face {
-  font-family: 'Plush-trial';
-  src: url('https://fonts.cdnfonts.com/css/plush-trial');
-} */
-.navbar-toggler {
-  padding: 2px 2px;
+:root {
+  --bg: #EBE1E1;
+  --surface: #ffffff;
+  --text: #000000;
+  --muted: #5c5050;
+  --border: #d6c8c8;
+  --accent: #7a2e3a;
+  --accent-hover: #5e222c;
+  --on-accent: #ffffff;
+  --header-bg: rgba(235, 225, 225, .88);
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(34, 27, 27, .06), 0 8px 24px rgba(34, 27, 27, .08);
 }
 
-body,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #000000;
+  --surface: #1a1515;
+  --text: #ffffff;
+  --muted: #b9abab;
+  --border: #3a3030;
+  --accent: #e3a1ab;
+  --accent-hover: #efbcc4;
+  --on-accent: #1d1414;
+  --header-bg: rgba(0, 0, 0, .88);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
-  font-family: 'Alegreya SC', sans-serif;
-  font-family: 'Alegreya', sans-serif;
-  font-weight: 400;
-  /* font-family: "Roboto Thin", sans-serif;
-  font-family: "Roboto Light", sans-serif;
-  font-family: "Roboto Medium", sans-serif;
-  font-family: "Roboto Black", sans-serif; */
-}
-main {
-  margin-top: 50px;
-}
-body[data-bs-theme="dark"] {
-  --bs-body-bg: #000 !important;
-  --bs-body-color: #fff;
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
 }
 
-body[data-bs-theme="chocolate"] {
-  --bs-body-bg: #836953 !important;
-  --bs-body-color: #fff;
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Alegreya", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 .5em;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+  letter-spacing: -.01em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: min(100% - 2.5rem, 1080px);
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: .5rem 1rem;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+}
+
+/* The blur lives on a pseudo-element: a backdrop-filter on the header itself
+   would trap the fixed offcanvas menu inside the header box. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: .7rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--surface);
+}
+
+.nav-toggle,
+.nav-backdrop,
+.icon-close {
+  display: none;
+}
+
+/* Offcanvas menu: tablet and smaller */
+@media (max-width: 991px) {
+  .nav-toggle {
+    display: grid;
+  }
+
+  /* Keep the buttons above the open panel, so the toggle doubles as close button */
+  .icon-btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: min(82vw, 320px);
+    height: 100vh;
+    height: 100dvh;
+    padding: 4.75rem 1.5rem 2rem;
+    overflow-y: auto;
+    background: var(--bg);
+    border-left: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform .25s ease, visibility .25s;
+  }
+
+  .nav-actions .nav-links a {
+    display: block;
+    padding: .95rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1.15rem;
+  }
+
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+
+  .nav-open {
+    overflow: hidden;
+  }
+
+  .nav-open .nav-links {
+    transform: none;
+    visibility: visible;
+  }
+
+  .nav-open .nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-open .icon-open {
+    display: none;
+  }
+
+  .nav-open .icon-close {
+    display: inline;
+  }
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* Sections */
+section {
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+}
+
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.15rem;
+  max-width: 56ch;
+}
+
+.section-intro {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.25rem;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: background-color .15s, color .15s, border-color .15s, transform .15s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: .55rem 1.1rem;
+  font-size: .95rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.75rem;
+}
+
+/* Hero */
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.25rem;
+  padding: .3rem .85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: .55rem;
+  height: .55rem;
+  background: #2e8b57;
+  border-radius: 50%;
+}
+
+.portrait {
+  width: min(100%, 320px);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* Over mij */
+.about-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.about-text {
+  max-width: 62ch;
+}
+
+.services {
+  display: grid;
+  gap: .75rem;
+  align-content: start;
+}
+
+.services li {
+  padding: 1.1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.services h3 {
+  font-size: 1.05rem;
+}
+
+.services p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .97rem;
+}
+
+.skills,
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.skills {
+  margin-top: 2rem;
+}
+
+.skills li,
+.tags li {
+  padding: .25rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 500;
+}
+
+.skills li {
+  background: var(--surface);
+}
+
+.tags li {
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+/* Projecten */
+.projects {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.project-card {
+  position: relative;
+}
+
+/* Stretch the "Bekijk" link over the whole card, so the card is clickable too */
+.project-card .btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.project-media {
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+  transition: transform .35s ease;
+}
+
+.project-card:hover img,
+.project-card:focus-within img {
+  transform: scale(1.08);
+}
+
+.project-card:hover .btn-primary {
+  background: var(--accent-hover);
+}
+
+/* transform on :hover would make .btn the containing block for its own
+   ::after overlay, shrinking the clickable area down to just the button */
+.project-card .btn:hover {
+  transform: none;
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.25rem 1.35rem 1.4rem;
+}
+
+.project-body p {
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+.project-body .tags {
+  margin-bottom: 1.25rem;
+}
+
+.project-body .btn {
+  margin-top: auto;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+}
+
+.contact .lead {
+  margin-inline: auto;
+}
+
+.contact .actions {
+  justify-content: center;
+}
+
+/* Footer */
+.site-footer {
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .9rem;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (min-width: 720px) {
+  .hero-grid {
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 719px) {
+  .portrait {
+    width: 180px;
+    grid-row: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .project-card img,
+  .nav-links,
+  .nav-backdrop {
+    transition: none;
+  }
 }

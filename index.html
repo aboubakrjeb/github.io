@@ -1,299 +1,240 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="chocolate">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aboubakr Jebbari - Portfolio website</title>
-    <!-- Bootstrap CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"> -->
-    <link href="./css/all.min.css" rel="stylesheet">
+    <title>Aboubakr Jebbari – Webdeveloper in Rotterdam</title>
+    <meta name="description"
+        content="Portfolio van Aboubakr Jebbari, webdeveloper uit Rotterdam. Snelle, strakke en gebruiksvriendelijke websites met WordPress, Elementor en WooCommerce.">
+    <meta name="theme-color" content="#EBE1E1">
+    <meta property="og:title" content="Aboubakr Jebbari – Webdeveloper">
+    <meta property="og:description"
+        content="Snelle, strakke en gebruiksvriendelijke websites met WordPress, Elementor en WooCommerce.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/aboubakr.webp">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23221b1b'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23EBE1E1'%3EAJ%3C/text%3E%3C/svg%3E">
+    <link rel="preload" as="image" href="./assets/aboubakr.webp">
+    <link href="https://fonts.cdnfonts.com/css/alegreya" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-
+    <!-- Set the theme before the page paints, so there is no flash -->
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('theme'); } catch (e) { }
+            if (theme !== 'dark' && theme !== 'light') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 
-<body data-bs-theme="chocolate">
+<body>
+    <a class="skip-link" href="#main">Naar de inhoud</a>
+
     <!-- Navigation -->
-    <nav class="navbar  sticky-top fixed-top navbar-expand-lg shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">Aboubakr Jebbari</a>
-            <button class="navbar-toggler btn-sm border-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div>
-                <ul class="navbar-nav">
-                    <li class="nav-item" id="data-bs-theme-color-toggler">
-                        <a href="#" class="nav-link">
-                            <span hidden="hidden">
-                                Non collapseable link
-                            </span>
-                            <i class="fa-solid fa-circle-half-stroke fa-lg"></i>
-                        </a>
-                    </li>
+    <header class="site-header">
+        <nav class="container nav" aria-label="Hoofdnavigatie">
+            <a class="brand" href="#top">Aboubakr Jebbari</a>
+            <div class="nav-actions">
+                <!-- Offcanvas menu on tablet and smaller, inline links on desktop -->
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="#over-mij">Over mij</a></li>
+                    <li><a href="#projecten">Projecten</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="icon-btn theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-controls="nav-menu"
+                    aria-expanded="false">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path class="icon-open" d="M4 7h16M4 12h16M4 17h16" />
+                        <path class="icon-close" d="M6 6l12 12M18 6 6 18" />
+                    </svg>
+                </button>
             </div>
-            <div class="collapse navbar-collapse btn-sm" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#over-mij">Over mij</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projecten">Projecten</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
+        <div class="nav-backdrop"></div>
+    </header>
 
-    <main>
+    <main id="main">
         <!-- Hero Section -->
-        <!--<div class="container col-12 px-4 py-5">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                <div class="col-10 col-sm-8 col-lg-6"> <img src="./assets/Polish_20260102_222045858.png"
-                        class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="300" height="200"
-                        loading="lazy">
+        <section id="top" class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <p class="status"><span class="status-dot"></span>Beschikbaar voor een nieuwe functie</p>
+                    <h1>Webdeveloper die snelle en strakke websites bouwt.</h1>
+                    <p class="lead">Ik ben <strong>Aboubakr Jebbari</strong>, webdeveloper uit Rotterdam. Ik bouw
+                        functionele, gebruiksvriendelijke websites en webshops met WordPress, Elementor en
+                        WooCommerce.</p>
+                    <div class="actions">
+                        <a class="btn btn-primary" href="#projecten">Bekijk mijn werk</a>
+                        <a class="btn btn-outline" href="#contact">Neem contact op</a>
+                    </div>
                 </div>
-                <div class="col-2 col-sm-4 col-lg-6">
-                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Assalamoe 3alaykom! <span
-                            class="ar">السلام
-                            عليكم</span>, mijn naam is <b>Aboubakr Jebbari</b></h1>
-                    <p class="lead">Een jonge marokkaanse Rotterdam, een Web Ontwikkelaar, vrijwillige tolk
-                        Arabisch/Nederlands & geïnteresseerd in theologie en filosofie!</p>
-
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start"> <button type="button"
-                            class="btn btn-outline-info btn-sm px-4 me-md-2">Wie ben ik? | من أنا؟</button> <button
-                            type="button" class="btn btn-outline-info btn-sm px-4">De projecten waar ik heb gewerkt |
-                            المشاريع التي عملت عليها</button> </div>
-                </div>
+                <img class="portrait" src="./assets/aboubakr.webp" alt="Portretfoto van Aboubakr Jebbari" width="480"
+                    height="480">
             </div>
-            </div>-->
-
-        <!-- <section class="jumbotron text-center">
-        <div class="container">
-            <img src="./assets/Polish_20260102_222045858.png" width="48" height="48" alt="Your Profile Picture"
-                class="profile-img mb-4" loading="lazy" />
-            <h1 class="display-4">Aboubakr Jebbari</h1>
-            <p class="lead">Web Ontwikkelaar & geïnteresseerd in theologie en filosofie</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#" class="btn btn-sm" disabled>Download Resume</a>
-                <a href="#contact" class="btn btn-outline-secondary btn-sm">Contacteer Mij</a>
-            </div>
-        </div>
-    </section> -->
+        </section>
 
         <!-- Over Section -->
-        <section id="over-mij" class="bg-transparent">
+        <section id="over-mij">
             <div class="container">
-                <div class="row text-center">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-center mb-4">Over Mij</h2>
-                        <p class="lead">Hallo en welkom op mijn portfolio website. Mijn naam is <b>Aboubakr Jebbari | أبوبكر الجباري</b>, beter bekend als <b><i>Aboe | أبو</i></b>, een jonge Marokkaanse Nederladse freelancer web ontwikkelaar met een passie voor het creëren van
-                            strakke, functionele en visueel aantrekkelijke websites gebruikmakend van WordPress. Met ervaring in thema-aanpassingen
-                            en
-                            plugin-ontwikkeling help ik bedrijven om hun online aanwezigheid effectief op te bouwen.</p>
-                        <p>Ik ben gespecialiseerd in het bouwen van aangepaste WordPress-oplossingen die niet alleen
-                            mooi
-                            zijn, maar ook geoptimaliseerd voor prestaties en gebruikerservaring. Mijn aanpak combineert
-                            technische expertise met creatief ontwerp om websites te leveren die opvallen..</p>
-                        <p>
-                            Naast dat heb ik ook interesse in theologie, geschiedenis, Islamitische wetenschappen en
-                            geralateerde onderwerpen en lees graag erover! Daarnaast werk ik ook weleens als tolk
-                            Arabisch/Nederlands, maar ben nu beeidigd!
-                        </p>
-                        <div class="row mt-5">
-                            <div class="col-md-4 text-center mb-4">
-                                <div class="bg-transparent p-4 rounded shadow-sm h-100">
-                                    <i class="fas fa-laptop-code fa-2x text-primary mb-3"></i>
-                                    <h4>WordPress Development</h4>
-                                    <p class="mb-0">Custom themes, plugins, and site optimization</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center mb-4">
-                                <div class="bg-transparent p-4 rounded shadow-sm h-100">
-                                    <i class="fas fa-paint-brush fa-2x text-primary mb-3"></i>
-                                    <h4>UI/UX Design</h4>
-                                    <p class="mb-0">User-friendly interfaces with modern aesthetics</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center mb-4">
-                                <div class="bg-transparent p-4 rounded shadow-sm h-100">
-                                    <i class="fas fa-mobile-alt fa-2x text-primary mb-3"></i>
-                                    <h4>Responsive Design</h4>
-                                    <p class="mb-0">Mobile-friendly websites that work on all devices</p>
-                                </div>
-                            </div>
-                        </div>
+                <h2>Over mij</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Hallo en welkom! Mijn naam is Aboubakr Jebbari, beter bekend als <strong>Aboe</strong>. Ik
+                            ben een Marokkaans-Nederlandse webdeveloper met een passie voor het creëren van strakke,
+                            functionele en visueel aantrekkelijke websites.</p>
+                        <p>Ik ben gespecialiseerd in maatwerk WordPress-oplossingen: van thema-aanpassingen tot
+                            plugin-ontwikkeling. Websites die niet alleen mooi zijn, maar ook geoptimaliseerd voor
+                            prestaties en gebruikerservaring.</p>
+                        <p>Naast mijn werk lees ik graag over theologie, geschiedenis en filosofie, en werk ik af en
+                            toe als tolk Arabisch/Nederlands.</p>
                     </div>
-                    <div class="col-lg-4 mx-auto">
-                        <img src="./assets/me.png" alt="" class="img img-fluid" />
-                    </div>
+                    <ul class="services">
+                        <li>
+                            <h3>WordPress Development</h3>
+                            <p>Maatwerk thema's, plugins en optimalisatie van bestaande websites.</p>
+                        </li>
+                        <li>
+                            <h3>UI/UX Design</h3>
+                            <p>Gebruiksvriendelijke interfaces met een moderne uitstraling.</p>
+                        </li>
+                        <li>
+                            <h3>Responsive Design</h3>
+                            <p>Websites die goed werken op mobiel, tablet en desktop.</p>
+                        </li>
+                    </ul>
                 </div>
+                <ul class="skills" aria-label="Vaardigheden">
+                    <li>WordPress</li>
+                    <li>Elementor</li>
+                    <li>WooCommerce</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Bootstrap</li>
+                    <li>Responsive design</li>
+                    <li>LightBox</li>
+                    <li>Mollie</li>
+                    <li>SEO</li>
+                </ul>
             </div>
         </section>
 
         <!-- Projecten Section -->
-        <section id="projecten" class="bg-transparent">
+        <section id="projecten">
             <div class="container">
-                <h2 class="text-center mb-5">Mijn Projecten</h2>
-                <div class="row">
+                <h2>Projecten</h2>
+                <p class="section-intro">Een selectie van websites die ik voor klanten heb gebouwd.</p>
+                <div class="projects">
                     <!-- Project 1 -->
-                    <div class="col-lg-6 col-sm-12 col-md-6 py-4">
-                        <div class="card project-card shadow">
-                            <img src="./assets/Screenshot from 2026-01-08 00-12-59.png" class="card-img-top"
-                                alt="Project 1">
-                            <div class="card-body">
-                                <h4 class="card-title">Bilal Berkane Portfolio website</h4>
-                                <p class="card-text">Dit is een portfolio website die ik heb gebouwd voor een kennis van
-                                    mij
-                                    die architect is, waarin staat aan welke projecten hij heeft gewerkt, en bij elke
-                                    project is een foto en een beschrijving erover!</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="https://bilalberkane.nl/" class="btn btn-sm btn-outline-info"
-                                            target="_new">Bekijk </a>
-                                        <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
-                                    </div>
-                                    <small class="text-muted">WordPress, Elementor</small>
-                                </div>
-                            </div>
+                    <article class="project-card">
+                        <div class="project-media"><img src="./assets/bilal-berkane.webp" alt="Screenshot van de portfolio website van Bilal Berkane"
+                            width="1100" height="519" loading="lazy" decoding="async"></div>
+                        <div class="project-body">
+                            <h3>Bilal Berkane – Portfolio</h3>
+                            <p>Portfolio website voor een kennis van mij, Bilal Berkane, een Rotterdamse Architect in working, met een overzicht van zijn al projecten. Elk project
+                                heeft een eigen foto en beschrijving.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken">
+                                <li>WordPress</li>
+                                <li>Elementor</li>
+                                <li>LightBox</li>
+                            </ul>
+                            <a class="btn btn-primary btn-sm" href="https://bilalberkane.nl/" target="_blank"
+                                rel="noopener">Bekijk <span aria-hidden="true">↗</span><span
+                                    class="visually-hidden"> de website van Bilal Berkane</span></a>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Project 2 -->
-                    <div class="col-lg-6 col-sm-12 col-md-6 py-4">
-                        <div class="card project-card shadow" style="opacity: 0.2;" disabled>
-                            <img src="./assets/Screenshot 2025-05-14 at 14.16.26.png" class="card-img-top"
-                                alt="Project 2">
-                            <div class="card-body">
-                                <h4 class="card-title">Ozerlogistics nieuwe website</h4>
-                                <p class="card-text">Dit is bedrijfswebsite voor een logitische bedrijf in Rotterdam,
-                                    genaamd<b> Ozer logistics</b>, waarbij de oude website vernieuwd moest worden en in
-                                    een
-                                    frisse jasje gestopt moest worden</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="https://www.ozertransport.nl/" class="btn btn-sm btn-outline-info"
-                                            target="_new">Bekijk</a>
-                                        <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
-                                    </div>
-                                    <small class="text-muted">WordPress, Elementor</small>
-                                </div>
-                            </div>
+                    <article class="project-card">
+                        <div class="project-media"><img src="./assets/bataafsche-leeuw.webp"
+                            alt="Screenshot van de website van uitgeverij De Bataafsche Leeuw" width="1100" height="524"
+                            loading="lazy" decoding="async"></div>
+                        <div class="project-body">
+                            <h3>De Bataafsche Leeuw – Uitgeverij</h3>
+                            <p>Webshop voor een Nederlandse uitgeverij met een focus op geschiedenisboeken, naast
+                                kunst, literatuur en lesmateriaal voor het voortgezet onderwijs.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken">
+                                <li>WordPress</li>
+                                <li>Elementor</li>
+                                <li>WooCommerce</li>
+                                <li>Mollie</li>
+                            </ul>
+                            <a class="btn btn-primary btn-sm" href="https://bataafscheleeuw.nl" target="_blank"
+                                rel="noopener">Bekijk <span aria-hidden="true">↗</span><span
+                                    class="visually-hidden"> de website van De Bataafsche Leeuw</span></a>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
+                    </article>
+
                     <!-- Project 3 -->
-                    <div class="col-lg-6 col-sm-12 col-md-6 py-4">
-                        <div class="card project-card shadow">
-                            <img src="./assets/Screenshot from 2026-01-08 00-17-55.png" class="card-img-top"
-                                alt="Project 2">
-                            <div class="card-body">
-                                <h4 class="card-title"> Bafaasche Leeuw uitgeverij</h4>
-                                <p class="card-text">
-                                    De Bataafsche Leeuw is een Nederlandse uitgeverij die samenwerkt met Van Soeren & Co
-                                    De
-                                    Bataafsche Leeuw - Uitgeverij Van Soeren & Co. Het bedrijf publiceert boeken in
-                                    diverse
-                                    categorieën zoals geschiedenis, kunst, literatuur en educatie Bureau ISBN -
-                                    Uitgeverij
-                                    De Bataafsche Leeuw B.V.. Ze hebben bijzondere focus op geschiedenisboeken
-                                    Uitgeverij De
-                                    Bataafsche Leeuw B.V. | Geschiedenisboeken en geven ook leermateriaal uit voor het
-                                    voortgezet onderwijs, waaronder wiskundeboeken uit de Getal & Ruimte serie.
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <!-- <a href="https://h-t.biz/" class="btn btn-sm btn-outline-info"
-                                            target="_new">Bekijk</a>  -->
-                                        <a href="https://bataafscheleeuw.nl" class="btn btn-sm btn-outline-info"
-                                            target="_new">Bekijk</a>
-                                        <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
-                                    </div>
-                                    <small class="text-muted">WordPress, Elementor, Woocommerce</small>
-                                </div>
-                            </div>
+                    <article class="project-card">
+                        <div class="project-media"><img src="./assets/witgoedspecialist010.webp"
+                            alt="Screenshot van de website van Witgoedspecialist010" width="1100" height="521"
+                            loading="lazy" decoding="async"></div>
+                        <div class="project-body">
+                            <h3>Witgoedspecialist010.nl</h3>
+                            <p>Bedrijfswebsite voor een Rotterdams bedrijf dat witgoed zoals wasmachines, drogers en
+                                kookplaten verkoopt en repareert tegen een eerlijke prijs.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken">
+                                <li>WordPress</li>
+                                <li>Elementor</li>
+                                <li>SEO</li>
+                            </ul>
+                            <a class="btn btn-primary btn-sm" href="https://witgoedspecialist010.nl/" target="_blank"
+                                rel="noopener">Bekijk <span aria-hidden="true">↗</span><span
+                                    class="visually-hidden"> de website van Witgoedspecialist010</span></a>
                         </div>
-                    </div>
-                    <!-- Project 4 -->
-                    <div class="col-lg-6 col-sm-12 col-md-6 py-4">
-                        <div class="card project-card shadow">
-                            <img src="./assets/Screenshot from 2026-01-08 00-11-42.png" class="card-img-top"
-                                alt="Project 2">
-                            <div class="card-body">
-                                <h4 class="card-title">Witgoedspecialist010.nl</h4>
-                                <p class="card-text">
-                                    <b>Witgoedspecialist010</b>, is een kleine bedrijf gevestigd in Rotterdam en haar
-                                    hoofdtaak is het verkopen, repareren van witgoed apparattuur zoals wasmachines,
-                                    vaatdrogers en kookplaten, tegen een redelijke prijs!
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="https://witgoedspecialist010.nl/" class="btn btn-sm btn-outline-info"
-                                            target="_new">Bekijk</a>
-                                        <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
-                                    </div>
-                                    <small class="text-muted">WordPress, Elementor</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-transparent">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="mb-4">Blijf in contact!</h2>
-                        <p class="lead mb-5">Interesse om samen te werken? Neem gerust contact met mij op :) </p>
-
-                        <div class="row">
-                            <div class="col-2"></div>
-
-                            <div class="col-8 mb-6">
-                                <div class="bg-transparent p-4 rounded shadow-sm h-100">
-                                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
-                                    <h4>Email</h4>
-                                    <p class="mb-0"><a href="mailto:aboujeb1991@gmail.com"
-                                            class="text-decoration-none">aboujeb1991@gmail.com</a></p>
-                                </div>
-                            </div>
-                            <div class="col-2"></div>
-
-                        </div>
-
-                        <div class="mt-5">
-                            <a href="https://www.linkedin.com/in/aboubakr-j-bari-30070740a" class="mx-2 text-transparent"
-                                target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-                        </div>
-                    </div>
+        <section id="contact">
+            <div class="container contact">
+                <h2>Blijf &nbsp; in contact!</h2>
+                <p class="lead">Op zoek naar een webdeveloper voor je team of een project? Neem gerust contact met mij
+                    op.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="mailto:aboujeb1991@gmail.com">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <path d="m3 7 9 6 9-6" />
+                        </svg>
+                        aboujeb1991@gmail.com
+                    </a>
+                    <a class="btn btn-outline" href="https://www.linkedin.com/in/aboubakr-j-bari-30070740a"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor">
+                            <path
+                                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+                        </svg>
+                        LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
-    <footer class="text-center">
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; <span class="date-ar"></span> - Alle rechten voorbehouden.</p>
+            <p>&copy; <span class="year">2026</span> Aboubakr Jebbari – Alle rechten voorbehouden.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://kit.fontawesome.com/948d7ef5f5.js" crossorigin="anonymous"></script>
-    <script src="./js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <!-- <script src="./js/moment-with-locales.js" type="text/javascript"></script> -->
-    <script src="./js/app.js" type="text/javascript"></script>
+    <script src="./js/app.js" defer></script>
 </body>
 
 </html>
