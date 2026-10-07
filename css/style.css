@@ -1,29 +1,47 @@
 :root {
   --bg: #EBE1E1;
-  --surface: #ffffff;
+  --bg-solid: #EBE1E1;
+  --surface: rgba(255, 255, 255, .55);
   --text: #000000;
   --muted: #5c5050;
   --border: #d6c8c8;
   --accent: #7a2e3a;
   --accent-hover: #5e222c;
   --on-accent: #ffffff;
-  --header-bg: rgba(235, 225, 225, .88);
-  --radius: 14px;
+  --on-accent-hover: #ffffff;
+  --header-bg: rgba(32, 38, 58, .5);
+  --radius: 20px;
   --shadow: 0 1px 2px rgba(34, 27, 27, .06), 0 8px 24px rgba(34, 27, 27, .08);
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-border: rgba(255, 255, 255, .6);
+  --glass-highlight: rgba(255, 255, 255, .85);
+  --glass-shadow: 0 8px 30px rgba(122, 46, 58, .14), inset 0 1px 0 rgba(255, 255, 255, .5);
+  --blob-1: #f7c9d3;
+  --blob-2: #c6b6ea;
+  --blob-3: #ffe2ad;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #000000;
-  --surface: #1a1515;
+  --bg: linear-gradient(180deg, #3e252c, #2b2b2b);
+  --bg-solid: #2b2b2b;
+  --surface: rgba(74, 46, 53, .4);
   --text: #ffffff;
-  --muted: #b9abab;
-  --border: #3a3030;
-  --accent: #e3a1ab;
-  --accent-hover: #efbcc4;
-  --on-accent: #1d1414;
-  --header-bg: rgba(0, 0, 0, .88);
+  --muted: #cab6ba;
+  --border: #5e3f46;
+  --accent: #ffffff;
+  --accent-hover: #2b2b2b;
+  --on-accent: #2b2b2b;
+  --on-accent-hover: #ffffff;
+  --header-bg: rgba(14, 18, 30, .5);
   --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-border: rgba(255, 255, 255, .14);
+  --glass-highlight: rgba(255, 255, 255, .22);
+  --glass-shadow: 0 8px 30px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .08);
+  --blob-1: #7a2e3a;
+  --blob-2: #203a52;
+  --blob-3: #e3a1ab;
 }
 
 *,
@@ -39,12 +57,43 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Alegreya", Georgia, "Times New Roman", Times, serif;
+  font-family: "Alegreya", Georgia, "Traditional Arabic", "Noto Naskh Arabic", "Times New Roman", Times, serif;
   font-size: 1.0625rem;
   line-height: 1.65;
+}
+
+/* Soft drifting color blobs the glass panels refract via backdrop-filter */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -15%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 18% 22%, var(--blob-1) 0%, transparent 42%),
+    radial-gradient(circle at 82% 12%, var(--blob-2) 0%, transparent 38%),
+    radial-gradient(circle at 55% 88%, var(--blob-3) 0%, transparent 45%);
+  filter: blur(90px);
+  opacity: .55;
+  pointer-events: none;
+  animation: liquidDrift 24s ease-in-out infinite alternate;
+}
+
+@keyframes liquidDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-3%, 2%) scale(1.06);
+  }
+
+  100% {
+    transform: translate(2%, -3%) scale(1);
+  }
 }
 
 img {
@@ -79,6 +128,14 @@ h3 {
   letter-spacing: -.01em;
 }
 
+/* Negative letter-spacing breaks Arabic letter connections */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] .brand {
+  letter-spacing: normal;
+}
+
 p {
   margin: 0 0 1em;
 }
@@ -111,12 +168,12 @@ ul {
 
 .skip-link {
   position: absolute;
-  left: 1rem;
+  inset-inline-start: 1rem;
   top: -4rem;
   z-index: 20;
   padding: .5rem 1rem;
   background: var(--text);
-  color: var(--bg);
+  color: var(--bg-solid);
   border-radius: 8px;
 }
 
@@ -140,7 +197,9 @@ ul {
   inset: 0;
   z-index: -1;
   background: var(--header-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .nav {
@@ -176,15 +235,87 @@ ul {
   width: 2.5rem;
   height: 2.5rem;
   padding: 0;
-  background: none;
-  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: 50%;
   color: var(--text);
   cursor: pointer;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  transition: transform .15s, box-shadow .15s;
 }
 
 .icon-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 4px 14px rgba(0, 0, 0, .12);
+}
+
+/* Language dropdown */
+.lang-switch {
+  position: relative;
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + .6rem);
+  inset-inline-end: 0;
+  z-index: 15;
+  min-width: 9.5rem;
+  padding: .4rem;
   background: var(--surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: calc(var(--radius) - 4px);
+  box-shadow: var(--glass-shadow), 0 12px 28px rgba(0, 0, 0, .18);
+  opacity: 0;
+  transform: translateY(-6px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease, visibility .15s;
+}
+
+.lang-switch.open .lang-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  padding: .55rem .65rem;
+  background: none;
+  border: none;
+  border-radius: calc(var(--radius) - 10px);
+  color: var(--text);
+  font-family: inherit;
+  font-size: .92rem;
+  text-align: start;
+  cursor: pointer;
+}
+
+.lang-option:hover {
+  background: var(--border);
+}
+
+.lang-option::before {
+  content: "";
+  width: 1rem;
+  flex: none;
+}
+
+.lang-option[aria-current="true"] {
+  font-weight: 700;
+}
+
+.lang-option[aria-current="true"]::before {
+  content: "✓";
+  color: var(--accent);
 }
 
 .nav-toggle,
@@ -208,7 +339,7 @@ ul {
   .nav-links {
     position: fixed;
     top: 0;
-    right: 0;
+    inset-inline-end: 0;
     z-index: 1;
     flex-direction: column;
     align-items: stretch;
@@ -218,12 +349,20 @@ ul {
     height: 100dvh;
     padding: 4.75rem 1.5rem 2rem;
     overflow-y: auto;
-    background: var(--bg);
-    border-left: 1px solid var(--border);
-    box-shadow: var(--shadow);
+    background: var(--header-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-inline-start: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
     transform: translateX(100%);
     visibility: hidden;
     transition: transform .25s ease, visibility .25s;
+  }
+
+  /* inset-inline-end flips to the left edge in RTL, but the transform below
+     is a physical length and needs its own direction-aware override. */
+  [dir="rtl"] .nav-links {
+    transform: translateX(-100%);
   }
 
   .nav-actions .nav-links a {
@@ -300,6 +439,7 @@ section + section {
 
 /* Buttons */
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: .5rem;
@@ -312,11 +452,12 @@ section + section {
   max-width: 100%;
   overflow-wrap: anywhere;
   text-decoration: none;
-  transition: background-color .15s, color .15s, border-color .15s, transform .15s;
+  overflow: hidden;
+  transition: background-color .15s, color .15s, border-color .15s, transform .15s, box-shadow .15s;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn-sm {
@@ -324,23 +465,39 @@ section + section {
   font-size: .95rem;
 }
 
+/* Glass sheen: a soft highlight riding the top half of every button */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+}
+
 .btn-primary {
   background: var(--accent);
   color: var(--on-accent);
+  box-shadow: var(--glass-shadow);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
+  color: var(--on-accent-hover);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .18), inset 0 1px 0 var(--glass-highlight);
 }
 
 .btn-outline {
-  border-color: var(--text);
+  background: var(--surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-color: var(--glass-border);
   color: var(--text);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .btn-outline:hover {
   background: var(--text);
-  color: var(--bg);
+  color: var(--bg-solid);
 }
 
 .actions {
@@ -364,10 +521,13 @@ section + section {
   margin-bottom: 1.25rem;
   padding: .3rem .85rem;
   background: var(--surface);
-  border: 1px solid var(--border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: 999px;
   font-size: .9rem;
   font-weight: 500;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .status-dot {
@@ -379,8 +539,9 @@ section + section {
 
 .portrait {
   width: min(100%, 320px);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
+  border-radius: 28px;
+  border: 1px solid var(--glass-highlight);
+  box-shadow: var(--glass-shadow), var(--shadow);
 }
 
 /* Over mij */
@@ -403,8 +564,17 @@ section + section {
 .services li {
   padding: 1.1rem 1.25rem;
   background: var(--surface);
-  border: 1px solid var(--border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.services li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .14), inset 0 1px 0 var(--glass-highlight);
 }
 
 .services h3 {
@@ -431,14 +601,17 @@ section + section {
 .skills li,
 .tags li {
   padding: .25rem .75rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   border-radius: 999px;
   font-size: .88rem;
   font-weight: 500;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .skills li {
   background: var(--surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .tags li {
@@ -457,16 +630,35 @@ section + section {
   flex-direction: column;
   overflow: hidden;
   background: var(--surface);
-  border: 1px solid var(--border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--glass-shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .project-card {
   position: relative;
 }
 
-/* Stretch the "Bekijk" link over the whole card, so the card is clickable too */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .16), inset 0 1px 0 var(--glass-highlight);
+}
+
+/* Stretch the "Bekijk" link over the whole card, so the card is clickable too.
+   .btn is position:relative for its glass sheen, which would otherwise make it
+   the containing block for this overlay and shrink the clickable area down to
+   just the button — put it back to static here so ::after escalates to the card. */
+.project-card .btn {
+  position: static;
+}
+
+.project-card .btn::before {
+  content: none;
+}
+
 .project-card .btn::after {
   content: "";
   position: absolute;
@@ -493,6 +685,7 @@ section + section {
 
 .project-card:hover .btn-primary {
   background: var(--accent-hover);
+  color: var(--on-accent-hover);
 }
 
 /* transform on :hover would make .btn the containing block for its own
@@ -583,9 +776,17 @@ section + section {
   }
 
   .btn,
+  .project-card,
   .project-card img,
+  .services li,
+  .icon-btn,
   .nav-links,
-  .nav-backdrop {
+  .nav-backdrop,
+  .lang-menu {
     transition: none;
+  }
+
+  body::before {
+    animation: none;
   }
 }

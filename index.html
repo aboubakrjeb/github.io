@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aboubakr Jebbari – Webdeveloper in Rotterdam</title>
+    <title>Chamali Web Solutions – Webdeveloper in Rotterdam</title>
     <meta name="description"
         content="Portfolio van Aboubakr Jebbari, webdeveloper uit Rotterdam. Snelle, strakke en gebruiksvriendelijke websites met WordPress, Elementor en WooCommerce.">
     <meta name="theme-color" content="#EBE1E1">
@@ -14,11 +14,11 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="./assets/aboubakr.webp">
     <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23221b1b'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23EBE1E1'%3EAJ%3C/text%3E%3C/svg%3E">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23221b1b'/%3E%3Ctext x='32' y='40' font-family='Arial,sans-serif' font-size='22' font-weight='700' text-anchor='middle' fill='%23EBE1E1'%3ECWS%3C/text%3E%3C/svg%3E">
     <link rel="preload" as="image" href="./assets/aboubakr.webp">
     <link href="https://fonts.cdnfonts.com/css/alegreya" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- Set the theme before the page paints, so there is no flash -->
+    <!-- Set the theme and language before the page paints, so there is no flash -->
     <script>
         (function () {
             var theme;
@@ -27,32 +27,59 @@
                 theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
             document.documentElement.setAttribute('data-theme', theme);
+
+            var lang;
+            try { lang = localStorage.getItem('lang'); } catch (e) { }
+            if (lang !== 'nl' && lang !== 'ar' && lang !== 'en') lang = 'nl';
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
         })();
     </script>
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Naar de inhoud</a>
+    <a class="skip-link" href="#main" data-i18n="skipLink">Naar de inhoud</a>
 
     <!-- Navigation -->
     <header class="site-header">
-        <nav class="container nav" aria-label="Hoofdnavigatie">
-            <a class="brand" href="#top">Aboubakr Jebbari</a>
+        <nav class="container nav" aria-label="Hoofdnavigatie" data-i18n-aria-label="navAriaLabel">
+            <a class="brand" href="#top">Chamali Web Solutions</a>
             <div class="nav-actions">
                 <!-- Offcanvas menu on tablet and smaller, inline links on desktop -->
                 <ul class="nav-links" id="nav-menu">
-                    <li><a href="#over-mij">Over mij</a></li>
-                    <li><a href="#projecten">Projecten</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#over-mij" data-i18n="navAbout">Over mij</a></li>
+                    <li><a href="#projecten" data-i18n="navProjects">Projecten</a></li>
+                    <li><a href="#contact" data-i18n="navContact">Contact</a></li>
                 </ul>
-                <button class="icon-btn theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema">
+                <div class="lang-switch">
+                    <button class="icon-btn lang-toggle" type="button" id="lang-toggle-btn" aria-haspopup="true"
+                        aria-expanded="false" aria-controls="lang-menu" aria-label="Taal wijzigen"
+                        data-i18n-aria-label="langToggleAria">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M3 12h18" />
+                            <path d="M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" />
+                        </svg>
+                    </button>
+                    <ul class="lang-menu" id="lang-menu" role="menu" aria-labelledby="lang-toggle-btn">
+                        <li role="none"><button type="button" role="menuitemradio" class="lang-option"
+                                data-lang="nl">Nederlands</button></li>
+                        <li role="none"><button type="button" role="menuitemradio" class="lang-option"
+                                data-lang="ar">العربية</button></li>
+                        <li role="none"><button type="button" role="menuitemradio" class="lang-option"
+                                data-lang="en">English</button></li>
+                    </ul>
+                </div>
+                <button class="icon-btn theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema"
+                    data-i18n-aria-label="themeToggleAria">
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                         <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
                         <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
                     </svg>
                 </button>
                 <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-controls="nav-menu"
-                    aria-expanded="false">
+                    aria-expanded="false" data-i18n-aria-label="menuAria">
                     <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round">
                         <path class="icon-open" d="M4 7h16M4 12h16M4 17h16" />
@@ -69,52 +96,56 @@
         <section id="top" class="hero">
             <div class="container hero-grid">
                 <div>
-                    <p class="status"><span class="status-dot"></span>Beschikbaar voor een nieuwe functie</p>
-                    <h1>Webdeveloper die snelle en strakke websites bouwt.</h1>
-                    <p class="lead">Ik ben <strong>Aboubakr Jebbari</strong>, webdeveloper uit Rotterdam. Ik bouw
-                        functionele, gebruiksvriendelijke websites en webshops met WordPress, Elementor en
-                        WooCommerce.</p>
+                    <p class="status"><span class="status-dot"></span><span
+                            data-i18n="heroStatus">Beschikbaar voor een nieuwe functie</span></p>
+                    <h1 data-i18n="heroTitle">Webdeveloper die snelle en strakke websites bouwt.</h1>
+                    <p class="lead" data-i18n="heroLead">Ik ben <strong>Aboubakr Jebbari</strong>, oprichter van
+                        <strong>Chamali Web Solutions</strong> en webdeveloper uit Rotterdam. Ik bouw functionele,
+                        gebruiksvriendelijke websites en webshops met WordPress, Elementor en WooCommerce.</p>
                     <div class="actions">
-                        <a class="btn btn-primary" href="#projecten">Bekijk mijn werk</a>
-                        <a class="btn btn-outline" href="#contact">Neem contact op</a>
+                        <a class="btn btn-primary" href="#projecten" data-i18n="heroBtnWork">Bekijk mijn werk</a>
+                        <a class="btn btn-outline" href="#contact" data-i18n="heroBtnContact">Neem contact op</a>
                     </div>
                 </div>
                 <img class="portrait" src="./assets/aboubakr.webp" alt="Portretfoto van Aboubakr Jebbari" width="480"
-                    height="480">
+                    height="643" data-i18n-alt="portraitAlt">
             </div>
         </section>
 
         <!-- Over Section -->
         <section id="over-mij">
             <div class="container">
-                <h2>Over mij</h2>
+                <h2 data-i18n="aboutTitle">Over mij</h2>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p>Hallo en welkom! Mijn naam is Aboubakr Jebbari, beter bekend als <strong>Aboe</strong>. Ik
-                            ben een Marokkaans-Nederlandse webdeveloper met een passie voor het creëren van strakke,
+                        <p data-i18n="aboutP1">Hallo en welkom! Mijn naam is Aboubakr Jebbari, beter bekend als
+                            <strong>Aboe</strong>, oprichter van <strong>Chamali Web Solutions</strong>. Ik ben een
+                            Marokkaans-Nederlandse webdeveloper met een passie voor het creëren van strakke,
                             functionele en visueel aantrekkelijke websites.</p>
-                        <p>Ik ben gespecialiseerd in maatwerk WordPress-oplossingen: van thema-aanpassingen tot
-                            plugin-ontwikkeling. Websites die niet alleen mooi zijn, maar ook geoptimaliseerd voor
-                            prestaties en gebruikerservaring.</p>
-                        <p>Naast mijn werk lees ik graag over theologie, geschiedenis en filosofie, en werk ik af en
-                            toe als tolk Arabisch/Nederlands.</p>
+                        <p data-i18n="aboutP2">Ik ben gespecialiseerd in maatwerk WordPress-oplossingen: van
+                            thema-aanpassingen tot plugin-ontwikkeling. Websites die niet alleen mooi zijn, maar ook
+                            geoptimaliseerd voor prestaties en gebruikerservaring.</p>
+                        <p data-i18n="aboutP3">Naast mijn werk lees ik graag over theologie, geschiedenis en
+                            filosofie, en werk ik af en toe als tolk Arabisch/Nederlands.</p>
                     </div>
                     <ul class="services">
                         <li>
-                            <h3>WordPress Development</h3>
-                            <p>Maatwerk thema's, plugins en optimalisatie van bestaande websites.</p>
+                            <h3 data-i18n="serviceWpTitle">WordPress Development</h3>
+                            <p data-i18n="serviceWpDesc">Maatwerk thema's, plugins en optimalisatie van bestaande
+                                websites.</p>
                         </li>
                         <li>
-                            <h3>UI/UX Design</h3>
-                            <p>Gebruiksvriendelijke interfaces met een moderne uitstraling.</p>
+                            <h3 data-i18n="serviceUxTitle">UI/UX Design</h3>
+                            <p data-i18n="serviceUxDesc">Gebruiksvriendelijke interfaces met een moderne
+                                uitstraling.</p>
                         </li>
                         <li>
-                            <h3>Responsive Design</h3>
-                            <p>Websites die goed werken op mobiel, tablet en desktop.</p>
+                            <h3 data-i18n="serviceRespTitle">Responsive Design</h3>
+                            <p data-i18n="serviceRespDesc">Websites die goed werken op mobiel, tablet en desktop.</p>
                         </li>
                     </ul>
                 </div>
-                <ul class="skills" aria-label="Vaardigheden">
+                <ul class="skills" aria-label="Vaardigheden" data-i18n-aria-label="skillsAria">
                     <li>WordPress</li>
                     <li>Elementor</li>
                     <li>WooCommerce</li>
@@ -133,66 +164,73 @@
         <!-- Projecten Section -->
         <section id="projecten">
             <div class="container">
-                <h2>Projecten</h2>
-                <p class="section-intro">Een selectie van websites die ik voor klanten heb gebouwd.</p>
+                <h2 data-i18n="projectsTitle">Projecten</h2>
+                <p class="section-intro" data-i18n="projectsIntro">Een selectie van websites die ik voor klanten heb
+                    gebouwd.</p>
                 <div class="projects">
                     <!-- Project 1 -->
                     <article class="project-card">
-                        <div class="project-media"><img src="./assets/bilal-berkane.webp" alt="Screenshot van de portfolio website van Bilal Berkane"
-                            width="1100" height="519" loading="lazy" decoding="async"></div>
+                        <div class="project-media"><img src="./assets/bilal-berkane.webp"
+                                alt="Screenshot van de portfolio website van Bilal Berkane" width="1100" height="519"
+                                loading="lazy" decoding="async" data-i18n-alt="project1Alt"></div>
                         <div class="project-body">
-                            <h3>Bilal Berkane – Portfolio</h3>
-                            <p>Portfolio website voor een kennis van mij, Bilal Berkane, een Rotterdamse Architect in working, met een overzicht van zijn al projecten. Elk project
+                            <h3 data-i18n="project1Title">Bilal Berkane – Portfolio</h3>
+                            <p data-i18n="project1Desc">Portfolio website voor een kennis van mij, Bilal Berkane, een
+                                Rotterdamse Architect in working, met een overzicht van zijn al projecten. Elk project
                                 heeft een eigen foto en beschrijving.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken">
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
                                 <li>WordPress</li>
                                 <li>Elementor</li>
                                 <li>LightBox</li>
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://bilalberkane.nl/" target="_blank"
-                                rel="noopener">Bekijk <span aria-hidden="true">↗</span><span
-                                    class="visually-hidden"> de website van Bilal Berkane</span></a>
+                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="project1Hidden"> de website van Bilal Berkane</span></a>
                         </div>
                     </article>
 
                     <!-- Project 2 -->
                     <article class="project-card">
                         <div class="project-media"><img src="./assets/bataafsche-leeuw.webp"
-                            alt="Screenshot van de website van uitgeverij De Bataafsche Leeuw" width="1100" height="524"
-                            loading="lazy" decoding="async"></div>
+                                alt="Screenshot van de website van uitgeverij De Bataafsche Leeuw" width="1100"
+                                height="524" loading="lazy" decoding="async" data-i18n-alt="project2Alt"></div>
                         <div class="project-body">
-                            <h3>De Bataafsche Leeuw – Uitgeverij</h3>
-                            <p>Webshop voor een Nederlandse uitgeverij met een focus op geschiedenisboeken, naast
-                                kunst, literatuur en lesmateriaal voor het voortgezet onderwijs.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken">
+                            <h3 data-i18n="project2Title">De Bataafsche Leeuw – Uitgeverij</h3>
+                            <p data-i18n="project2Desc">Webshop voor een Nederlandse uitgeverij met een focus op
+                                geschiedenisboeken, naast kunst, literatuur en lesmateriaal voor het voortgezet
+                                onderwijs.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
                                 <li>WordPress</li>
                                 <li>Elementor</li>
                                 <li>WooCommerce</li>
                                 <li>Mollie</li>
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://bataafscheleeuw.nl" target="_blank"
-                                rel="noopener">Bekijk <span aria-hidden="true">↗</span><span
-                                    class="visually-hidden"> de website van De Bataafsche Leeuw</span></a>
+                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="project2Hidden"> de website van De Bataafsche Leeuw</span></a>
                         </div>
                     </article>
 
                     <!-- Project 3 -->
                     <article class="project-card">
                         <div class="project-media"><img src="./assets/witgoedspecialist010.webp"
-                            alt="Screenshot van de website van Witgoedspecialist010" width="1100" height="521"
-                            loading="lazy" decoding="async"></div>
+                                alt="Screenshot van de website van Witgoedspecialist010" width="1100" height="521"
+                                loading="lazy" decoding="async" data-i18n-alt="project3Alt"></div>
                         <div class="project-body">
-                            <h3>Witgoedspecialist010.nl</h3>
-                            <p>Bedrijfswebsite voor een Rotterdams bedrijf dat witgoed zoals wasmachines, drogers en
-                                kookplaten verkoopt en repareert tegen een eerlijke prijs.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken">
+                            <h3 data-i18n="project3Title">Witgoedspecialist010.nl</h3>
+                            <p data-i18n="project3Desc">Bedrijfswebsite voor een Rotterdams bedrijf dat witgoed zoals
+                                wasmachines, drogers en kookplaten verkoopt en repareert tegen een eerlijke prijs.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
                                 <li>WordPress</li>
                                 <li>Elementor</li>
                                 <li>SEO</li>
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://witgoedspecialist010.nl/" target="_blank"
-                                rel="noopener">Bekijk <span aria-hidden="true">↗</span><span
-                                    class="visually-hidden"> de website van Witgoedspecialist010</span></a>
+                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="project3Hidden"> de website van Witgoedspecialist010</span></a>
                         </div>
                     </article>
                 </div>
@@ -202,9 +240,9 @@
         <!-- Contact Section -->
         <section id="contact">
             <div class="container contact">
-                <h2>Blijf &nbsp; in contact!</h2>
-                <p class="lead">Op zoek naar een webdeveloper voor je team of een project? Neem gerust contact met mij
-                    op.</p>
+                <h2 data-i18n="contactTitle">Blijf &nbsp; in contact!</h2>
+                <p class="lead" data-i18n="contactLead">Op zoek naar een webdeveloper voor je team of een project?
+                    Neem gerust contact met mij op.</p>
                 <div class="actions">
                     <a class="btn btn-primary" href="mailto:aboujeb1991@gmail.com">
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
@@ -230,7 +268,8 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; <span class="year">2026</span> Aboubakr Jebbari – Alle rechten voorbehouden.</p>
+            <p>&copy; <span class="year">2026</span> Aboubakr Jebbari – <span data-i18n="footerRights">Alle rechten
+                    voorbehouden.</span></p>
         </div>
     </footer>
 
