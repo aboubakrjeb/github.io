@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot-Image
+Disallow: /assets/aboubakr.webp
+
+Sitemap: https://chamaliwebsolutions.nl/sitemap.xml

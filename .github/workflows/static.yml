@@ -33,11 +33,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # Only publish the files the site uses; source PNGs, screenshots and personal photos stay out
+      - name: Collect site files
+        run: |
+          mkdir -p _site/assets
+          cp index.html robots.txt sitemap.xml _site/
+          cp -r css js _site/
+          cp assets/*.webp assets/favicon.svg assets/apple-touch-icon.png assets/og-image.png _site/assets/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
