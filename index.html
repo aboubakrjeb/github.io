@@ -41,7 +41,7 @@
     </script>
     <link href="https://fonts.cdnfonts.com/css/alegreya" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- Set the theme and language before the page paints, so there is no flash -->
+    <!-- Set the theme, glass effect and language before the page paints, so there is no flash -->
     <script>
         (function () {
             var theme;
@@ -50,6 +50,10 @@
                 theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
             document.documentElement.setAttribute('data-theme', theme);
+
+            var glass;
+            try { glass = localStorage.getItem('glass'); } catch (e) { }
+            document.documentElement.setAttribute('data-glass', glass === 'off' ? 'off' : 'on');
 
             var lang;
             try { lang = localStorage.getItem('lang'); } catch (e) { }
@@ -72,6 +76,7 @@
                 <ul class="nav-links" id="nav-menu">
                     <li><a href="#over-mij" data-i18n="navAbout">Over mij</a></li>
                     <li><a href="#projecten" data-i18n="navProjects">Projecten</a></li>
+                    <li><a href="#pakketten" data-i18n="navPackages">Pakketten</a></li>
                     <li><a href="#contact" data-i18n="navContact">Contact</a></li>
                 </ul>
                 <div class="lang-switch">
@@ -101,10 +106,19 @@
                         <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
                     </svg>
                 </button>
+                <button class="icon-btn glass-toggle" type="button" aria-pressed="true" aria-label="Glaseffect"
+                    data-i18n-aria-label="glassToggleAria">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z" />
+                        <path class="icon-glass-off" d="M4 4l16 16" />
+                    </svg>
+                </button>
                 <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-controls="nav-menu"
                     aria-expanded="false" data-i18n-aria-label="menuAria">
-                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round">
                         <path class="icon-open" d="M4 7h16M4 12h16M4 17h16" />
                         <path class="icon-close" d="M6 6l12 12M18 6 6 18" />
                     </svg>
@@ -119,19 +133,23 @@
         <section id="top" class="hero">
             <div class="container hero-grid">
                 <div>
-                    <p class="status"><span class="status-dot"></span><span
-                            data-i18n="heroStatus">Beschikbaar voor een nieuwe functie</span></p>
-                    <h1 data-i18n="heroTitle">Webdeveloper die snelle en strakke websites bouwt.</h1>
-                    <p class="lead" data-i18n="heroLead">Ik ben <strong>Aboubakr Jebbari</strong>, oprichter van
-                        <strong>Chamali Web Solutions</strong> en webdeveloper uit Rotterdam. Ik bouw functionele,
-                        gebruiksvriendelijke websites en webshops met WordPress, Elementor en WooCommerce.</p>
+                    <p class="status"><span class="status-icon" aria-hidden="true">!</span><span data-i18n="heroStatus">24/7 beschikbaar voor
+                            nieuwe projecten: hybride, op afstand en op locatie</span></p>
+                    <h1 data-i18n="heroTitle">Een professionele en meedenkende webdeveloper die snelle en strakke websites
+                        bouwt.</h1>
+                    <p class="lead" data-i18n="heroLead"><span lang="ar" dir="rtl">السلام عليكم كلشي لاباس الصحة
+                            لباس؟</span> Ik ben <strong>Aboubakr Jebbari</strong>, oprichter van
+                        <strong>Chamali Web Solutions</strong> en een professionele en meedenkende webdeveloper uit Rotterdam.
+                        Ik bouw functionele,
+                        gebruiksvriendelijke websites en webshops met WordPress, Elementor en WooCommerce.
+                    </p>
                     <div class="actions">
                         <a class="btn btn-primary" href="#projecten" data-i18n="heroBtnWork">Bekijk mijn werk</a>
                         <a class="btn btn-outline" href="#contact" data-i18n="heroBtnContact">Neem contact op</a>
                     </div>
                 </div>
                 <img class="portrait" src="./assets/aboubakr.webp" alt="Portretfoto van Aboubakr Jebbari" width="480"
-                    height="643" data-i18n-alt="portraitAlt">
+                    height="637" data-i18n-alt="portraitAlt">
             </div>
         </section>
 
@@ -141,15 +159,20 @@
                 <h2 data-i18n="aboutTitle">Over mij</h2>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p data-i18n="aboutP1">Hallo en welkom! Mijn naam is Aboubakr Jebbari, beter bekend als
-                            <strong>Aboe</strong>, oprichter van <strong>Chamali Web Solutions</strong>. Ik ben een
-                            Marokkaans-Nederlandse webdeveloper met een passie voor het creëren van strakke,
-                            functionele en visueel aantrekkelijke websites.</p>
-                        <p data-i18n="aboutP2">Ik ben gespecialiseerd in maatwerk WordPress-oplossingen: van
-                            thema-aanpassingen tot plugin-ontwikkeling. Websites die niet alleen mooi zijn, maar ook
-                            geoptimaliseerd voor prestaties en gebruikerservaring.</p>
-                        <p data-i18n="aboutP3">Naast mijn werk lees ik graag over theologie, geschiedenis en
-                            filosofie, en werk ik af en toe als tolk Arabisch/Nederlands.</p>
+                        <p data-i18n="aboutP1">Ik ben Aboubakr Jebbari, ook wel <strong>Aboe</strong>, een professionele en meedenkende webdeveloper
+                            uit Rotterdam en oprichter van <strong>Chamali Web Solutions</strong>. Ik help
+                            ondernemers, organisaties en verenigingen aan een professionele online aanwezigheid, van
+                            een overzichtelijke bedrijfswebsite tot een complete webshop.</p>
+                        <p data-i18n="aboutP2">Ik ben gespecialiseerd in WordPress, Elementor en WooCommerce, van
+                            maatwerk thema's tot plugins. Mijn websites laden snel, werken goed op mobiel, tablet en
+                            desktop en zijn goed vindbaar in Google. Voor webshops koppel ik betalingen via Mollie, en
+                            meertalige websites krijgen ondersteuning voor Arabisch van rechts naar links.</p>
+                        <p data-i18n="aboutP3">Ik denk mee vanaf het eerste gesprek tot de livegang, en blijf daarna
+                            betrokken met beveiliging, onderhoud en support. Zo blijft je website veilig, snel en
+                            up-to-date.</p>
+                        <p data-i18n="aboutP4">Mijn Marokkaans-Nederlandse achtergrond en mijn werk als tolk
+                            Arabisch–Nederlands helpen me om helder te communiceren met klanten uit verschillende
+                            culturen. Naast mijn werk verdiep ik me graag in geschiedenis, filosofie en theologie.</p>
                     </div>
                     <ul class="services">
                         <li>
@@ -210,8 +233,8 @@
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://bilalberkane.nl/" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden"
-                                    data-i18n="project1Hidden"> de website van Bilal Berkane</span></a>
+                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project1Hidden">
+                                    de website van Bilal Berkane</span></a>
                         </div>
                     </article>
 
@@ -233,8 +256,8 @@
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://bataafscheleeuw.nl" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden"
-                                    data-i18n="project2Hidden"> de website van De Bataafsche Leeuw</span></a>
+                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project2Hidden">
+                                    de website van De Bataafsche Leeuw</span></a>
                         </div>
                     </article>
 
@@ -254,8 +277,8 @@
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://witgoedspecialist010.nl/" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden"
-                                    data-i18n="project3Hidden"> de website van Witgoedspecialist010</span></a>
+                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project3Hidden">
+                                    de website van Witgoedspecialist010</span></a>
                         </div>
                     </article>
 
@@ -276,8 +299,8 @@
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://www.faseero.nl" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden"
-                                    data-i18n="project4Hidden"> de website van Faseero</span></a>
+                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project4Hidden">
+                                    de website van Faseero</span></a>
                         </div>
                     </article>
 
@@ -299,11 +322,89 @@
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://ettaouhid.nl/" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden"
-                                    data-i18n="project5Hidden"> de website van Ettaouhid</span></a>
+                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project5Hidden">
+                                    de website van Ettaouhid</span></a>
                         </div>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <!-- Pakketten Section -->
+        <section id="pakketten">
+            <div class="container">
+                <h2 data-i18n="packagesTitle">Onderhoudspakketten</h2>
+                <p class="section-intro" data-i18n="packagesIntro">Kies het onderhoudspakket dat bij je website past.
+                </p>
+                <ul class="packages">
+                    <!-- Pakket 1 -->
+                    <li class="package">
+                        <h3 data-i18n="package1Title">Basis</h3>
+                        <p class="package-desc" data-i18n="package1Desc">Een eenvoudige, <strong>informatieve
+                                website</strong> voor je bedrijf.</p>
+                        <p class="package-price" data-i18n="package1Price">vanaf <strong>€50</strong> per maand</p>
+                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                        <div class="package-includes">
+                            <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
+                            <ul class="package-features">
+                                <li><span data-i18n="featureSite">Informatieve zakelijke website</span></li>
+                                <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                        inbegrepen:</span> <span data-i18n="featureWebshop">Webshop</span></li>
+                                <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                        inbegrepen:</span> <span data-i18n="featureSecurity">Beveiliging</span></li>
+                                <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                        inbegrepen:</span> <span data-i18n="featureMaintenance">Maandelijks
+                                        onderhoud</span></li>
+                                <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                        inbegrepen:</span> <span data-i18n="featureSupport">24/7 support</span></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Pakket 2 -->
+                    <li class="package package-featured">
+                        <p class="package-badge" data-i18n="packagesBadge">Aanbevolen</p>
+                        <h3 data-i18n="package2Title">Webshop</h3>
+                        <p class="package-desc" data-i18n="package2Desc">Je zakelijke website <strong>inclusief
+                                webshop</strong>.</p>
+                        <p class="package-price" data-i18n="package2Price">vanaf <strong>€100</strong> per maand</p>
+                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                        <div class="package-includes">
+                            <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
+                            <ul class="package-features">
+                                <li><span data-i18n="featureSite">Informatieve zakelijke website</span></li>
+                                <li><span data-i18n="featureWebshop">Webshop</span></li>
+                                <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                        inbegrepen:</span> <span data-i18n="featureSecurity">Beveiliging</span></li>
+                                <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                        inbegrepen:</span> <span data-i18n="featureMaintenance">Maandelijks
+                                        onderhoud</span></li>
+                                <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                        inbegrepen:</span> <span data-i18n="featureSupport">24/7 support</span></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Pakket 3 -->
+                    <li class="package">
+                        <h3 data-i18n="package3Title">Compleet</h3>
+                        <p class="package-desc" data-i18n="package3Desc">Alles uit Webshop, plus
+                            <strong>beveiliging</strong>, <strong>maandelijks onderhoud</strong> en <strong>24/7
+                                support</strong>.</p>
+                        <p class="package-price" data-i18n="package3Price">vanaf <strong>€150</strong> per maand</p>
+                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                        <div class="package-includes">
+                            <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
+                            <ul class="package-features">
+                                <li><span data-i18n="featureSite">Informatieve zakelijke website</span></li>
+                                <li><span data-i18n="featureWebshop">Webshop</span></li>
+                                <li><span data-i18n="featureSecurity">Beveiliging</span></li>
+                                <li><span data-i18n="featureMaintenance">Maandelijks onderhoud</span></li>
+                                <li><span data-i18n="featureSupport">24/7 support</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -311,7 +412,7 @@
         <section id="contact">
             <div class="container contact">
                 <h2 data-i18n="contactTitle">Blijf &nbsp; in contact!</h2>
-                <p class="lead" data-i18n="contactLead">Op zoek naar een webdeveloper voor je team of een project?
+                <p class="lead" data-i18n="contactLead">Op zoek naar een professionele en meedenkende webdeveloper voor je team of een project?
                     Neem gerust contact met mij op.</p>
                 <div class="actions">
                     <a class="btn btn-primary" href="mailto:aboujeb1991@gmail.com">

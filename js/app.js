@@ -6,20 +6,23 @@ const translations = {
         navAriaLabel: "Hoofdnavigatie",
         navAbout: "Over mij",
         navProjects: "Projecten",
+        navPackages: "Pakketten",
         navContact: "Contact",
         themeToggleAria: "Wissel tussen licht en donker thema",
+        glassToggleAria: "Glaseffect",
         langToggleAria: "Schakel over naar Arabisch",
         menuAria: "Menu",
-        heroStatus: "Beschikbaar voor een nieuwe functie",
-        heroTitle: "Webdeveloper die snelle en strakke websites bouwt.",
-        heroLead: 'Ik ben <strong>Aboubakr Jebbari</strong>, oprichter van <strong>Chamali Web Solutions</strong> en webdeveloper uit Rotterdam. Ik bouw functionele, gebruiksvriendelijke websites en webshops met WordPress, Elementor en WooCommerce.',
+        heroStatus: "24/7 beschikbaar voor nieuwe projecten: hybride, op afstand en op locatie",
+        heroTitle: "Een professionele en meedenkende webdeveloper die snelle en strakke websites bouwt.",
+        heroLead: '<span lang="ar" dir="rtl">السلام عليكم كلشي لاباس الصحة لباس؟</span> Ik ben <strong>Aboubakr Jebbari</strong>, oprichter van <strong>Chamali Web Solutions</strong> en een professionele en meedenkende webdeveloper uit Rotterdam. Ik bouw functionele, gebruiksvriendelijke websites en webshops met WordPress, Elementor en WooCommerce.',
         heroBtnWork: "Bekijk mijn werk",
         heroBtnContact: "Neem contact op",
         portraitAlt: "Portretfoto van Aboubakr Jebbari",
         aboutTitle: "Over mij",
-        aboutP1: 'Hallo en welkom! Mijn naam is Aboubakr Jebbari, beter bekend als <strong>Aboe</strong>, oprichter van <strong>Chamali Web Solutions</strong>. Ik ben een Marokkaans-Nederlandse webdeveloper met een passie voor het creëren van strakke, functionele en visueel aantrekkelijke websites.',
-        aboutP2: "Ik ben gespecialiseerd in maatwerk WordPress-oplossingen: van thema-aanpassingen tot plugin-ontwikkeling. Websites die niet alleen mooi zijn, maar ook geoptimaliseerd voor prestaties en gebruikerservaring.",
-        aboutP3: "Naast mijn werk lees ik graag over theologie, geschiedenis en filosofie, en werk ik af en toe als tolk Arabisch/Nederlands.",
+        aboutP1: 'Ik ben Aboubakr Jebbari, ook wel <strong>Aboe</strong>, een professionele en meedenkende webdeveloper uit Rotterdam en oprichter van <strong>Chamali Web Solutions</strong>. Ik help ondernemers, organisaties en verenigingen aan een professionele online aanwezigheid, van een overzichtelijke bedrijfswebsite tot een complete webshop.',
+        aboutP2: "Ik ben gespecialiseerd in WordPress, Elementor en WooCommerce, van maatwerk thema's tot plugins. Mijn websites laden snel, werken goed op mobiel, tablet en desktop en zijn goed vindbaar in Google. Voor webshops koppel ik betalingen via Mollie, en meertalige websites krijgen ondersteuning voor Arabisch van rechts naar links.",
+        aboutP3: "Ik denk mee vanaf het eerste gesprek tot de livegang, en blijf daarna betrokken met beveiliging, onderhoud en support. Zo blijft je website veilig, snel en up-to-date.",
+        aboutP4: "Mijn Marokkaans-Nederlandse achtergrond en mijn werk als tolk Arabisch–Nederlands helpen me om helder te communiceren met klanten uit verschillende culturen. Naast mijn werk verdiep ik me graag in geschiedenis, filosofie en theologie.",
         serviceWpTitle: "WordPress Development",
         serviceWpDesc: "Maatwerk thema's, plugins en optimalisatie van bestaande websites.",
         serviceUxTitle: "UI/UX Design",
@@ -51,8 +54,28 @@ const translations = {
         project5Desc: "Nieuw ontwerp voor de website van Vereniging Ettaouhid, een sociaal-culturele vereniging in Rotterdam die sinds 1989 actief is met een moskee, Koranonderwijs, Arabische les en activiteiten voor jongeren, met ondersteuning voor Arabisch van rechts naar links.",
         project5Alt: "Screenshot van de website van Vereniging Ettaouhid",
         project5Hidden: " de website van Ettaouhid",
+        packagesTitle: "Onderhoudspakketten",
+        packagesIntro: "Kies het onderhoudspakket dat bij je website past.",
+        packagesBadge: "Aanbevolen",
+        package1Title: "Basis",
+        package1Desc: "Een eenvoudige, <strong>informatieve website</strong> voor je bedrijf.",
+        package1Price: "vanaf <strong>€50</strong> per maand",
+        package2Title: "Webshop",
+        package2Desc: "Je zakelijke website <strong>inclusief webshop</strong>.",
+        package2Price: "vanaf <strong>€100</strong> per maand",
+        package3Title: "Compleet",
+        package3Desc: "Alles uit Webshop, plus <strong>beveiliging</strong>, <strong>maandelijks onderhoud</strong> en <strong>24/7 support</strong>.",
+        package3Price: "vanaf <strong>€150</strong> per maand",
+        packageBtn: "Vraag aan",
+        includesTitle: "Wat is er inbegrepen?",
+        notIncluded: "Niet inbegrepen:",
+        featureSite: "Informatieve zakelijke website",
+        featureWebshop: "Webshop",
+        featureSecurity: "Beveiliging",
+        featureMaintenance: "Maandelijks onderhoud",
+        featureSupport: "24/7 support",
         contactTitle: "Blijf &nbsp; in contact!",
-        contactLead: "Op zoek naar een webdeveloper voor je team of een project? Neem gerust contact met mij op.",
+        contactLead: "Op zoek naar een professionele en meedenkende webdeveloper voor je team of een project? Neem gerust contact met mij op.",
         footerRights: "Alle rechten voorbehouden.",
     },
     ar: {
@@ -62,20 +85,23 @@ const translations = {
         navAriaLabel: "التنقل الرئيسي",
         navAbout: "عني",
         navProjects: "المشاريع",
+        navPackages: "الباقات",
         navContact: "تواصل",
         themeToggleAria: "التبديل بين الوضع الفاتح والداكن",
+        glassToggleAria: "تأثير الزجاج",
         langToggleAria: "التبديل إلى الهولندية",
         menuAria: "القائمة",
-        heroStatus: "متاح لوظيفة جديدة",
-        heroTitle: "مطوّر مواقع يبني مواقع سريعة وأنيقة.",
-        heroLead: 'أنا <strong>أبو بكر جبّاري</strong>، مؤسس <strong>Chamali Web Solutions</strong> ومطوّر مواقع من روتردام. أبني مواقع وظيفية وسهلة الاستخدام ومتاجر إلكترونية باستخدام WordPress وElementor وWooCommerce.',
+        heroStatus: "متاح على مدار الساعة لمشاريع جديدة: بشكل هجين أو عن بُعد أو في الموقع",
+        heroTitle: "مطوّر مواقع محترف ومتعاون يبني مواقع سريعة وأنيقة.",
+        heroLead: 'السلام عليكم كلشي لاباس الصحة لباس؟ أنا <strong>أبو بكر جبّاري</strong>، مؤسس <strong>Chamali Web Solutions</strong> ومطوّر مواقع محترف ومتعاون من روتردام. أبني مواقع وظيفية وسهلة الاستخدام ومتاجر إلكترونية باستخدام WordPress وElementor وWooCommerce.',
         heroBtnWork: "اطّلع على أعمالي",
         heroBtnContact: "تواصل معي",
         portraitAlt: "صورة شخصية لأبو بكر جبّاري",
         aboutTitle: "عني",
-        aboutP1: 'مرحبًا بكم! اسمي أبو بكر جبّاري، المعروف أيضًا باسم <strong>أبو</strong>، مؤسس <strong>Chamali Web Solutions</strong>. أنا مطوّر مواقع مغربي-هولندي، شغوف بتصميم مواقع أنيقة وعملية وجذابة بصريًا.',
-        aboutP2: "أنا متخصص في حلول WordPress المخصصة: من تعديل القوالب إلى تطوير الإضافات. مواقع ليست جميلة فحسب، بل محسّنة أيضًا من حيث الأداء وتجربة المستخدم.",
-        aboutP3: "إلى جانب عملي، أحب القراءة عن اللاهوت والتاريخ والفلسفة، وأعمل أحيانًا كمترجم فوري بين العربية والهولندية.",
+        aboutP1: 'أنا أبو بكر جبّاري، المعروف أيضًا باسم <strong>أبو</strong>، مطوّر مواقع محترف ومتعاون من روتردام ومؤسس <strong>Chamali Web Solutions</strong>. أساعد رواد الأعمال والمؤسسات والجمعيات على بناء حضور احترافي على الإنترنت، من موقع تعريفي واضح للشركة إلى متجر إلكتروني متكامل.',
+        aboutP2: "أتخصص في WordPress وElementor وWooCommerce، من القوالب المخصصة إلى الإضافات. مواقعي سريعة التحميل، وتعمل بسلاسة على الجوال والتابلت وأجهزة الكمبيوتر، ويسهل العثور عليها في Google. وللمتاجر الإلكترونية أربط الدفع عبر Mollie، وتحصل المواقع متعددة اللغات على دعم العربية من اليمين إلى اليسار.",
+        aboutP3: "أرافقك من أول لقاء حتى إطلاق الموقع، وأبقى معك بعد ذلك بالحماية والصيانة والدعم، ليبقى موقعك آمنًا وسريعًا ومحدّثًا.",
+        aboutP4: "تساعدني خلفيتي المغربية الهولندية وعملي كمترجم فوري بين العربية والهولندية على التواصل بوضوح مع عملاء من ثقافات مختلفة. وإلى جانب عملي، أحب القراءة في التاريخ والفلسفة واللاهوت.",
         serviceWpTitle: "تطوير WordPress",
         serviceWpDesc: "قوالب وإضافات مخصصة، وتحسين للمواقع القائمة.",
         serviceUxTitle: "تصميم UI/UX",
@@ -107,8 +133,28 @@ const translations = {
         project5Desc: "تصميم جديد لموقع جمعية التوحيد، وهي جمعية اجتماعية ثقافية في روتردام تنشط منذ عام 1989، تضم مسجدًا وتعليم القرآن ودروس اللغة العربية وأنشطة للشباب، مع دعم للغة العربية من اليمين إلى اليسار.",
         project5Alt: "لقطة شاشة لموقع جمعية التوحيد",
         project5Hidden: " موقع جمعية التوحيد",
+        packagesTitle: "باقات الصيانة",
+        packagesIntro: "اختر باقة الصيانة التي تناسب موقعك.",
+        packagesBadge: "موصى بها",
+        package1Title: "الأساسية",
+        package1Desc: "موقع <strong>تعريفي</strong> بسيط لشركتك.",
+        package1Price: "ابتداءً من <strong>€50</strong> شهريًا",
+        package2Title: "المتجر",
+        package2Desc: "موقع شركتك <strong>مع متجر إلكتروني</strong>.",
+        package2Price: "ابتداءً من <strong>€100</strong> شهريًا",
+        package3Title: "الشاملة",
+        package3Desc: "كل ما في باقة المتجر، بالإضافة إلى <strong>الحماية</strong> و<strong>الصيانة الشهرية</strong> و<strong>دعم على مدار الساعة</strong>.",
+        package3Price: "ابتداءً من <strong>€150</strong> شهريًا",
+        packageBtn: "اطلب الآن",
+        includesTitle: "ماذا تتضمن الباقة؟",
+        notIncluded: "غير مشمول:",
+        featureSite: "موقع تعريفي للشركة",
+        featureWebshop: "متجر إلكتروني",
+        featureSecurity: "الحماية",
+        featureMaintenance: "الصيانة الشهرية",
+        featureSupport: "دعم على مدار الساعة",
         contactTitle: "ابقَ على تواصل!",
-        contactLead: "هل تبحث عن مطوّر مواقع لفريقك أو لمشروعك؟ لا تتردد في التواصل معي.",
+        contactLead: "هل تبحث عن مطوّر مواقع محترف ومتعاون لفريقك أو لمشروعك؟ لا تتردد في التواصل معي.",
         footerRights: "جميع الحقوق محفوظة.",
     },
     en: {
@@ -118,20 +164,23 @@ const translations = {
         navAriaLabel: "Main navigation",
         navAbout: "About",
         navProjects: "Projects",
+        navPackages: "Packages",
         navContact: "Contact",
         themeToggleAria: "Toggle light and dark theme",
+        glassToggleAria: "Glass effect",
         langToggleAria: "Change language",
         menuAria: "Menu",
-        heroStatus: "Available for a new role",
-        heroTitle: "Web developer who builds fast, polished websites.",
-        heroLead: 'I\'m <strong>Aboubakr Jebbari</strong>, founder of <strong>Chamali Web Solutions</strong> and web developer based in Rotterdam. I build functional, user-friendly websites and webshops with WordPress, Elementor and WooCommerce.',
+        heroStatus: "Available 24/7 for new projects: hybrid, remote and on-site",
+        heroTitle: "A professional, collaborative web developer who builds fast, polished websites.",
+        heroLead: '<span lang="ar" dir="rtl">السلام عليكم كلشي لاباس الصحة لباس؟</span> I\'m <strong>Aboubakr Jebbari</strong>, founder of <strong>Chamali Web Solutions</strong> and a professional, collaborative web developer based in Rotterdam. I build functional, user-friendly websites and webshops with WordPress, Elementor and WooCommerce.',
         heroBtnWork: "View my work",
         heroBtnContact: "Get in touch",
         portraitAlt: "Portrait photo of Aboubakr Jebbari",
         aboutTitle: "About me",
-        aboutP1: 'Hello and welcome! My name is Aboubakr Jebbari, better known as <strong>Aboe</strong>, founder of <strong>Chamali Web Solutions</strong>. I\'m a Moroccan-Dutch web developer with a passion for creating clean, functional and visually appealing websites.',
-        aboutP2: "I specialise in custom WordPress solutions: from theme customisation to plugin development. Websites that aren't just beautiful, but also optimised for performance and user experience.",
-        aboutP3: "Outside of work I enjoy reading about theology, history and philosophy, and occasionally work as an Arabic/Dutch interpreter.",
+        aboutP1: 'I\'m Aboubakr Jebbari, also known as <strong>Aboe</strong>, a professional, collaborative web developer from Rotterdam and founder of <strong>Chamali Web Solutions</strong>. I help entrepreneurs, organisations and associations build a professional online presence, from a clear business website to a complete webshop.',
+        aboutP2: "I specialise in WordPress, Elementor and WooCommerce, from custom themes to plugins. My websites load fast, work well on mobile, tablet and desktop, and are easy to find in Google. For webshops I integrate payments through Mollie, and multilingual websites get right-to-left support for Arabic.",
+        aboutP3: "I think along with you from the first conversation to launch, and stay involved afterwards with security, maintenance and support. That keeps your website safe, fast and up to date.",
+        aboutP4: "My Moroccan-Dutch background and my work as an Arabic–Dutch interpreter help me communicate clearly with clients from different cultures. Outside of work, I enjoy reading about history, philosophy and theology.",
         serviceWpTitle: "WordPress Development",
         serviceWpDesc: "Custom themes, plugins and optimisation for existing websites.",
         serviceUxTitle: "UI/UX Design",
@@ -163,8 +212,28 @@ const translations = {
         project5Desc: "New design for the website of Vereniging Ettaouhid, a socio-cultural association in Rotterdam, active since 1989, with a mosque, Quran education, Arabic classes and youth activities, with right-to-left support for Arabic.",
         project5Alt: "Screenshot of the Vereniging Ettaouhid website",
         project5Hidden: " Ettaouhid's website",
+        packagesTitle: "Maintenance packages",
+        packagesIntro: "Choose the maintenance package that fits your website.",
+        packagesBadge: "Recommended",
+        package1Title: "Basic",
+        package1Desc: "A simple, <strong>informative website</strong> for your business.",
+        package1Price: "from <strong>€50</strong> per month",
+        package2Title: "Webshop",
+        package2Desc: "Your business website <strong>including a webshop</strong>.",
+        package2Price: "from <strong>€100</strong> per month",
+        package3Title: "Complete",
+        package3Desc: "Everything in Webshop, plus <strong>security</strong>, <strong>monthly maintenance</strong> and <strong>24/7 support</strong>.",
+        package3Price: "from <strong>€150</strong> per month",
+        packageBtn: "Request",
+        includesTitle: "What's included?",
+        notIncluded: "Not included:",
+        featureSite: "Informative business website",
+        featureWebshop: "Webshop",
+        featureSecurity: "Security",
+        featureMaintenance: "Monthly maintenance",
+        featureSupport: "24/7 support",
         contactTitle: "Let's stay in touch!",
-        contactLead: "Looking for a web developer for your team or project? Feel free to get in touch.",
+        contactLead: "Looking for a professional, collaborative web developer for your team or project? Feel free to get in touch.",
         footerRights: "All rights reserved.",
     },
 };
@@ -234,6 +303,24 @@ function toggle_theme() {
     }
 }
 
+function sync_glass_toggle() {
+    const glass_toggle_btn = document.querySelector('.glass-toggle');
+    if (!glass_toggle_btn) return;
+    glass_toggle_btn.setAttribute('aria-pressed', document.documentElement.getAttribute('data-glass') !== 'off');
+}
+
+function toggle_glass() {
+    const root = document.documentElement;
+    const glass = root.getAttribute('data-glass') === 'off' ? 'on' : 'off';
+    root.setAttribute('data-glass', glass);
+    sync_glass_toggle();
+    try {
+        localStorage.setItem('glass', glass);
+    } catch (e) {
+        // Storage can be blocked (private window); the toggle still works for this visit.
+    }
+}
+
 function set_nav_open(open) {
     document.documentElement.classList.toggle('nav-open', open);
     const nav_toggle_btn = document.querySelector('.nav-toggle');
@@ -248,6 +335,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const theme_toggle_btn = document.querySelector('.theme-toggle');
     if (theme_toggle_btn) theme_toggle_btn.addEventListener('click', toggle_theme);
+
+    const glass_toggle_btn = document.querySelector('.glass-toggle');
+    if (glass_toggle_btn) glass_toggle_btn.addEventListener('click', toggle_glass);
+    sync_glass_toggle();
 
     // Language dropdown
     const lang_toggle_btn = document.querySelector('.lang-toggle');
