@@ -847,6 +847,15 @@ section + section {
   border-top: 1px solid var(--border);
 }
 
+/* Terms under the cards: VAT, notice period, and a pointer for people without a site */
+.packages-note {
+  margin: 1.5rem auto 0;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: .92rem;
+  text-align: center;
+}
+
 .package-includes-title {
   margin-bottom: .5rem;
   font-size: .95rem;
@@ -979,8 +988,10 @@ section + section {
   /* Each card spans the same five rows (title, text, price, button, list),
      so prices and buttons line up even when the descriptions differ in length */
   .packages {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0 1.25rem;
+    max-width: 760px;
+    margin-inline: auto;
   }
 
   .package {
