@@ -31,7 +31,7 @@ const translations = {
         serviceRespDesc: "Websites die goed werken op mobiel, tablet en desktop.",
         skillsAria: "Vaardigheden",
         projectsTitle: "Projecten",
-        projectsIntro: "Een selectie van websites en apps die ik voor klanten heb gebouwd.",
+        projectsIntro: "Een selectie van websites die ik voor klanten heb gebouwd.",
         tagsAria: "Gebruikte technieken",
         btnView: "Bekijk",
         project1Title: "Bilal Berkane – Portfolio",
@@ -54,17 +54,6 @@ const translations = {
         project5Desc: "Nieuw ontwerp voor de website van Vereniging Ettaouhid, een sociaal-culturele vereniging in Rotterdam die sinds 1989 actief is met een moskee, Koranonderwijs, Arabische les en activiteiten voor jongeren, met ondersteuning voor Arabisch van rechts naar links.",
         project5Alt: "Screenshot van de website van Vereniging Ettaouhid",
         project5Hidden: " de website van Ettaouhid",
-        projectAiLabel: "AI-project",
-        project6Title: "Ḥizbi – Dagelijkse Quran-khatma's",
-        project6Desc: "Webapp voor de dagelijkse Quran-khatma's van Moskee Arrahma in Rotterdam, met AI gebouwd in Claude Code. Bijna 180 lezers zien hun ḥizb van vandaag, vinken het af en volgen de khatma-teller. Wie voor een overledene leest, blijft anoniem.",
-        project6Alt: "Ontwerp van de Ḥizbi-app op twee telefoons: het scherm Vandaag en het rooster",
-        projectDemoStatus: "Status: demo",
-        hizbiShotTodayAlt: "Screenshot van het scherm Vandaag in de Ḥizbi-demo",
-        hizbiShotRosterAlt: "Screenshot van het rooster in de Ḥizbi-demo",
-        hizbiShotHistoryAlt: "Screenshot van de geschiedenis met het khatma-nummer per dag",
-        hizbiShotAdminAlt: "Screenshot van het beheerscherm met de WhatsApp-lijst",
-        lightboxAria: "Vergrote screenshot",
-        closeAria: "Sluiten",
         packagesTitle: "Onderhoudspakketten",
         packagesIntro: "Kies het onderhoudspakket dat bij je website past.",
         packagesBadge: "Aanbevolen",
@@ -121,7 +110,7 @@ const translations = {
         serviceRespDesc: "مواقع تعمل بسلاسة على الجوال والتابلت وأجهزة الكمبيوتر.",
         skillsAria: "المهارات",
         projectsTitle: "المشاريع",
-        projectsIntro: "مجموعة مختارة من المواقع والتطبيقات التي صممتها لعملائي.",
+        projectsIntro: "مجموعة مختارة من المواقع التي صممتها لعملائي.",
         tagsAria: "التقنيات المستخدمة",
         btnView: "عرض",
         project1Title: "Bilal Berkane – معرض أعمال",
@@ -144,17 +133,6 @@ const translations = {
         project5Desc: "تصميم جديد لموقع جمعية التوحيد، وهي جمعية اجتماعية ثقافية في روتردام تنشط منذ عام 1989، تضم مسجدًا وتعليم القرآن ودروس اللغة العربية وأنشطة للشباب، مع دعم للغة العربية من اليمين إلى اليسار.",
         project5Alt: "لقطة شاشة لموقع جمعية التوحيد",
         project5Hidden: " موقع جمعية التوحيد",
-        projectAiLabel: "مشروع ذكاء اصطناعي",
-        project6Title: "حزبي – الختمات القرآنية اليومية",
-        project6Desc: "تطبيق ويب للختمات القرآنية اليومية لمسجد الرحمة في روتردام، بُني بالذكاء الاصطناعي باستخدام Claude Code. يرى قرابة 180 قارئًا حزبهم لهذا اليوم ويسجّلون قراءته ويتابعون عدّاد الختمات، ويبقى من يقرأ عن متوفى مجهول الهوية.",
-        project6Alt: "تصميم تطبيق حزبي على هاتفين: شاشة اليوم وجدول القراءة",
-        projectDemoStatus: "الحالة: نسخة تجريبية",
-        hizbiShotTodayAlt: "لقطة شاشة لصفحة اليوم في النسخة التجريبية من حزبي",
-        hizbiShotRosterAlt: "لقطة شاشة لجدول القراءة في النسخة التجريبية من حزبي",
-        hizbiShotHistoryAlt: "لقطة شاشة لصفحة التاريخ مع رقم الختمة لكل يوم",
-        hizbiShotAdminAlt: "لقطة شاشة لصفحة الإدارة مع قائمة واتساب",
-        lightboxAria: "لقطة شاشة مكبّرة",
-        closeAria: "إغلاق",
         packagesTitle: "باقات الصيانة",
         packagesIntro: "اختر باقة الصيانة التي تناسب موقعك.",
         packagesBadge: "موصى بها",
@@ -211,7 +189,7 @@ const translations = {
         serviceRespDesc: "Websites that work well on mobile, tablet and desktop.",
         skillsAria: "Skills",
         projectsTitle: "Projects",
-        projectsIntro: "A selection of websites and apps I've built for clients.",
+        projectsIntro: "A selection of websites I've built for clients.",
         tagsAria: "Technologies used",
         btnView: "View",
         project1Title: "Bilal Berkane – Portfolio",
@@ -234,17 +212,6 @@ const translations = {
         project5Desc: "New design for the website of Vereniging Ettaouhid, a socio-cultural association in Rotterdam, active since 1989, with a mosque, Quran education, Arabic classes and youth activities, with right-to-left support for Arabic.",
         project5Alt: "Screenshot of the Vereniging Ettaouhid website",
         project5Hidden: " Ettaouhid's website",
-        projectAiLabel: "AI project",
-        project6Title: "Ḥizbi – Daily Quran khatmas",
-        project6Desc: "Web app for the daily Quran khatmas of Moskee Arrahma in Rotterdam, built with AI in Claude Code. Almost 180 readers see today's ḥizb, tick it off and follow the khatma counter. Anyone reading for a deceased person stays anonymous.",
-        project6Alt: "Design of the Ḥizbi app on two phones: the Today screen and the roster",
-        projectDemoStatus: "Status: demo",
-        hizbiShotTodayAlt: "Screenshot of the Today screen in the Ḥizbi demo",
-        hizbiShotRosterAlt: "Screenshot of the roster in the Ḥizbi demo",
-        hizbiShotHistoryAlt: "Screenshot of the history with the khatma number per day",
-        hizbiShotAdminAlt: "Screenshot of the admin screen with the WhatsApp list",
-        lightboxAria: "Enlarged screenshot",
-        closeAria: "Close",
         packagesTitle: "Maintenance packages",
         packagesIntro: "Choose the maintenance package that fits your website.",
         packagesBadge: "Recommended",
@@ -372,22 +339,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const glass_toggle_btn = document.querySelector('.glass-toggle');
     if (glass_toggle_btn) glass_toggle_btn.addEventListener('click', toggle_glass);
     sync_glass_toggle();
-
-    // Screenshot lightbox; without JS the thumbnail links just open the image
-    const lightbox = document.querySelector('.lightbox');
-    if (lightbox && lightbox.showModal) {
-        const lightbox_img = lightbox.querySelector('img');
-        document.querySelectorAll('.project-shots a').forEach((link) => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const thumb = link.querySelector('img');
-                lightbox_img.src = link.getAttribute('href');
-                lightbox_img.alt = thumb ? thumb.alt : '';
-                lightbox.showModal();
-            });
-        });
-        lightbox.addEventListener('click', () => lightbox.close());
-    }
 
     // Language dropdown
     const lang_toggle_btn = document.querySelector('.lang-toggle');
