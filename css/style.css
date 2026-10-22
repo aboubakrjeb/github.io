@@ -765,7 +765,7 @@ section + section {
   border-bottom: 1px solid var(--border);
 }
 
-.project-card img {
+.project-media img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -773,8 +773,8 @@ section + section {
   transition: transform .35s ease;
 }
 
-.project-card:hover img,
-.project-card:focus-within img {
+.project-card:hover .project-media img,
+.project-card:focus-within .project-media img {
   transform: scale(1.08);
 }
 
@@ -800,6 +800,100 @@ section + section {
 .project-body p {
   color: var(--muted);
   font-size: .98rem;
+}
+
+/* Labels for a project that isn't a website, such as the AI-built Ḥizbi app */
+.project-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .6rem;
+}
+
+.project-label,
+.project-status {
+  padding: .15rem .65rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .project-label,
+[dir="rtl"] .project-status {
+  letter-spacing: normal;
+}
+
+.project-label {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.project-status::before {
+  content: "";
+  width: .45rem;
+  height: .45rem;
+  background: var(--check);
+  border-radius: 50%;
+}
+
+/* Screenshot thumbnails at the bottom of an app project; they open in the lightbox */
+.project-shots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+  align-self: stretch;
+  margin-top: auto;
+}
+
+.project-shots a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.project-shots img {
+  width: 100%;
+  transition: transform .2s ease;
+}
+
+.project-shots a:hover img,
+.project-shots a:focus-visible img {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border: none;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, .8);
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 16px;
+  cursor: zoom-out;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -.75rem;
+  inset-inline-end: -.75rem;
 }
 
 .project-body .tags {
@@ -1015,7 +1109,8 @@ section + section {
 
   .btn,
   .project-card,
-  .project-card img,
+  .project-media img,
+  .project-shots img,
   .services li,
   .package,
   .icon-btn,
