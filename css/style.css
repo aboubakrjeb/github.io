@@ -153,12 +153,11 @@ h3 {
   letter-spacing: -.01em;
 }
 
-/* Handwritten accent for the hero heading and the brand only; it has a single weight */
+/* Rounded sans accent for the hero heading and the brand only; the CDN serves weight 700 */
 h1,
 .brand {
-  font-family: 'Molgiant Belliontera Script', "Alegreya", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: normal;
+  font-family: 'Ysabeau Infant', "Alegreya", Georgia, serif;
+  font-weight: 700;
 }
 
 /* Negative letter-spacing breaks Arabic letter connections */
@@ -170,7 +169,7 @@ h1,
   letter-spacing: normal;
 }
 
-/* The script font has no Arabic letters, so the Arabic heading keeps the body fonts */
+/* Ysabeau Infant has no Arabic letters, so the Arabic heading keeps the body fonts */
 [dir="rtl"] h1 {
   font-family: inherit;
 }
@@ -257,8 +256,10 @@ ul {
 
 .brand {
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 1.15rem;
+  letter-spacing: -.01em;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -469,7 +470,13 @@ ul {
   }
 
   .brand {
-    font-size: 1.2rem;
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .brand {
+    font-size: .8rem;
   }
 }
 
