@@ -1,3 +1,22 @@
+/* Ysabeau Infant (SIL OFL, see assets/fonts/OFL.txt), self-hosted as a variable font covering every weight */
+@font-face {
+  font-family: "Ysabeau Infant";
+  font-style: normal;
+  font-weight: 1 1000;
+  font-display: swap;
+  src: url("../assets/fonts/ysabeau-infant-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Ysabeau Infant";
+  font-style: normal;
+  font-weight: 1 1000;
+  font-display: swap;
+  src: url("../assets/fonts/ysabeau-infant-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   --bg: #EBE1E1;
   --bg-solid: #EBE1E1;
@@ -82,7 +101,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Alegreya", Georgia, "Traditional Arabic", "Noto Naskh Arabic", "Times New Roman", Times, serif;
+  font-family: "Ysabeau Infant", "Traditional Arabic", "Noto Naskh Arabic", system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.65;
 }
@@ -153,13 +172,6 @@ h3 {
   letter-spacing: -.01em;
 }
 
-/* Rounded sans accent for the hero heading and the brand only; the CDN serves weight 700 */
-h1,
-.brand {
-  font-family: 'Ysabeau Infant', "Alegreya", Georgia, serif;
-  font-weight: 700;
-}
-
 /* Negative letter-spacing breaks Arabic letter connections */
 [dir="rtl"] h1,
 [dir="rtl"] h2,
@@ -167,11 +179,6 @@ h1,
 [dir="rtl"] .brand,
 [dir="rtl"] .package-badge {
   letter-spacing: normal;
-}
-
-/* Ysabeau Infant has no Arabic letters, so the Arabic heading keeps the body fonts */
-[dir="rtl"] h1 {
-  font-family: inherit;
 }
 
 p {
@@ -257,6 +264,7 @@ ul {
 .brand {
   color: var(--text);
   font-size: 1.15rem;
+  font-weight: 700;
   letter-spacing: -.01em;
   text-decoration: none;
   white-space: nowrap;
