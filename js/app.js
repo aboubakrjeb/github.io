@@ -54,6 +54,14 @@ const translations = {
         project5Desc: "Nieuw ontwerp voor de website van Vereniging Ettaouhid, een sociaal-culturele vereniging in Rotterdam die sinds 1989 actief is met een moskee, Koranonderwijs, Arabische les en activiteiten voor jongeren, met ondersteuning voor Arabisch van rechts naar links.",
         project5Alt: "Screenshot van de website van Vereniging Ettaouhid",
         project5Hidden: " de website van Ettaouhid",
+        project6Title: "Stichting Al Jariah – Goed doel",
+        project6Desc: "Nieuw ontwerp voor de website van Stichting Al Jariah, een ANBI-erkend goed doel dat waterputten, koranscholen en moskeeën bouwt in Gambia en Ghana. Schuif over de afbeelding om de oude en de nieuwe website te vergelijken.",
+        project6BeforeAlt: "De oude website van Stichting Al Jariah",
+        project6AfterAlt: "De nieuwe website van Stichting Al Jariah",
+        project6Hidden: " de website van Stichting Al Jariah",
+        compareBefore: "Voor",
+        compareAfter: "Na",
+        compareAria: "Schuif tussen de oude en de nieuwe website",
         packagesTitle: "Onderhoudspakketten",
         packagesIntro: "Kies het onderhoudspakket dat bij je website past.",
         package1Title: "Website",
@@ -136,6 +144,14 @@ const translations = {
         project5Desc: "تصميم جديد لموقع جمعية التوحيد، وهي جمعية اجتماعية ثقافية في روتردام تنشط منذ عام 1989، تضم مسجدًا وتعليم القرآن ودروس اللغة العربية وأنشطة للشباب، مع دعم للغة العربية من اليمين إلى اليسار.",
         project5Alt: "لقطة شاشة لموقع جمعية التوحيد",
         project5Hidden: " موقع جمعية التوحيد",
+        project6Title: "Stichting Al Jariah – مؤسسة خيرية",
+        project6Desc: "تصميم جديد لموقع مؤسسة Al Jariah، وهي مؤسسة خيرية معترف بها (ANBI) تبني آبار المياه ومدارس القرآن والمساجد في غامبيا وغانا. اسحب الخط فوق الصورة للمقارنة بين الموقع القديم والجديد.",
+        project6BeforeAlt: "الموقع القديم لمؤسسة Al Jariah",
+        project6AfterAlt: "الموقع الجديد لمؤسسة Al Jariah",
+        project6Hidden: " موقع مؤسسة Al Jariah",
+        compareBefore: "قبل",
+        compareAfter: "بعد",
+        compareAria: "اسحب للمقارنة بين الموقع القديم والجديد",
         packagesTitle: "باقات الصيانة",
         packagesIntro: "اختر باقة الصيانة التي تناسب موقعك.",
         package1Title: "موقع",
@@ -218,6 +234,14 @@ const translations = {
         project5Desc: "New design for the website of Vereniging Ettaouhid, a socio-cultural association in Rotterdam, active since 1989, with a mosque, Quran education, Arabic classes and youth activities, with right-to-left support for Arabic.",
         project5Alt: "Screenshot of the Vereniging Ettaouhid website",
         project5Hidden: " Ettaouhid's website",
+        project6Title: "Stichting Al Jariah – Charity",
+        project6Desc: "New design for the website of Stichting Al Jariah, a registered Dutch charity (ANBI) that builds water wells, Quran schools and mosques in Gambia and Ghana. Drag across the image to compare the old and the new website.",
+        project6BeforeAlt: "The old Stichting Al Jariah website",
+        project6AfterAlt: "The new Stichting Al Jariah website",
+        project6Hidden: " Stichting Al Jariah's website",
+        compareBefore: "Before",
+        compareAfter: "After",
+        compareAria: "Slide between the old and the new website",
         packagesTitle: "Maintenance packages",
         packagesIntro: "Choose the maintenance package that fits your website.",
         package1Title: "Website",
@@ -330,6 +354,17 @@ function toggle_glass() {
     }
 }
 
+// Before/after sliders: the range input lies invisibly over the images, so
+// dragging (or the arrow keys) moves the line between them.
+function init_compare_sliders() {
+    document.querySelectorAll('.compare').forEach((compare) => {
+        const range = compare.querySelector('.compare-range');
+        const update = () => compare.style.setProperty('--pos', range.value + '%');
+        range.addEventListener('input', update);
+        update();
+    });
+}
+
 function set_nav_open(open) {
     document.documentElement.classList.toggle('nav-open', open);
     const nav_toggle_btn = document.querySelector('.nav-toggle');
@@ -341,6 +376,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (year) year.innerText = new Date().getFullYear();
 
     apply_language(get_lang());
+    init_compare_sliders();
 
     const theme_toggle_btn = document.querySelector('.theme-toggle');
     if (theme_toggle_btn) theme_toggle_btn.addEventListener('click', toggle_theme);

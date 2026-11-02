@@ -778,6 +778,99 @@ section + section {
   transform: scale(1.08);
 }
 
+/* Before/after slider in a project card: the new site underneath, the old
+   one on top, cut off at the line. It sits above the card's link overlay, so
+   dragging moves the line instead of opening the website. */
+.compare {
+  --pos: 50%;
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 16 / 9;
+  user-select: none;
+}
+
+.project-card .compare img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+/* No zoom on hover here: the line would no longer match the images */
+.project-card:hover .compare img,
+.project-card:focus-within .compare img {
+  transform: none;
+}
+
+.compare-before {
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+.compare-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  /* Swiping up or down over it still scrolls the page */
+  touch-action: pan-y;
+}
+
+.compare-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  margin-left: -1px;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .2), 0 0 12px rgba(0, 0, 0, .35);
+  pointer-events: none;
+}
+
+.compare-grip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #000000;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+}
+
+.compare-range:focus-visible ~ .compare-line .compare-grip {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.compare-label {
+  position: absolute;
+  top: .6rem;
+  padding: .15rem .6rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .55);
+  color: #ffffff;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.compare-label-before {
+  left: .6rem;
+}
+
+.compare-label-after {
+  right: .6rem;
+}
+
 .project-card:hover .btn-primary {
   background: var(--accent-hover);
   color: var(--on-accent-hover);
