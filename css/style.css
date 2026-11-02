@@ -82,8 +82,6 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Molgiant Belliontera', sans-serif;
-  font-family: 'Molgiant Belliontera Script', sans-serif;
   font-family: "Alegreya", Georgia, "Traditional Arabic", "Noto Naskh Arabic", "Times New Roman", Times, serif;
   font-size: 1.0625rem;
   line-height: 1.65;
@@ -155,6 +153,14 @@ h3 {
   letter-spacing: -.01em;
 }
 
+/* Handwritten accent for the hero heading and the brand only; it has a single weight */
+h1,
+.brand {
+  font-family: 'Molgiant Belliontera Script', "Alegreya", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
 /* Negative letter-spacing breaks Arabic letter connections */
 [dir="rtl"] h1,
 [dir="rtl"] h2,
@@ -162,6 +168,11 @@ h3 {
 [dir="rtl"] .brand,
 [dir="rtl"] .package-badge {
   letter-spacing: normal;
+}
+
+/* The script font has no Arabic letters, so the Arabic heading keeps the body fonts */
+[dir="rtl"] h1 {
+  font-family: inherit;
 }
 
 p {
@@ -246,8 +257,7 @@ ul {
 
 .brand {
   color: var(--text);
-  font-weight: 700;
-  letter-spacing: -.01em;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
@@ -459,7 +469,7 @@ ul {
   }
 
   .brand {
-    font-size: .95rem;
+    font-size: 1.2rem;
   }
 }
 
