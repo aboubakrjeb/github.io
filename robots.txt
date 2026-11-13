@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
+# The founder's portrait is for the page only, not for image search
 User-agent: Googlebot-Image
-Disallow: /assets/aboubakr.webp
+Disallow: /img/aboubakr.webp
 
 Sitemap: https://chamaliwebsolutions.nl/sitemap.xml

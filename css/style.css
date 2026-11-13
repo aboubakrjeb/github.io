@@ -1,10 +1,16 @@
-/* Ysabeau Infant (SIL OFL, see assets/fonts/OFL.txt), self-hosted as a variable font covering every weight */
+/* =========================================================================
+   Chamali Web Solutions
+   Brand kit: assets/Chamali-Brand-Kit (colours, fonts, zellige pattern)
+   All fonts are self-hosted under the SIL Open Font License, see fonts/
+   ========================================================================= */
+
+/* Body text: Ysabeau Infant, variable font covering every weight */
 @font-face {
   font-family: "Ysabeau Infant";
   font-style: normal;
   font-weight: 1 1000;
   font-display: swap;
-  src: url("../assets/fonts/ysabeau-infant-latin.woff2") format("woff2");
+  src: url("../fonts/ysabeau-infant-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -13,77 +19,125 @@
   font-style: normal;
   font-weight: 1 1000;
   font-display: swap;
-  src: url("../assets/fonts/ysabeau-infant-latin-ext.woff2") format("woff2");
+  src: url("../fonts/ysabeau-infant-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-:root {
-  --bg: #EBE1E1;
-  --bg-solid: #EBE1E1;
-  --surface: rgba(255, 255, 255, .55);
-  --text: #000000;
-  --muted: #5c5050;
-  --border: #d6c8c8;
-  --accent: #7a2e3a;
-  --accent-hover: #5e222c;
-  --on-accent: #ffffff;
-  --on-accent-hover: #ffffff;
-  --check: #2e8b57;
-  --header-bg: rgba(32, 38, 58, .5);
-  --radius: 20px;
-  --shadow: 0 1px 2px rgba(34, 27, 27, .06), 0 8px 24px rgba(34, 27, 27, .08);
-  --glass-blur: blur(20px) saturate(180%);
-  --glass-border: rgba(255, 255, 255, .6);
-  --glass-highlight: rgba(255, 255, 255, .85);
-  --glass-shadow: 0 8px 30px rgba(122, 46, 58, .14), inset 0 1px 0 rgba(255, 255, 255, .5);
-  --blob-1: #f7c9d3;
-  --blob-2: #c6b6ea;
-  --blob-3: #ffe2ad;
+/* "Chamali" in the logo: Fraunces Black (Latin subset) */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/fraunces-black.woff2") format("woff2");
 }
 
+/* "WEB SOLUTIONS" in the logo: Unbounded Medium (Latin subset) */
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/unbounded-medium.woff2") format("woff2");
+}
+
+/* The Arabic slogan: Bouazzi Maghribi, limited to Arabic so Latin text falls through */
+@font-face {
+  font-family: "Bouazzi Maghribi";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/bouazzi-maghribi.woff2") format("woff2");
+  unicode-range: U+0021, U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200F, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Brand kit colours */
+  --red: #B3121E;
+  --red-dark: #8F0C16;
+  --green: #0B5440;
+  --cream: #FAF7F0;
+  --gold: #F2C45A;
+
+  /* Light theme */
+  color-scheme: light;
+  --bg: #FAF7F0;
+  --bg-alt: #F2ECE1;
+  --surface: #FFFFFF;
+  --text: #1F1A17;
+  --muted: #5E564F;
+  --border: #E4DBCC;
+  --accent: var(--red);
+  --accent-hover: var(--red-dark);
+  --on-accent: var(--cream);
+  --link: var(--red);
+  --eyebrow: var(--red);
+  --icon-bg: var(--green);
+  --icon-fg: var(--cream);
+  --check: var(--green);
+  --header-bg: rgba(250, 247, 240, .86);
+  --slider: var(--red);
+  --badge-bg: var(--green);
+  --badge-fg: var(--cream);
+  --wordmark: var(--red);
+  --wordmark-sub: var(--green);
+
+  /* The star in the header and footer follows the light logo: green, red, cream */
+  --star-outer: var(--green);
+  --star-inner: var(--red);
+  --star-line: var(--cream);
+  --star-line-opacity: .55;
+  --star-glyph: var(--cream);
+
+  /* Eight-pointed star for small bullets, echoing the logo */
+  --star-clip: polygon(50% 0, 63.5% 14.6%, 85.4% 14.6%, 85.4% 36.5%, 100% 50%, 85.4% 63.5%, 85.4% 85.4%, 63.5% 85.4%, 50% 100%, 36.5% 85.4%, 14.6% 85.4%, 14.6% 63.5%, 0 50%, 14.6% 36.5%, 14.6% 14.6%, 36.5% 14.6%);
+
+  --radius: 18px;
+  --shadow: 0 1px 2px rgba(31, 26, 23, .05), 0 6px 18px rgba(31, 26, 23, .06);
+  --shadow-lg: 0 2px 4px rgba(31, 26, 23, .06), 0 18px 40px rgba(31, 26, 23, .12);
+
+  --font-body: "Ysabeau Infant", "Noto Naskh Arabic", "Traditional Arabic", system-ui, sans-serif;
+  --font-display: "Fraunces", "Bouazzi Maghribi", Georgia, serif;
+  --font-label: "Unbounded", "Ysabeau Infant", "Noto Naskh Arabic", system-ui, sans-serif;
+  --font-arabic: "Bouazzi Maghribi", "Noto Naskh Arabic", "Traditional Arabic", serif;
+}
+
+/* Dark theme: deep green-black ground, cream text, gold accents.
+   The red bands (hero, contact) stay red in both themes. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: linear-gradient(180deg, #3e252c, #2b2b2b);
-  --bg-solid: #2b2b2b;
-  --surface: rgba(74, 46, 53, .4);
-  --text: #ffffff;
-  --muted: #cab6ba;
-  --border: #5e3f46;
-  --accent: #ffffff;
-  --accent-hover: #2b2b2b;
-  --on-accent: #2b2b2b;
-  --on-accent-hover: #ffffff;
-  --check: #5cc08a;
-  /* Same near-black as the background of the portrait photo */
-  --header-bg: #070608;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
-  --glass-blur: blur(20px) saturate(180%);
-  --glass-border: rgba(255, 255, 255, .14);
-  --glass-highlight: rgba(255, 255, 255, .22);
-  --glass-shadow: 0 8px 30px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .08);
-  --blob-1: #7a2e3a;
-  --blob-2: #203a52;
-  --blob-3: #e3a1ab;
+  --bg: #0A1814;
+  --bg-alt: #0E201B;
+  --surface: #12291F;
+  --text: #FAF7F0;
+  --muted: #B6C1BB;
+  --border: #21402F;
+  --accent: var(--red);
+  --accent-hover: #CC1F2C;
+  --on-accent: var(--cream);
+  --link: var(--gold);
+  --eyebrow: var(--gold);
+  --icon-bg: var(--gold);
+  --icon-fg: #0A1814;
+  --check: var(--gold);
+  --header-bg: rgba(10, 24, 20, .88);
+  --slider: var(--gold);
+  --badge-bg: var(--gold);
+  --badge-fg: #0A1814;
+  --wordmark: var(--cream);
+  --wordmark-sub: var(--gold);
+
+  --star-outer: var(--cream);
+  --star-inner: var(--green);
+  --star-line: var(--gold);
+  --star-line-opacity: .9;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 18px rgba(0, 0, 0, .3);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, .3), 0 18px 40px rgba(0, 0, 0, .45);
 }
 
-/* Flat look without the glass effect, switched with the glass toggle */
-:root[data-glass="off"] {
-  --surface: #ffffff;
-  --glass-blur: none;
-  --glass-border: var(--border);
-  --glass-highlight: transparent;
-  --glass-shadow: var(--shadow);
-}
-
-/* The dark header is already solid, so only the light one needs a flat colour */
-:root[data-theme="light"][data-glass="off"] {
-  --header-bg: var(--bg-solid);
-}
-
-:root[data-theme="dark"][data-glass="off"] {
-  --surface: #382b2f;
-}
-
+/* ---------- Base ---------- */
 *,
 *::before,
 *::after {
@@ -92,52 +146,18 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
+  scroll-padding-top: 76px;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  position: relative;
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Ysabeau Infant", "Traditional Arabic", "Noto Naskh Arabic", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.65;
-}
-
-/* Soft drifting color blobs the glass panels refract via backdrop-filter */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -15%;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 18% 22%, var(--blob-1) 0%, transparent 42%),
-    radial-gradient(circle at 82% 12%, var(--blob-2) 0%, transparent 38%),
-    radial-gradient(circle at 55% 88%, var(--blob-3) 0%, transparent 45%);
-  filter: blur(90px);
-  opacity: .55;
-  pointer-events: none;
-  animation: liquidDrift 24s ease-in-out infinite alternate;
-}
-
-@keyframes liquidDrift {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate(-3%, 2%) scale(1.06);
-  }
-
-  100% {
-    transform: translate(2%, -3%) scale(1);
-  }
-}
-
-:root[data-glass="off"] body::before {
-  content: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -147,45 +167,41 @@ img {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0 0 .5em;
-  line-height: 1.15;
-  letter-spacing: -.02em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -.01em;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.1rem, 5.5vw, 3.5rem);
+  font-size: clamp(2.4rem, 5.6vw, 4.1rem);
+  line-height: 1.04;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
 }
 
 h3 {
-  font-size: 1.15rem;
-  letter-spacing: -.01em;
-}
-
-/* Negative letter-spacing breaks Arabic letter connections */
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3,
-[dir="rtl"] .brand,
-[dir="rtl"] .package-badge {
-  letter-spacing: normal;
+  font-size: 1.2rem;
+  letter-spacing: 0;
 }
 
 p {
   margin: 0 0 1em;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -197,8 +213,14 @@ ul {
   border-radius: 4px;
 }
 
+.band-red :focus-visible,
+.band-green :focus-visible,
+.package-featured :focus-visible {
+  outline-color: var(--gold);
+}
+
 .container {
-  width: min(100% - 2.5rem, 1080px);
+  width: min(100% - 2.5rem, 1120px);
   margin-inline: auto;
 }
 
@@ -218,7 +240,7 @@ ul {
   z-index: 20;
   padding: .5rem 1rem;
   background: var(--text);
-  color: var(--bg-solid);
+  color: var(--bg);
   border-radius: 8px;
 }
 
@@ -226,7 +248,102 @@ ul {
   top: 1rem;
 }
 
-/* Navigation */
+/* ---------- Arabic ---------- */
+/* Negative letter-spacing and wide tracking both break Arabic letter connections */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .budget-label,
+[dir="rtl"] .package-match,
+[dir="rtl"] .hero-tags,
+[dir="rtl"] .step-number,
+[dir="rtl"] .compare-label,
+[dir="rtl"] .founder-role,
+[dir="rtl"] .contact-note {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Bouazzi Maghribi has tall ascenders: give Arabic display text more room */
+[dir="rtl"] h1,
+[dir="rtl"] h2 {
+  line-height: 1.45;
+}
+
+/* Small headings read better in a plain Naskh than in the Maghribi display face */
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .founder-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .budget-label,
+[dir="rtl"] .package-match,
+[dir="rtl"] .hero-tags,
+[dir="rtl"] .founder-role,
+[dir="rtl"] .contact-note {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+/* ---------- Wordmark: the logo as live text ---------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-star {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.wordmark {
+  display: grid;
+  justify-items: start;
+  line-height: 1;
+}
+
+.wordmark-name {
+  color: var(--wordmark);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -.01em;
+}
+
+.wordmark-sub {
+  margin-top: .22rem;
+  color: var(--wordmark-sub);
+  font-family: "Unbounded", system-ui, sans-serif;
+  font-size: .5rem;
+  font-weight: 500;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  /* Cancel the trailing tracking so the line ends flush with "Chamali" */
+  margin-inline-end: -.42em;
+}
+
+/* Labels above headings, in the "WEB SOLUTIONS" style */
+.eyebrow {
+  margin-bottom: .9rem;
+  color: var(--eyebrow);
+  font-family: var(--font-label);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+/* ---------- Navigation ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -242,9 +359,8 @@ ul {
   inset: 0;
   z-index: -1;
   background: var(--header-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
 }
 
 .nav {
@@ -252,28 +368,68 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-block: .7rem;
+  padding-block: .65rem;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: .6rem;
-}
-
-.brand {
-  color: var(--text);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -.01em;
-  text-decoration: none;
-  white-space: nowrap;
+  gap: .5rem;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.35rem;
+  margin-inline-end: .5rem;
+}
+
+.nav-links a {
+  position: relative;
+  color: var(--muted);
+  font-size: .98rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.nav-links a:hover,
+.nav-links a.is-active {
+  color: var(--text);
+}
+
+/* Desktop: a small red bar under the section in view */
+.nav-links a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -.3rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform .2s ease;
+}
+
+:root[data-theme="dark"] .nav-links a:not(.nav-cta)::after {
+  background: var(--gold);
+}
+
+.nav-links a.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-links .nav-cta {
+  padding: .45rem 1rem;
+  background: var(--accent);
+  border-radius: 999px;
+  color: var(--on-accent);
+}
+
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta.is-active {
+  background: var(--accent-hover);
+  color: var(--on-accent);
 }
 
 .icon-btn {
@@ -283,28 +439,16 @@ ul {
   height: 2.5rem;
   padding: 0;
   background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border);
   border-radius: 50%;
   color: var(--text);
   cursor: pointer;
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
-  transition: transform .15s, box-shadow .15s;
+  transition: transform .15s, border-color .15s;
 }
 
 .icon-btn:hover {
   transform: translateY(-1px);
-  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 4px 14px rgba(0, 0, 0, .12);
-}
-
-/* The glass toggle's droplet gets a slash while the effect is off */
-.icon-glass-off {
-  display: none;
-}
-
-:root[data-glass="off"] .icon-glass-off {
-  display: inline;
+  border-color: var(--muted);
 }
 
 /* Language dropdown */
@@ -320,11 +464,9 @@ ul {
   min-width: 9.5rem;
   padding: .4rem;
   background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: calc(var(--radius) - 4px);
-  box-shadow: var(--glass-shadow), 0 12px 28px rgba(0, 0, 0, .18);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
   opacity: 0;
   transform: translateY(-6px);
   visibility: hidden;
@@ -347,16 +489,17 @@ ul {
   padding: .55rem .65rem;
   background: none;
   border: none;
-  border-radius: calc(var(--radius) - 10px);
+  border-radius: 8px;
   color: var(--text);
-  font-family: inherit;
-  font-size: .92rem;
+  font-family: var(--font-body);
+  font-size: .95rem;
   text-align: start;
+  text-decoration: none;
   cursor: pointer;
 }
 
 .lang-option:hover {
-  background: var(--border);
+  background: var(--bg-alt);
 }
 
 .lang-option::before {
@@ -365,13 +508,17 @@ ul {
   flex: none;
 }
 
-.lang-option[aria-current="true"] {
+.lang-option[aria-current="page"] {
   font-weight: 700;
 }
 
-.lang-option[aria-current="true"]::before {
+.lang-option[aria-current="page"]::before {
   content: "✓";
   color: var(--accent);
+}
+
+:root[data-theme="dark"] .lang-option[aria-current="page"]::before {
+  color: var(--gold);
 }
 
 .nav-toggle,
@@ -403,13 +550,12 @@ ul {
     width: min(82vw, 320px);
     height: 100vh;
     height: 100dvh;
-    padding: 4.75rem 1.5rem 2rem;
+    margin: 0;
+    padding: 5rem 1.5rem 2rem;
     overflow-y: auto;
-    background: var(--header-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border-inline-start: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
+    background: var(--bg);
+    border-inline-start: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
     transform: translateX(100%);
     visibility: hidden;
     transition: transform .25s ease, visibility .25s;
@@ -427,6 +573,18 @@ ul {
     border-bottom: 1px solid var(--border);
     color: var(--text);
     font-size: 1.15rem;
+  }
+
+  .nav-links a::after {
+    content: none;
+  }
+
+  .nav-actions .nav-links .nav-cta {
+    margin-top: 1.25rem;
+    padding: .8rem 1rem;
+    border-bottom: none;
+    color: var(--on-accent);
+    text-align: center;
   }
 
   .nav-backdrop {
@@ -462,14 +620,10 @@ ul {
   }
 }
 
-/* Keep the brand and the four header buttons on one line on small phones */
+/* Keep the wordmark and the three header buttons on one line on small phones */
 @media (max-width: 419px) {
-  .nav {
-    gap: .75rem;
-  }
-
   .nav-actions {
-    gap: .4rem;
+    gap: .35rem;
   }
 
   .icon-btn {
@@ -477,64 +631,104 @@ ul {
     height: 2.25rem;
   }
 
-  .brand {
-    font-size: .9rem;
+  .site-header .brand-star {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .site-header .wordmark-name {
+    font-size: 1.25rem;
+  }
+
+  .site-header .wordmark-sub {
+    font-size: .42rem;
   }
 }
 
-@media (max-width: 359px) {
-  .brand {
-    font-size: .8rem;
-  }
-}
-
-.nav-links a {
-  color: var(--muted);
-  font-size: .95rem;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-/* Sections */
+/* ---------- Sections ---------- */
 section {
-  padding-block: clamp(3rem, 8vw, 5.5rem);
+  position: relative;
+  padding-block: clamp(4rem, 9vw, 6.5rem);
 }
 
-section+section {
-  border-top: 1px solid var(--border);
+.band-alt {
+  background: var(--bg-alt);
 }
 
-.lead {
-  color: var(--muted);
-  font-size: 1.15rem;
-  max-width: 56ch;
+.section-head {
+  max-width: 640px;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.section-head-center {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .section-intro {
+  margin: 0;
   color: var(--muted);
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
 
-/* Buttons */
+.lead {
+  font-size: 1.2rem;
+  max-width: 54ch;
+}
+
+/* Red and green bands with the zellige pattern from the brand kit.
+   The tile is black; at 20% it lands on the brand's dark red (#8F0C16) over red. */
+.band-red,
+.band-green {
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--cream);
+}
+
+.band-red {
+  background: var(--red);
+}
+
+.band-green {
+  background: var(--green);
+}
+
+.zellige {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../img/zellige.svg") 0 0 / 80px 80px repeat;
+  opacity: .2;
+  pointer-events: none;
+}
+
+.band-red .eyebrow,
+.band-green .eyebrow {
+  color: var(--gold);
+}
+
+.band-red .section-intro,
+.band-green .section-intro,
+.band-red .lead {
+  color: rgba(250, 247, 240, .88);
+}
+
+/* ---------- Buttons ---------- */
 .btn {
-  position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: .5rem;
-  padding: .75rem 1.25rem;
+  padding: .85rem 1.4rem;
   border: 1.5px solid transparent;
   border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 700;
   line-height: 1.2;
   max-width: 100%;
   overflow-wrap: anywhere;
   text-decoration: none;
-  overflow: hidden;
   transition: background-color .15s, color .15s, border-color .15s, transform .15s, box-shadow .15s;
 }
 
@@ -543,198 +737,271 @@ section+section {
 }
 
 .btn-sm {
-  padding: .55rem 1.1rem;
+  padding: .6rem 1.15rem;
   font-size: .95rem;
-}
-
-/* Glass sheen: a soft highlight riding the top half of every button */
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 55%);
-  pointer-events: none;
-}
-
-:root[data-glass="off"] .btn::before {
-  content: none;
 }
 
 .btn-primary {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: var(--glass-shadow);
+  box-shadow: 0 6px 16px rgba(179, 18, 30, .22);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  color: var(--on-accent-hover);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, .18), inset 0 1px 0 var(--glass-highlight);
+  color: var(--on-accent);
 }
 
-.btn-outline {
-  background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-color: var(--glass-border);
-  color: var(--text);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
+/* On red: a cream button with red text, and a cream outline */
+.btn-cream {
+  background: var(--cream);
+  color: var(--red);
+  box-shadow: 0 8px 22px rgba(60, 4, 8, .28);
 }
 
-.btn-outline:hover {
-  background: var(--text);
-  color: var(--bg-solid);
+.btn-cream:hover {
+  background: #ffffff;
+  color: var(--red-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(250, 247, 240, .7);
+  color: var(--cream);
+}
+
+.btn-ghost:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--red);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: .75rem;
-  margin-top: 1.75rem;
+  margin-top: 2rem;
 }
 
-/* Hero: one centred column with the portrait on top */
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: clamp(4rem, 10vw, 7.5rem) clamp(3.5rem, 8vw, 6rem);
+}
+
+/* Like the banner: a light veil of pattern at the start, full pattern at the end */
+.hero .zellige {
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
+}
+
+[dir="rtl"] .hero .zellige {
+  -webkit-mask-image: linear-gradient(270deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
+  mask-image: linear-gradient(270deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
+}
+
 .hero-grid {
   display: grid;
-  justify-items: center;
-  gap: 2rem;
-  text-align: center;
+  gap: 3rem;
+  align-items: center;
 }
 
-.hero .lead {
-  margin-inline: auto;
+.hero h1 {
+  max-width: 15ch;
+  color: var(--cream);
 }
 
-.hero .actions {
-  justify-content: center;
+.hero .lead strong {
+  color: var(--cream);
 }
 
-.status {
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem 1.6rem;
+  margin-top: 2.5rem;
+  padding-top: 1.1rem;
+  border-top: 2px solid rgba(242, 196, 90, .45);
+  max-width: 40rem;
+  color: var(--cream);
+  font-family: var(--font-label);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.hero-tags li {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  margin-bottom: 1.25rem;
-  padding: .3rem .85rem;
-  background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: 999px;
-  font-size: .9rem;
-  font-weight: 500;
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  gap: .55rem;
 }
 
-.status-icon {
-  color: var(--check);
-  font-size: 1.3rem;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 1;
-  animation: statusBounce 2s ease-in-out infinite;
+/* A small gold eight-pointed star in front of every tag */
+.hero-tags li::before {
+  content: "";
+  flex: none;
+  width: .6rem;
+  height: .6rem;
+  background: var(--gold);
+  clip-path: var(--star-clip);
 }
 
-/* Two hops, the second smaller, then a short rest before the next round */
-@keyframes statusBounce {
-
-  0%,
-  40%,
-  60%,
-  100% {
-    transform: translateY(0);
-  }
-
-  20% {
-    transform: translateY(-5px);
-  }
-
-  50% {
-    transform: translateY(-2px);
-  }
-}
-
-.portrait {
-  grid-row: 1;
-  width: min(100%, 240px);
-  border-radius: 28px;
-  border: 1px solid var(--glass-highlight);
-  box-shadow: var(--glass-shadow), var(--shadow);
-}
-
-/* Over mij */
-.about-grid {
+/* The emblem: the star in its "on red" colours, with the slogan underneath */
+.hero-emblem {
+  --star-outer: var(--cream);
+  --star-inner: var(--green);
+  --star-line: var(--gold);
+  --star-line-opacity: .9;
+  --star-glyph: var(--cream);
   display: grid;
-  gap: 2rem;
-  margin-top: 1.5rem;
+  justify-items: center;
+  text-align: center;
 }
 
-.about-text {
-  max-width: 62ch;
+/* The star with the banner's outline star centred behind it, much larger */
+.hero-star-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
+.hero-star-outline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 230%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-star {
+  width: clamp(9rem, 24vw, 17rem);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 18px 30px rgba(60, 4, 8, .35));
+}
+
+.slogan {
+  margin: 1.25rem 0 .25rem;
+  color: var(--gold);
+  /* A red halo hides the outline star's lines behind the letters */
+  text-shadow: 0 0 6px var(--red), 0 0 14px var(--red), 0 0 24px var(--red);
+  font-family: var(--font-arabic);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  line-height: 1.35;
+}
+
+.slogan-caption {
+  margin: 0;
+  text-shadow: 0 0 6px var(--red), 0 0 14px var(--red);
+  color: rgba(250, 247, 240, .82);
+  font-size: .98rem;
+  font-style: italic;
+}
+
+[dir="rtl"] .slogan-caption {
+  font-style: normal;
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1.35fr 1fr;
+    gap: 4rem;
+  }
+}
+
+/* Phones: the emblem moves above the text and shrinks */
+@media (max-width: 899px) {
+  .hero-emblem {
+    order: -1;
+  }
+
+  .hero-star-outline {
+    opacity: .7;
+  }
+}
+
+/* ---------- Diensten ---------- */
 .services {
   display: grid;
-  gap: .75rem;
-  align-content: start;
+  gap: 1.25rem;
 }
 
-/* The package cards share the look of the service cards */
-.services li,
-.package {
-  padding: 1.1rem 1.25rem;
-  text-align: center;
+.service {
+  padding: 1.6rem 1.5rem 1.4rem;
   background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--shadow);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.services li:hover,
-.package:hover {
+.service:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, .14), inset 0 1px 0 var(--glass-highlight);
+  box-shadow: var(--shadow-lg);
 }
 
-.services h3,
-.package h3 {
-  font-size: 1.05rem;
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.1rem;
+  background: var(--icon-bg);
+  border-radius: 14px;
+  color: var(--icon-fg);
 }
 
-.services p,
-.package-desc {
+.service p {
   margin: 0;
   color: var(--muted);
-  font-size: .97rem;
 }
 
-.skills,
+/* "Cloud & maatwerk": the odd seventh card lies on its side across the full row */
+@media (min-width: 720px) {
+  .service-wide {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .service-wide .service-icon {
+    flex: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0;
+  }
+
+  .service-wide h3 {
+    margin-bottom: .3rem;
+  }
+}
+
+.chips,
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
 }
 
-.skills {
-  margin-top: 2rem;
+.chips {
+  margin-top: 2.25rem;
 }
 
-.skills li,
+.chips li,
 .tags li {
-  padding: .25rem .75rem;
-  border: 1px solid var(--glass-border);
+  padding: .25rem .8rem;
+  border: 1px solid var(--border);
   border-radius: 999px;
   font-size: .88rem;
-  font-weight: 500;
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  font-weight: 600;
 }
 
-.skills li {
+.chips li {
   background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .tags li {
@@ -742,50 +1009,86 @@ section+section {
   font-size: .82rem;
 }
 
-/* Projecten */
+/* ---------- Werkwijze ---------- */
+.band-green h2 {
+  color: var(--cream);
+}
+
+.steps {
+  display: grid;
+  gap: 1.25rem;
+  counter-reset: none;
+}
+
+.step {
+  position: relative;
+  padding: 1.6rem 1.5rem 1.4rem;
+  background: rgba(250, 247, 240, .06);
+  border: 1px solid rgba(250, 247, 240, .16);
+  border-radius: var(--radius);
+}
+
+.step-number {
+  display: block;
+  margin-bottom: .75rem;
+  color: var(--gold);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.step h3 {
+  color: var(--cream);
+}
+
+.step p {
+  margin: 0;
+  color: rgba(250, 247, 240, .85);
+}
+
+/* ---------- Projecten ---------- */
 .projects {
   display: grid;
   gap: 1.5rem;
 }
 
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   background: var(--surface);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--shadow);
   transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.project-card {
-  position: relative;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .16), inset 0 1px 0 var(--glass-highlight);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Stretch the "Bekijk" link over the whole card, so the card is clickable too.
-   .btn is position:relative for its glass sheen, which would otherwise make it
-   the containing block for this overlay and shrink the clickable area down to
-   just the button — put it back to static here so ::after escalates to the card. */
+/* Stretch the "Bekijk website" link over the whole card, so the card is clickable too.
+   The button must stay position:static (and untransformed on hover) so its ::after
+   overlay uses the card as containing block instead of the button. */
 .project-card .btn {
   position: static;
-}
-
-.project-card .btn::before {
-  content: none;
 }
 
 .project-card .btn::after {
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.project-card .btn:hover {
+  transform: none;
+}
+
+.project-card:hover .btn-primary {
+  background: var(--accent-hover);
 }
 
 .project-media {
@@ -803,17 +1106,38 @@ section+section {
 
 .project-card:hover img,
 .project-card:focus-within img {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
-/* Before/after slider in a project card: the new site underneath, the old
-   one on top, cut off at the line. It sits above the card's link overlay, so
-   dragging moves the line instead of opening the website. */
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.project-body p {
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+.project-body .tags {
+  margin-bottom: 1.25rem;
+}
+
+.project-body .btn {
+  margin-top: auto;
+}
+
+/* Before/after slider: the new site underneath, the old one on top, cut off at
+   the line. It sits above the card's link overlay, so dragging moves the line
+   instead of opening the website. */
 .compare {
   --pos: 50%;
   position: relative;
   z-index: 1;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   user-select: none;
 }
 
@@ -821,6 +1145,7 @@ section+section {
   position: absolute;
   inset: 0;
   height: 100%;
+  aspect-ratio: auto;
 }
 
 /* No zoom on hover here: the line would no longer match the images */
@@ -863,78 +1188,105 @@ section+section {
   left: 50%;
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: #ffffff;
-  color: #000000;
+  background: var(--red);
+  color: var(--cream);
+  border: 2px solid var(--cream);
   transform: translate(-50%, -50%);
   box-shadow: 0 2px 10px rgba(0, 0, 0, .35);
 }
 
 .compare-range:focus-visible~.compare-line .compare-grip {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--gold);
   outline-offset: 2px;
 }
 
 .compare-label {
   position: absolute;
-  top: .6rem;
-  padding: .15rem .6rem;
+  top: .7rem;
+  padding: .2rem .65rem;
   border-radius: 999px;
-  background: rgba(0, 0, 0, .55);
+  background: rgba(31, 26, 23, .7);
   color: #ffffff;
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .05em;
+  font-family: var(--font-label);
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .12em;
   text-transform: uppercase;
   pointer-events: none;
 }
 
 .compare-label-before {
-  left: .6rem;
+  left: .7rem;
 }
 
 .compare-label-after {
-  right: .6rem;
+  right: .7rem;
 }
 
-.project-card:hover .btn-primary {
-  background: var(--accent-hover);
-  color: var(--on-accent-hover);
+@media (min-width: 720px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-featured {
+    grid-column: 1 / -1;
+  }
 }
 
-/* transform on :hover would make .btn the containing block for its own
-   ::after overlay, shrinking the clickable area down to just the button */
-.project-card .btn:hover {
-  transform: none;
+@media (min-width: 1000px) {
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* The featured case lies on its side: slider at the start, text at the end */
+  .project-featured {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .project-featured .project-media {
+    border-bottom: none;
+    border-inline-end: 1px solid var(--border);
+  }
+
+  /* Fill the full height of the card, whatever the length of the text */
+  .project-featured .compare {
+    height: 100%;
+    min-height: 21rem;
+    aspect-ratio: auto;
+  }
+
+  .project-featured .project-body {
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .project-featured h3 {
+    font-size: 1.6rem;
+  }
 }
 
-.project-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1.25rem 1.35rem 1.4rem;
-}
-
-.project-body p {
-  color: var(--muted);
-  font-size: .98rem;
-}
-
-.project-body .tags {
-  margin-bottom: 1.25rem;
-}
-
-.project-body .btn {
-  margin-top: auto;
-}
-
-/* Pakketten: three cards like the service cards, the middle one filled */
+/* ---------- Pakketten ---------- */
 .packages {
   display: grid;
   gap: 1.5rem;
+  max-width: 520px;
+  margin-inline: auto;
 }
 
 .package {
@@ -942,6 +1294,28 @@ section+section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.package:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.package h3,
+.package h4 {
+  font-size: 1.6rem;
+}
+
+.package-desc {
+  margin: 0;
+  color: var(--muted);
 }
 
 .package-desc strong {
@@ -951,39 +1325,31 @@ section+section {
 .package-price {
   margin: 1rem 0;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: .95rem;
 }
 
 .package-price strong {
   margin-inline: .2rem;
   color: var(--text);
-  font-size: 2rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 900;
   line-height: 1;
 }
 
 .package-includes {
   align-self: stretch;
-  margin-top: 1.25rem;
-  padding-top: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
   border-top: 1px solid var(--border);
-}
-
-/* Terms under the cards: VAT, notice period, and a pointer for people without a site */
-.packages-note {
-  margin: 1.5rem auto 0;
-  max-width: 60ch;
-  color: var(--muted);
-  font-size: .92rem;
-  text-align: center;
 }
 
 .package-includes-title {
   margin-bottom: .5rem;
-  font-size: .95rem;
   font-weight: 700;
 }
 
-/* The list sits centred in the card, its rows stay left-aligned so the ticks line up */
+/* The list sits centred in the card, its rows stay start-aligned so the ticks line up */
 .package-features {
   display: inline-flex;
   flex-direction: column;
@@ -995,7 +1361,7 @@ section+section {
   align-items: baseline;
   gap: .6rem;
   padding-block: .2rem;
-  font-size: .95rem;
+  font-size: .97rem;
 }
 
 .package-features li::before {
@@ -1018,61 +1384,428 @@ section+section {
   font-weight: 400;
 }
 
-/* The recommended package: a filled accent card with inverted colours */
+/* The webshop package: a filled brand-red card with cream text */
 .package-featured {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--on-accent);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
-}
-
-.package-featured:hover {
-  box-shadow: 0 22px 46px rgba(0, 0, 0, .3);
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--cream);
+  box-shadow: 0 18px 40px rgba(143, 12, 22, .3);
 }
 
 .package-featured .package-desc,
 .package-featured .package-price,
 .package-featured .package-features .excluded {
-  color: color-mix(in srgb, var(--on-accent) 78%, transparent);
+  color: rgba(250, 247, 240, .85);
 }
 
 .package-featured .package-desc strong,
-.package-featured .package-price strong,
+.package-featured .package-price strong {
+  color: var(--cream);
+}
+
 .package-featured .package-features li::before {
-  color: var(--on-accent);
+  color: var(--gold);
 }
 
 .package-featured .package-includes {
-  border-top-color: color-mix(in srgb, var(--on-accent) 30%, transparent);
+  border-top-color: rgba(250, 247, 240, .3);
 }
 
-.package-featured .btn-primary,
-.package-featured .btn-primary:hover {
-  background: var(--on-accent);
-  color: var(--accent);
+/* Terms under the cards: VAT, notice period, and a pointer for people without a site */
+.packages-note {
+  margin: 1.75rem auto 0;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: .95rem;
+  text-align: center;
 }
 
-/* Centred on the top edge of the card, so it doesn't push the content down */
-.package-badge {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  white-space: nowrap;
-  padding: .15rem .7rem;
-  background: var(--on-accent);
-  color: var(--accent);
-  border-radius: 999px;
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .06em;
+/* Budget slider: one range input above the build packages */
+.budget {
+  max-width: 720px;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+  padding: 1.5rem 1.6rem 1.3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.budget-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  margin-bottom: .75rem;
+}
+
+.budget-label {
+  color: var(--eyebrow);
+  font-family: var(--font-label);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .2em;
   text-transform: uppercase;
 }
 
-/* Contact */
-.contact {
+.budget-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.budget-range {
+  --fill: 14%;
+  display: block;
+  width: 100%;
+  height: 2rem;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Chrome/Safari/Brave: the filled part of the track is a gradient up to --fill */
+.budget-range::-webkit-slider-runnable-track {
+  height: .5rem;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--slider) var(--fill), var(--border) var(--fill));
+}
+
+[dir="rtl"] .budget-range::-webkit-slider-runnable-track {
+  background: linear-gradient(to left, var(--slider) var(--fill), var(--border) var(--fill));
+}
+
+.budget-range::-webkit-slider-thumb {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: -.55rem;
+  border: 3px solid var(--surface);
+  border-radius: 50%;
+  background: var(--slider);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Firefox draws the filled part itself, in the right direction for RTL too */
+.budget-range::-moz-range-track {
+  height: .5rem;
+  border-radius: 999px;
+  background: var(--border);
+}
+
+.budget-range::-moz-range-progress {
+  height: .5rem;
+  border-radius: 999px;
+  background: var(--slider);
+}
+
+.budget-range::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 3px solid var(--surface);
+  border-radius: 50%;
+  background: var(--slider);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+
+.budget-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .3rem;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.budget-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.budget-match strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.budget-cta {
+  font-weight: 700;
+}
+
+/* The package that fits the chosen budget: a ring and a badge on the top edge */
+.package-match {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  padding: .25rem .8rem;
+  background: var(--badge-bg);
+  border-radius: 999px;
+  color: var(--badge-fg);
+  font-family: var(--font-label);
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity .2s ease;
+  pointer-events: none;
+}
+
+.package.is-match {
+  outline: 3px solid var(--slider);
+  outline-offset: 4px;
+}
+
+.package.is-match .package-match {
+  opacity: 1;
+}
+
+/* Optional maintenance: a quieter block under the build packages */
+.maintenance {
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--border);
+}
+
+.maintenance-head {
+  max-width: 600px;
+  margin: 0 auto 2rem;
   text-align: center;
+}
+
+.maintenance-head h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.maintenance-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.package-compact {
+  padding: 1.4rem 1.3rem;
+  background: var(--bg-alt);
+  box-shadow: none;
+}
+
+.package-compact h4 {
+  font-size: 1.3rem;
+}
+
+.package-compact .package-price strong {
+  font-size: 1.8rem;
+}
+
+.package-compact .package-features li {
+  font-size: .92rem;
+}
+
+/* Each card spans the same five rows (title, text, price, button, list),
+   so prices and buttons line up even when the descriptions differ in length */
+@media (min-width: 720px) {
+  .packages-maintenance {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 1.5rem;
+    max-width: 800px;
+  }
+
+  .packages-maintenance .package {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    align-items: start;
+    justify-items: center;
+  }
+
+  .packages-maintenance .package-includes {
+    justify-self: stretch;
+  }
+}
+
+@media (min-width: 900px) {
+  .packages-build {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 1.5rem;
+    max-width: none;
+  }
+
+  .packages-build .package {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    align-items: start;
+    justify-items: center;
+  }
+
+  .packages-build .package-includes {
+    justify-self: stretch;
+  }
+}
+
+/* ---------- Over ---------- */
+.about-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 62ch;
+}
+
+.about-text p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.about-text p strong {
+  color: var(--text);
+}
+
+.values {
+  display: grid;
+  gap: .7rem;
+  margin-top: 1.75rem;
+}
+
+.values li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-weight: 700;
+}
+
+/* The eight-pointed star as bullet */
+.values li::before {
+  content: "";
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: var(--accent);
+  clip-path: var(--star-clip);
+}
+
+:root[data-theme="dark"] .values li::before {
+  background: var(--gold);
+}
+
+.founder {
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.founder-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border-bottom: 5px solid var(--red);
+}
+
+.founder-body {
+  padding: 1.5rem 1.6rem 1.7rem;
+}
+
+.founder-body .eyebrow {
+  margin-bottom: .5rem;
+}
+
+.founder-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.founder-role {
+  margin: .3rem 0 1rem;
+  color: var(--muted);
+  font-family: var(--font-label);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.founder-quote {
+  margin: 0;
+  padding-inline-start: 1rem;
+  border-inline-start: 3px solid var(--gold);
+}
+
+.founder-quote p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.founder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.founder-link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 4.5rem;
+  }
+
+  .founder {
+    max-width: 420px;
+    justify-self: end;
+  }
+}
+
+/* ---------- Contact ---------- */
+.contact-inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.contact .zellige {
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 30%, #000 85%);
+  mask-image: radial-gradient(ellipse at center, transparent 30%, #000 85%);
+}
+
+.contact-star {
+  --star-outer: var(--cream);
+  --star-inner: var(--green);
+  --star-line: var(--gold);
+  --star-line-opacity: .9;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact h2 {
+  max-width: 20ch;
+  color: var(--cream);
 }
 
 .contact .lead {
@@ -1081,84 +1814,86 @@ section+section {
 
 .contact .actions {
   justify-content: center;
+  margin-top: 1.5rem;
 }
 
-/* Footer */
+.contact-note {
+  margin: 2rem 0 0;
+  color: rgba(250, 247, 240, .8);
+  font-family: var(--font-label);
+  font-size: .66rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* ---------- Footer ---------- */
 .site-footer {
-  padding-block: 1.75rem;
+  padding-block: 3rem 2.25rem;
   border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: .9rem;
-  text-align: center;
+  font-size: .95rem;
 }
 
-.site-footer p {
-  margin: 0;
+.footer-grid {
+  display: grid;
+  gap: 2rem;
 }
 
-@media (min-width: 720px) {
-  .about-grid {
-    grid-template-columns: 1.3fr 1fr;
-    gap: 3rem;
-  }
+.footer-tagline {
+  margin: .8rem 0 0;
+}
 
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+}
 
-  /* Each card spans the same five rows (title, text, price, button, list),
-     so prices and buttons line up even when the descriptions differ in length */
-  .packages {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 1.25rem;
-    max-width: 760px;
-    margin-inline: auto;
-  }
+.footer-nav a,
+.footer-meta a {
+  color: var(--muted);
+  text-decoration: none;
+}
 
-  .package {
-    display: grid;
-    grid-row: span 5;
-    grid-template-rows: subgrid;
+.footer-nav a:hover,
+.footer-meta a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.footer-meta p {
+  margin: 0 0 .35rem;
+}
+
+/* "1448 AH" stays on one line next to the Gregorian year */
+.hijri {
+  white-space: nowrap;
+}
+
+@media (min-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr auto 1fr;
     align-items: start;
-    justify-items: center;
   }
 
-  .package-includes {
-    justify-self: stretch;
+  .footer-nav {
+    flex-direction: column;
   }
-}
 
-@media (min-width: 1000px) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
+  .footer-meta {
+    text-align: end;
   }
 }
 
-@media (max-width: 719px) {
-  .portrait {
-    width: 180px;
-  }
-}
-
+/* ---------- Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .btn,
-  .project-card,
-  .project-card img,
-  .services li,
-  .package,
-  .icon-btn,
-  .nav-links,
-  .nav-backdrop,
-  .lang-menu {
-    transition: none;
-  }
-
-  body::before,
-  .status-icon {
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }

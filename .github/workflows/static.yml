@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Builds the language pages and deploys the site to GitHub Pages (chamaliwebsolutions.nl)
 name: Deploy static content to Pages
 
 on:
@@ -22,7 +22,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -31,16 +30,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Makes en/index.html and ar/index.html; fails when a translation is missing
+      - name: Build language pages
+        run: node tools/build-i18n.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      # Only publish the files the site uses; source PNGs, screenshots and personal photos stay out
+      # Only publish the files the site uses; source material stays out
       - name: Collect site files
         run: |
-          mkdir -p _site/assets
-          cp index.html robots.txt sitemap.xml google*.html _site/
-          cp -r css js _site/
-          cp assets/*.webp assets/favicon.svg assets/apple-touch-icon.png assets/og-image.png _site/assets/
-          cp -r assets/fonts _site/assets/
+          mkdir -p _site
+          cp index.html robots.txt sitemap.xml google*.html favicon.ico icon.svg apple-touch-icon.png _site/
+          cp -r css js fonts img en ar _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,47 +1,103 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamali Web Solutions – Webdeveloper in Rotterdam</title>
-    <meta name="description"
-        content="Portfolio van Aboubakr Jebbari, webdeveloper uit Rotterdam. Snelle, strakke en gebruiksvriendelijke websites met WordPress, Elementor en WooCommerce.">
-    <meta name="theme-color" content="#EBE1E1">
+    <!-- This page is the Dutch source. tools/build-i18n.mjs makes /en/ and /ar/ from it and fills in
+         title, description, canonical, og:url and og:locale per language. Keep each of these tags on one line. -->
+    <title>Websites &amp; webshops in Rotterdam | Chamali Web Solutions</title>
+    <meta name="description" content="Chamali Web Solutions bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties voor ondernemers, organisaties en verenigingen. Altijd in overleg, vanaf €250.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#B3121E">
     <link rel="canonical" href="https://chamaliwebsolutions.nl/">
-    <meta property="og:title" content="Chamali Web Solutions – Webdeveloper in Rotterdam">
-    <meta property="og:description"
-        content="Snelle, strakke en gebruiksvriendelijke websites met WordPress, Elementor en WooCommerce.">
+    <link rel="alternate" hreflang="nl" href="https://chamaliwebsolutions.nl/">
+    <link rel="alternate" hreflang="en" href="https://chamaliwebsolutions.nl/en/">
+    <link rel="alternate" hreflang="ar" href="https://chamaliwebsolutions.nl/ar/">
+    <link rel="alternate" hreflang="x-default" href="https://chamaliwebsolutions.nl/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://chamaliwebsolutions.nl/">
     <meta property="og:site_name" content="Chamali Web Solutions">
     <meta property="og:locale" content="nl_NL">
-    <meta property="og:image" content="https://chamaliwebsolutions.nl/assets/og-image.png">
+    <meta property="og:url" content="https://chamaliwebsolutions.nl/">
+    <meta property="og:title" content="Websites &amp; webshops in Rotterdam | Chamali Web Solutions">
+    <meta property="og:description" content="Chamali Web Solutions bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties voor ondernemers, organisaties en verenigingen. Altijd in overleg, vanaf €250.">
+    <meta property="og:image" content="https://chamaliwebsolutions.nl/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Chamali Web Solutions – Webdeveloper in Rotterdam">
+    <meta property="og:image:alt" content="Chamali Web Solutions – كود بنكهة شمالية، الخاوا!">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
-    <link rel="preload" as="image" href="./assets/aboubakr.webp">
-    <!-- Structured data for the business only; no personal details on purpose -->
+    <meta name="twitter:title" content="Websites &amp; webshops in Rotterdam | Chamali Web Solutions">
+    <meta name="twitter:description" content="Chamali Web Solutions bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties voor ondernemers, organisaties en verenigingen. Altijd in overleg, vanaf €250.">
+    <meta name="twitter:image" content="https://chamaliwebsolutions.nl/img/og-image.png">
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <!-- Structured data for the business only; no personal details on purpose.
+         The offer prices must match the packages (see CLAUDE.md). -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Chamali Web Solutions",
-        "url": "https://chamaliwebsolutions.nl/",
-        "logo": "https://chamaliwebsolutions.nl/assets/apple-touch-icon.png",
-        "image": "https://chamaliwebsolutions.nl/assets/og-image.png",
-        "description": "Webdeveloper in Rotterdam. Snelle, strakke en gebruiksvriendelijke websites met WordPress, Elementor en WooCommerce.",
-        "areaServed": { "@type": "City", "name": "Rotterdam" },
-        "knowsAbout": ["WordPress", "Elementor", "WooCommerce", "Webdesign", "Responsive design", "SEO"],
-        "sameAs": ["https://www.linkedin.com/in/a-j-30070740a/"]
+        "@graph": [
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://chamaliwebsolutions.nl/#business",
+                "name": "Chamali Web Solutions",
+                "url": "https://chamaliwebsolutions.nl/",
+                "logo": "https://chamaliwebsolutions.nl/img/logo-512.png",
+                "image": "https://chamaliwebsolutions.nl/img/og-image.png",
+                "slogan": "كود بنكهة شمالية، الخاوا!",
+                "description": "Webbureau in Rotterdam. Bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties, altijd in overleg met de klant.",
+                "email": "info@chamaliwebsolutions.nl",
+                "address": { "@type": "PostalAddress", "addressLocality": "Rotterdam", "addressCountry": "NL" },
+                "areaServed": [
+                    { "@type": "City", "name": "Rotterdam" },
+                    { "@type": "Country", "name": "Nederland" }
+                ],
+                "priceRange": "€250+",
+                "knowsLanguage": ["nl", "ar", "en"],
+                "knowsAbout": ["WordPress", "Elementor", "WooCommerce", "Webdesign", "Webshops", "Responsive design", "SEO", "Meertalige websites", "Cloudapplicaties", "Nextcloud", "VPS-beheer"],
+                "sameAs": ["https://www.linkedin.com/company/chamali-web-solutions/"],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Pakketten",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "Basis",
+                            "description": "Eenvoudige website met een paar pagina's.",
+                            "priceSpecification": { "@type": "PriceSpecification", "minPrice": 250, "priceCurrency": "EUR", "valueAddedTaxIncluded": true }
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Webshop",
+                            "description": "Uitgebreide website met WooCommerce-webshop.",
+                            "priceSpecification": { "@type": "PriceSpecification", "minPrice": 500, "priceCurrency": "EUR", "valueAddedTaxIncluded": true }
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Maatwerk",
+                            "description": "Eigen online systeem of cloudapplicatie, zoals Nextcloud op een VPS.",
+                            "priceSpecification": { "@type": "PriceSpecification", "minPrice": 750, "priceCurrency": "EUR", "valueAddedTaxIncluded": true }
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://chamaliwebsolutions.nl/#website",
+                "url": "https://chamaliwebsolutions.nl/",
+                "name": "Chamali Web Solutions",
+                "inLanguage": ["nl", "en", "ar"],
+                "publisher": { "@id": "https://chamaliwebsolutions.nl/#business" }
+            }
+        ]
     }
     </script>
-    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/ysabeau-infant-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-black.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/ysabeau-infant-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/bouazzi-maghribi.woff2" crossorigin>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- Set the theme, glass effect and language before the page paints, so there is no flash -->
+    <!-- Set the theme before the page paints, so there is no flash of the wrong one -->
     <script>
         (function () {
             var theme;
@@ -50,39 +106,62 @@
                 theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
             document.documentElement.setAttribute('data-theme', theme);
-
-            var glass;
-            try { glass = localStorage.getItem('glass'); } catch (e) { }
-            document.documentElement.setAttribute('data-glass', glass === 'off' ? 'off' : 'on');
-
-            var lang;
-            try { lang = localStorage.getItem('lang'); } catch (e) { }
-            if (lang !== 'nl' && lang !== 'ar' && lang !== 'en') lang = 'nl';
-            document.documentElement.setAttribute('lang', lang);
-            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
         })();
     </script>
 </head>
 
 <body>
+    <!-- The Chamali star, drawn once and reused. Its colours come from the --star-* custom properties. -->
+    <svg width="0" height="0" class="visually-hidden" aria-hidden="true" focusable="false">
+        <symbol id="chamali-star" viewBox="0 0 512 512">
+            <polygon style="fill: var(--star-outer)"
+                points="256,20.48 324.98,89.46 422.54,89.46 422.54,187.02 491.52,256 422.54,324.98 422.54,422.54 324.98,422.54 256,491.52 187.02,422.54 89.46,422.54 89.46,324.98 20.48,256 89.46,187.02 89.46,89.46 187.02,89.46" />
+            <polygon style="fill: var(--star-inner)"
+                points="256,54.04 315.15,113.19 398.81,113.19 398.81,196.85 457.96,256 398.81,315.15 398.81,398.81 315.15,398.81 256,457.96 196.85,398.81 113.19,398.81 113.19,315.15 54.04,256 113.19,196.85 113.19,113.19 196.85,113.19" />
+            <polygon style="fill: none; stroke: var(--star-line); opacity: var(--star-line-opacity)" stroke-width="7"
+                points="256,75.24 308.94,128.18 383.82,128.18 383.82,203.06 436.76,256 383.82,308.94 383.82,383.82 308.94,383.82 256,436.76 203.06,383.82 128.18,383.82 128.18,308.94 75.24,256 128.18,203.06 128.18,128.18 203.06,128.18" />
+            <g style="fill: none; stroke: var(--star-glyph)" stroke-width="29.44" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="186.52,185.34 137.06,256 186.52,326.66" />
+                <polyline points="325.48,185.34 374.94,256 325.48,326.66" />
+            </g>
+            <g style="fill: var(--star-glyph)">
+                <circle cx="256" cy="220.67" r="22.37" />
+                <circle cx="256" cy="284.26" r="22.37" />
+                <path
+                    d="M 278.37 284.26 C 278.37 317.24 251.29 336.08 234.8 343.14 L 230.09 331.37 C 244.22 321.95 251.29 307.81 251.29 296.04 Z" />
+            </g>
+        </symbol>
+    </svg>
+
     <a class="skip-link" href="#main" data-i18n="skipLink">Naar de inhoud</a>
 
     <!-- Navigation -->
     <header class="site-header">
         <nav class="container nav" aria-label="Hoofdnavigatie" data-i18n-aria-label="navAriaLabel">
-            <a class="brand" href="#top">Chamali Web Solutions</a>
+            <a class="brand" href="#top" aria-label="Chamali Web Solutions, terug naar boven"
+                data-i18n-aria-label="brandAria">
+                <svg class="brand-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                    <use href="#chamali-star" />
+                </svg>
+                <span class="wordmark" aria-hidden="true">
+                    <span class="wordmark-name">Chamali</span>
+                    <span class="wordmark-sub">Web Solutions</span>
+                </span>
+            </a>
             <div class="nav-actions">
                 <!-- Offcanvas menu on tablet and smaller, inline links on desktop -->
                 <ul class="nav-links" id="nav-menu">
-                    <li><a href="#over-mij" data-i18n="navAbout">Over mij</a></li>
+                    <li><a href="#diensten" data-i18n="navServices">Diensten</a></li>
+                    <li><a href="#werkwijze" data-i18n="navProcess">Werkwijze</a></li>
                     <li><a href="#projecten" data-i18n="navProjects">Projecten</a></li>
                     <li><a href="#pakketten" data-i18n="navPackages">Pakketten</a></li>
-                    <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+                    <li><a href="#over" data-i18n="navAbout">Over ons</a></li>
+                    <li><a class="nav-cta" href="#contact" data-i18n="navContact">Contact</a></li>
                 </ul>
                 <div class="lang-switch">
-                    <button class="icon-btn lang-toggle" type="button" id="lang-toggle-btn" aria-haspopup="true"
-                        aria-expanded="false" aria-controls="lang-menu" aria-label="Taal wijzigen"
-                        data-i18n-aria-label="langToggleAria">
+                    <button class="icon-btn lang-toggle" type="button" id="lang-toggle-btn" aria-expanded="false"
+                        aria-controls="lang-menu" aria-label="Taal wijzigen" data-i18n-aria-label="langToggleAria">
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="9" />
@@ -90,13 +169,11 @@
                             <path d="M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" />
                         </svg>
                     </button>
-                    <ul class="lang-menu" id="lang-menu" role="menu" aria-labelledby="lang-toggle-btn">
-                        <li role="none"><button type="button" role="menuitemradio" class="lang-option"
-                                data-lang="nl">Nederlands</button></li>
-                        <li role="none"><button type="button" role="menuitemradio" class="lang-option"
-                                data-lang="ar">العربية</button></li>
-                        <li role="none"><button type="button" role="menuitemradio" class="lang-option"
-                                data-lang="en">English</button></li>
+                    <!-- Real links to the pre-rendered pages; the build script moves aria-current per language -->
+                    <ul class="lang-menu" id="lang-menu">
+                        <li><a class="lang-option" href="./" hreflang="nl" lang="nl" aria-current="page">Nederlands</a></li>
+                        <li><a class="lang-option" href="./ar/" hreflang="ar" lang="ar">العربية</a></li>
+                        <li><a class="lang-option" href="./en/" hreflang="en" lang="en">English</a></li>
                     </ul>
                 </div>
                 <button class="icon-btn theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema"
@@ -104,15 +181,6 @@
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                         <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
                         <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
-                    </svg>
-                </button>
-                <button class="icon-btn glass-toggle" type="button" aria-pressed="true" aria-label="Glaseffect"
-                    data-i18n-aria-label="glassToggleAria">
-                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z" />
-                        <path class="icon-glass-off" d="M4 4l16 16" />
                     </svg>
                 </button>
                 <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-controls="nav-menu"
@@ -129,220 +197,214 @@
     </header>
 
     <main id="main">
-        <!-- Hero Section -->
-        <section id="top" class="hero">
+        <!-- Hero: brand red with the zellige pattern from the brand kit banner -->
+        <section id="top" class="hero band-red">
+            <div class="zellige" aria-hidden="true"></div>
             <div class="container hero-grid">
-                <div>
-                    <p class="status"><span class="status-icon" aria-hidden="true">!</span><span
-                            data-i18n="heroStatus">24/7 beschikbaar voor
-                            nieuwe projecten: hybride, op afstand en op locatie</span></p>
-                    <h1 data-i18n="heroTitle">Een professionele en meedenkende webdeveloper die snelle en strakke
-                        websites
-                        bouwt.</h1>
-                    <p class="lead" data-i18n="heroLead"><span lang="ar" dir="rtl">السلام عليكم كلشي لاباس الصحة
-                            لباس؟</span> Ik ben <strong>Aboubakr Jebbari</strong>, oprichter van
-                        <strong>Chamali Web Solutions</strong> en een professionele en meedenkende webdeveloper uit
-                        Rotterdam.
-                        Ik bouw functionele,
-                        gebruiksvriendelijke websites en webshops met WordPress, Elementor en WooCommerce.
-                    </p>
+                <div class="hero-content">
+                    <p class="eyebrow" data-i18n="heroEyebrow">Webdesign &amp; development · Rotterdam</p>
+                    <h1 data-i18n="heroTitle">Een website die net zo hard werkt als jij.</h1>
+                    <p class="lead" data-i18n="heroLead">Bij <strong>Chamali Web Solutions</strong> bouwen we snelle,
+                        strakke en goed vindbare websites, webshops en cloudapplicaties voor ondernemers, organisaties
+                        en verenigingen, en we beheren ze ook. Altijd in overleg met jou, van het eerste gesprek tot
+                        ver na de livegang.</p>
                     <div class="actions">
-                        <a class="btn btn-primary" href="#projecten" data-i18n="heroBtnWork">Bekijk mijn werk</a>
-                        <a class="btn btn-outline" href="#contact" data-i18n="heroBtnContact">Neem contact op</a>
+                        <a class="btn btn-cream" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte aan</a>
+                        <a class="btn btn-ghost" href="#projecten" data-i18n="heroBtnWork">Bekijk ons werk</a>
                     </div>
+                    <ul class="hero-tags" aria-label="Waar we voor staan" data-i18n-aria-label="heroTagsAria">
+                        <li data-i18n="heroTag1">Websites</li>
+                        <li data-i18n="heroTag2">Webshops</li>
+                        <li data-i18n="heroTag5">Cloud-apps</li>
+                        <li data-i18n="heroTag3">Rotterdam, NL</li>
+                        <li data-i18n="heroTag4">Noord-Marokkaanse roots</li>
+                    </ul>
                 </div>
-                <img class="portrait" src="./assets/aboubakr.webp" alt="Portretfoto van Aboubakr Jebbari" width="480"
-                    height="637" data-i18n-alt="portraitAlt">
+                <div class="hero-emblem">
+                    <div class="hero-star-wrap">
+                        <img class="hero-star-outline" src="./img/star-outline.svg" alt="" width="860" height="860">
+                        <svg class="hero-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                            <use href="#chamali-star" />
+                        </svg>
+                    </div>
+                    <p class="slogan" lang="ar" dir="rtl">كود بنكهة شمالية، الخاوا!</p>
+                    <p class="slogan-caption" data-i18n="heroSloganCaption">Code met een noordelijk smaakje, broeders!
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- Over Section -->
-        <section id="over-mij">
+        <!-- Diensten -->
+        <section id="diensten">
             <div class="container">
-                <h2 data-i18n="aboutTitle">Over mij</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p data-i18n="aboutP1">Ik ben Aboubakr Jebbari, ook wel <strong>Aboe</strong>, een professionele
-                            en meedenkende webdeveloper
-                            uit Rotterdam en oprichter van <strong>Chamali Web Solutions</strong>. Ik help
-                            ondernemers, organisaties en verenigingen aan een professionele online aanwezigheid, van
-                            een overzichtelijke bedrijfswebsite tot een complete webshop.</p>
-                        <p data-i18n="aboutP2">Ik ben gespecialiseerd in WordPress, Elementor en WooCommerce, van
-                            maatwerk thema's tot plugins. Mijn websites laden snel, werken goed op mobiel, tablet en
-                            desktop en zijn goed vindbaar in Google. Voor webshops koppel ik betalingen via Mollie, en
-                            meertalige websites krijgen ondersteuning voor Arabisch van rechts naar links.</p>
-                        <p data-i18n="aboutP3">Ik denk mee vanaf het eerste gesprek tot de livegang, en blijf daarna
-                            betrokken met beveiliging, onderhoud en support. Zo blijft je website veilig, snel en
-                            up-to-date.</p>
-                        <p data-i18n="aboutP4">Mijn Marokkaans-Nederlandse achtergrond en mijn werk als tolk
-                            Arabisch–Nederlands helpen me om helder te communiceren met klanten uit verschillende
-                            culturen. Naast mijn werk verdiep ik me graag in geschiedenis, filosofie en theologie.</p>
-                    </div>
-                    <ul class="services">
-                        <li>
-                            <h3 data-i18n="serviceWpTitle">WordPress Development</h3>
-                            <p data-i18n="serviceWpDesc">Maatwerk thema's, plugins en optimalisatie van bestaande
-                                websites.</p>
-                        </li>
-                        <li>
-                            <h3 data-i18n="serviceUxTitle">UI/UX Design</h3>
-                            <p data-i18n="serviceUxDesc">Gebruiksvriendelijke interfaces met een moderne
-                                uitstraling.</p>
-                        </li>
-                        <li>
-                            <h3 data-i18n="serviceRespTitle">Responsive Design</h3>
-                            <p data-i18n="serviceRespDesc">Websites die goed werken op mobiel, tablet en desktop.</p>
-                        </li>
-                    </ul>
-                </div>
-                <ul class="skills" aria-label="Vaardigheden" data-i18n-aria-label="skillsAria">
+                <header class="section-head">
+                    <p class="eyebrow" data-i18n="servicesEyebrow">Diensten</p>
+                    <h2 data-i18n="servicesTitle">Alles voor een sterke online aanwezigheid</h2>
+                    <p class="section-intro" data-i18n="servicesIntro">Van een eerste website tot een complete webshop
+                        met onderhoud: je hebt één vast aanspreekpunt dat het hele traject kent.</p>
+                </header>
+                <ul class="services">
+                    <li class="service">
+                        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="16" rx="2" />
+                                <path d="M3 9h18M6.5 6.5h.01M9 6.5h.01M7 13h6M7 16h10" />
+                            </svg></span>
+                        <h3 data-i18n="service1Title">Bedrijfswebsites</h3>
+                        <p data-i18n="service1Desc">Een overzichtelijke, professionele website die laat zien wie je bent
+                            en bezoekers omzet in klanten.</p>
+                    </li>
+                    <li class="service">
+                        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 8h14l-1.2 12H6.2L5 8Z" />
+                                <path d="M9 8V7a3 3 0 0 1 6 0v1" />
+                            </svg></span>
+                        <h3 data-i18n="service2Title">Webshops</h3>
+                        <p data-i18n="service2Desc">Online verkopen met WooCommerce, veilige betalingen via Mollie en
+                            een checkout die gewoon werkt.</p>
+                    </li>
+                    <li class="service">
+                        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 12a8 8 0 1 1-2.34-5.66" />
+                                <path d="M20 4v4h-4" />
+                                <path d="m9.5 12 1.8 1.8 3.2-3.6" />
+                            </svg></span>
+                        <h3 data-i18n="service3Title">Redesign</h3>
+                        <p data-i18n="service3Desc">Is je website verouderd? We geven hem een frisse, moderne
+                            uitstraling, zonder dat je je vindbaarheid verliest.</p>
+                    </li>
+                    <li class="service">
+                        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M3 12h18" />
+                                <path d="M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" />
+                            </svg></span>
+                        <h3 data-i18n="service4Title">Meertalig &amp; Arabisch</h3>
+                        <p data-i18n="service4Desc">Websites in meerdere talen, inclusief Arabisch van rechts naar
+                            links, zodat je elke doelgroep bereikt.</p>
+                    </li>
+                    <li class="service">
+                        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="10.5" cy="10.5" r="6.5" />
+                                <path d="m20 20-4.9-4.9" />
+                                <path d="m11.2 7.5-2 3.2h2.6l-2 3.2" />
+                            </svg></span>
+                        <h3 data-i18n="service5Title">Snel &amp; vindbaar</h3>
+                        <p data-i18n="service5Desc">Korte laadtijden, nette techniek en een sterke SEO-basis, zodat
+                            klanten je vinden in Google.</p>
+                    </li>
+                    <li class="service">
+                        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg></span>
+                        <h3 data-i18n="service6Title">Onderhoud &amp; hosting</h3>
+                        <p data-i18n="service6Desc">Hosting, updates, back-ups en beveiliging uit één hand. Jij
+                            onderneemt, wij houden je website gezond.</p>
+                    </li>
+                    <li class="service service-wide">
+                        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M7 18.5a4.5 4.5 0 0 1-.7-8.95A6 6 0 0 1 17.8 8.6 4.95 4.95 0 0 1 17.5 18.5H7Z" />
+                                <path d="M9.5 14.5h5M12 12v5" />
+                            </svg></span>
+                        <div>
+                            <h3 data-i18n="service7Title">Cloud &amp; maatwerk</h3>
+                            <p data-i18n="service7Desc">Online systemen op maat en cloudapplicaties zoals Nextcloud op je
+                                eigen VPS. We bouwen én beheren ze, altijd in overleg met jou.</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="chips" aria-label="Technieken en tools" data-i18n-aria-label="techAria">
                     <li>WordPress</li>
                     <li>Elementor</li>
                     <li>WooCommerce</li>
+                    <li>Gutenberg</li>
+                    <li>Mollie</li>
+                    <li>Brevo</li>
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JavaScript</li>
-                    <li>Bootstrap</li>
                     <li>Responsive design</li>
-                    <li>LightBox</li>
-                    <li>Mollie</li>
                     <li>SEO</li>
-                    <li>Claude Code</li>
-                    <li>VS Code</li>
+                    <li>Nextcloud</li>
+                    <li>VPS</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Projecten Section -->
-        <section id="projecten">
+        <!-- Werkwijze -->
+        <section id="werkwijze" class="band-green">
+            <div class="zellige" aria-hidden="true"></div>
             <div class="container">
-                <h2 data-i18n="projectsTitle">Projecten</h2>
-                <p class="section-intro" data-i18n="projectsIntro">Een selectie van websites die ik voor klanten heb
-                    gebouwd.</p>
+                <header class="section-head">
+                    <p class="eyebrow" data-i18n="processEyebrow">Werkwijze</p>
+                    <h2 data-i18n="processTitle">Zo werken we samen</h2>
+                    <p class="section-intro" data-i18n="processIntro">Een helder traject in vier stappen, zonder
+                        vakjargon of verrassingen achteraf.</p>
+                </header>
+                <ol class="steps">
+                    <li class="step">
+                        <span class="step-number" aria-hidden="true">01</span>
+                        <h3 data-i18n="step1Title">Kennismaking</h3>
+                        <p data-i18n="step1Desc">We bespreken je doelen, doelgroep en budget. Daarna krijg je een
+                            duidelijke offerte.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-number" aria-hidden="true">02</span>
+                        <h3 data-i18n="step2Title">Ontwerp</h3>
+                        <p data-i18n="step2Desc">We maken een ontwerp dat past bij je merk en schaven het samen bij tot
+                            het klopt.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-number" aria-hidden="true">03</span>
+                        <h3 data-i18n="step3Title">Bouw</h3>
+                        <p data-i18n="step3Desc">We bouwen je website snel, responsive en toegankelijk, met aandacht
+                            voor vindbaarheid.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-number" aria-hidden="true">04</span>
+                        <h3 data-i18n="step4Title">Livegang &amp; nazorg</h3>
+                        <p data-i18n="step4Desc">Na de lancering blijven we betrokken met onderhoud, beveiliging en
+                            support.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Projecten -->
+        <section id="projecten" class="band-alt">
+            <div class="container">
+                <header class="section-head">
+                    <p class="eyebrow" data-i18n="projectsEyebrow">Projecten</p>
+                    <h2 data-i18n="projectsTitle">Werk waar we trots op zijn</h2>
+                    <p class="section-intro" data-i18n="projectsIntro">Een selectie van websites die we voor klanten
+                        hebben gebouwd.</p>
+                </header>
                 <div class="projects">
-                    <!-- Project 1 -->
-                    <article class="project-card">
-                        <div class="project-media"><img src="./assets/bilal-berkane.webp"
-                                alt="Screenshot van de portfolio website van Bilal Berkane" width="1100" height="519"
-                                loading="lazy" decoding="async" data-i18n-alt="project1Alt"></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project1Title">Bilal Berkane – Portfolio</h3>
-                            <p data-i18n="project1Desc">Portfolio website voor een kennis van mij, Bilal Berkane, een
-                                Rotterdamse Architect in working, met een overzicht van zijn al projecten. Elk project
-                                heeft een eigen foto en beschrijving.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
-                                <li>WordPress</li>
-                                <li>Elementor</li>
-                                <li>LightBox</li>
-                            </ul>
-                            <a class="btn btn-primary btn-sm" href="https://bilalberkane.nl/" target="_blank"
-                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project1Hidden">
-                                    de website van Bilal Berkane</span></a>
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card">
-                        <div class="project-media"><img src="./assets/bataafsche-leeuw.webp"
-                                alt="Screenshot van de website van uitgeverij De Bataafsche Leeuw" width="1100"
-                                height="524" loading="lazy" decoding="async" data-i18n-alt="project2Alt"></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project2Title">De Bataafsche Leeuw – Uitgeverij</h3>
-                            <p data-i18n="project2Desc">Webshop voor een Nederlandse uitgeverij met een focus op
-                                geschiedenisboeken, naast kunst, literatuur en lesmateriaal voor het voortgezet
-                                onderwijs.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
-                                <li>WordPress</li>
-                                <li>Elementor</li>
-                                <li>WooCommerce</li>
-                                <li>Mollie</li>
-                            </ul>
-                            <a class="btn btn-primary btn-sm" href="https://bataafscheleeuw.nl" target="_blank"
-                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project2Hidden">
-                                    de website van De Bataafsche Leeuw</span></a>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card">
-                        <div class="project-media"><img src="./assets/witgoedspecialist010.webp"
-                                alt="Screenshot van de website van Witgoedspecialist010" width="1100" height="521"
-                                loading="lazy" decoding="async" data-i18n-alt="project3Alt"></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project3Title">Witgoedspecialist010.nl</h3>
-                            <p data-i18n="project3Desc">Bedrijfswebsite voor een Rotterdams bedrijf dat witgoed zoals
-                                wasmachines, drogers en kookplaten verkoopt en repareert tegen een eerlijke prijs.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
-                                <li>WordPress</li>
-                                <li>Elementor</li>
-                                <li>SEO</li>
-                            </ul>
-                            <a class="btn btn-primary btn-sm" href="https://witgoedspecialist010.nl/" target="_blank"
-                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project3Hidden">
-                                    de website van Witgoedspecialist010</span></a>
-                        </div>
-                    </article>
-
-                    <!-- Project 4 -->
-                    <article class="project-card">
-                        <div class="project-media"><img src="./assets/faseero.webp"
-                                alt="Screenshot van de website van Faseero" width="1100" height="688" loading="lazy"
-                                decoding="async" data-i18n-alt="project4Alt"></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project4Title">Faseero – Marokkaanse producten</h3>
-                            <p data-i18n="project4Desc">Website voor Faseero, dat authentieke Marokkaanse producten
-                                zoals amlou, honing en saffraan rechtstreeks van boeren en ambachtslieden naar Nederland
-                                brengt, met daarnaast reizen naar Marokko en een Msemmen Bar.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
-                                <li>WordPress</li>
-                                <li>Gutenberg</li>
-                                <li>Brevo</li>
-                            </ul>
-                            <a class="btn btn-primary btn-sm" href="https://www.faseero.nl" target="_blank"
-                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project4Hidden">
-                                    de website van Faseero</span></a>
-                        </div>
-                    </article>
-
-                    <!-- Project 5: hidden, the Ettaouhid project was cancelled. Remove this comment to show it again.
-                    <article class="project-card">
-                        <div class="project-media"><img src="./assets/ettaouhid.webp"
-                                alt="Screenshot van de website van Vereniging Ettaouhid" width="1100" height="688"
-                                loading="lazy" decoding="async" data-i18n-alt="project5Alt"></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project5Title">Ettaouhid – Vereniging in Rotterdam</h3>
-                            <p data-i18n="project5Desc">Nieuw ontwerp voor de website van Vereniging Ettaouhid, een
-                                sociaal-culturele vereniging in Rotterdam die sinds 1989 actief is met een moskee,
-                                Koranonderwijs, Arabische les en activiteiten voor jongeren, met ondersteuning voor
-                                Arabisch van rechts naar links.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
-                                <li>WordPress</li>
-                                <li>RTL</li>
-                                <li>Responsive design</li>
-                            </ul>
-                            <a class="btn btn-primary btn-sm" href="https://ettaouhid.nl/" target="_blank"
-                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project5Hidden">
-                                    de website van Ettaouhid</span></a>
-                        </div>
-                    </article>
-                    -->
-
-                    <!-- Project 6: before/after slider of the old and the new website.
+                    <!-- Featured: before/after slider of the old and the new website.
                          dir="ltr" keeps "voor" on the left in the Arabic version too. -->
-                    <article class="project-card">
+                    <article class="project-card project-featured">
                         <div class="project-media">
                             <div class="compare" dir="ltr">
-                                <img class="compare-after" src="./assets/stichting-aljariah-na.webp"
+                                <img class="compare-after" src="./img/stichting-aljariah-na.webp"
                                     alt="De nieuwe website van Stichting Al Jariah" width="1200" height="750"
-                                    loading="lazy" decoding="async" data-i18n-alt="project6AfterAlt">
-                                <img class="compare-before" src="./assets/stichting-aljariah-voor.webp"
+                                    loading="lazy" decoding="async" data-i18n-alt="projAljariahAfterAlt">
+                                <img class="compare-before" src="./img/stichting-aljariah-voor.webp"
                                     alt="De oude website van Stichting Al Jariah" width="1200" height="750"
-                                    loading="lazy" decoding="async" data-i18n-alt="project6BeforeAlt">
+                                    loading="lazy" decoding="async" data-i18n-alt="projAljariahBeforeAlt">
                                 <span class="compare-label compare-label-before" data-i18n="compareBefore">Voor</span>
                                 <span class="compare-label compare-label-after" data-i18n="compareAfter">Na</span>
                                 <input class="compare-range" type="range" min="0" max="100" step="0.1" value="50"
@@ -356,8 +418,8 @@
                             </div>
                         </div>
                         <div class="project-body">
-                            <h3 data-i18n="project6Title">Stichting Al Jariah – Goed doel</h3>
-                            <p data-i18n="project6Desc">Nieuw ontwerp voor de website van Stichting Al Jariah, een
+                            <h3 data-i18n="projAljariahTitle">Stichting Al Jariah – Goed doel</h3>
+                            <p data-i18n="projAljariahDesc">Nieuw ontwerp voor de website van Stichting Al Jariah, een
                                 ANBI-erkend goed doel dat waterputten, koranscholen en moskeeën bouwt in Gambia en
                                 Ghana. Schuif over de afbeelding om de oude en de nieuwe website te vergelijken.</p>
                             <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
@@ -366,82 +428,328 @@
                                 <li>Responsive design</li>
                             </ul>
                             <a class="btn btn-primary btn-sm" href="https://stichtingaljariah.nl/" target="_blank"
-                                rel="noopener"><span data-i18n="btnView">Bekijk</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden" data-i18n="project6Hidden">
-                                    de website van Stichting Al Jariah</span></a>
+                                rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="projAljariahHidden"> van Stichting Al Jariah</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-media"><img src="./img/faseero.webp"
+                                alt="Screenshot van de website van Faseero" width="1100" height="688" loading="lazy"
+                                decoding="async" data-i18n-alt="projFaseeroAlt"></div>
+                        <div class="project-body">
+                            <h3 data-i18n="projFaseeroTitle">Faseero – Marokkaanse producten</h3>
+                            <p data-i18n="projFaseeroDesc">Website voor Faseero, dat authentieke Marokkaanse producten
+                                zoals amlou, honing en saffraan rechtstreeks van boeren en ambachtslieden naar Nederland
+                                brengt, met daarnaast reizen naar Marokko en een Msemmen Bar.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
+                                <li>WordPress</li>
+                                <li>Gutenberg</li>
+                                <li>Brevo</li>
+                            </ul>
+                            <a class="btn btn-primary btn-sm" href="https://www.faseero.nl" target="_blank"
+                                rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="projFaseeroHidden"> van Faseero</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-media"><img src="./img/bataafsche-leeuw.webp"
+                                alt="Screenshot van de website van uitgeverij De Bataafsche Leeuw" width="1100"
+                                height="524" loading="lazy" decoding="async" data-i18n-alt="projLeeuwAlt"></div>
+                        <div class="project-body">
+                            <h3 data-i18n="projLeeuwTitle">De Bataafsche Leeuw – Uitgeverij</h3>
+                            <p data-i18n="projLeeuwDesc">Webshop voor een Nederlandse uitgeverij met een focus op
+                                geschiedenisboeken, naast kunst, literatuur en lesmateriaal voor het voortgezet
+                                onderwijs.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
+                                <li>WordPress</li>
+                                <li>Elementor</li>
+                                <li>WooCommerce</li>
+                                <li>Mollie</li>
+                            </ul>
+                            <a class="btn btn-primary btn-sm" href="https://bataafscheleeuw.nl" target="_blank"
+                                rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="projLeeuwHidden"> van De Bataafsche Leeuw</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-media"><img src="./img/witgoedspecialist010.webp"
+                                alt="Screenshot van de website van Witgoedspecialist010" width="1100" height="521"
+                                loading="lazy" decoding="async" data-i18n-alt="projWitgoedAlt"></div>
+                        <div class="project-body">
+                            <h3 data-i18n="projWitgoedTitle">Witgoedspecialist010.nl</h3>
+                            <p data-i18n="projWitgoedDesc">Bedrijfswebsite voor een Rotterdams bedrijf dat witgoed zoals
+                                wasmachines, drogers en kookplaten verkoopt en repareert tegen een eerlijke prijs.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
+                                <li>WordPress</li>
+                                <li>Elementor</li>
+                                <li>SEO</li>
+                            </ul>
+                            <a class="btn btn-primary btn-sm" href="https://witgoedspecialist010.nl/" target="_blank"
+                                rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="projWitgoedHidden"> van Witgoedspecialist010</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-media"><img src="./img/bilal-berkane.webp"
+                                alt="Screenshot van de portfoliowebsite van Bilal Berkane" width="1100" height="519"
+                                loading="lazy" decoding="async" data-i18n-alt="projBilalAlt"></div>
+                        <div class="project-body">
+                            <h3 data-i18n="projBilalTitle">Bilal Berkane – Portfolio</h3>
+                            <p data-i18n="projBilalDesc">Portfoliowebsite voor de Rotterdamse architect in opleiding
+                                Bilal Berkane, met een overzicht van al zijn projecten. Elk project heeft een eigen foto
+                                en beschrijving.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
+                                <li>WordPress</li>
+                                <li>Elementor</li>
+                                <li>LightBox</li>
+                            </ul>
+                            <a class="btn btn-primary btn-sm" href="https://bilalberkane.nl/" target="_blank"
+                                rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="projBilalHidden"> van Bilal Berkane</span></a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Pakketten Section -->
+        <!-- Pakketten: three build packages, a budget slider that points at the matching one,
+             and the maintenance packages as an optional extra underneath -->
         <section id="pakketten">
             <div class="container">
-                <h2 data-i18n="packagesTitle">Onderhoudspakketten</h2>
-                <p class="section-intro" data-i18n="packagesIntro">Kies het onderhoudspakket dat bij je website past.
-                </p>
-                <ul class="packages">
-                    <!-- Pakket 1 -->
-                    <li class="package">
-                        <h3 data-i18n="package1Title">Website</h3>
-                        <p class="package-desc" data-i18n="package1Desc">Voor bedrijven met een <strong>informatieve
-                                website</strong>.</p>
-                        <p class="package-price" data-i18n="package1Price">vanaf <strong>€50</strong> per maand</p>
-                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                <header class="section-head section-head-center">
+                    <p class="eyebrow" data-i18n="packagesEyebrow">Pakketten</p>
+                    <h2 data-i18n="packagesTitle">Kies het pakket dat bij je past</h2>
+                    <p class="section-intro" data-i18n="packagesIntro">Drie startpunten voor je project. De definitieve
+                        prijs bepalen we samen, na een vrijblijvend gesprek.</p>
+                </header>
+
+                <!-- Shown by app.js; without JavaScript the cards alone still tell the whole story -->
+                <div class="budget" hidden>
+                    <div class="budget-head">
+                        <label class="budget-label" for="budget-range" data-i18n="budgetLabel">Wat is je
+                            budget?</label>
+                        <output class="budget-value" for="budget-range" dir="auto">€500</output>
+                    </div>
+                    <input class="budget-range" id="budget-range" type="range" min="250" max="2000" step="50"
+                        value="500">
+                    <div class="budget-scale" aria-hidden="true">
+                        <span dir="ltr">€250</span>
+                        <span data-i18n="budgetEnd">in overleg</span>
+                    </div>
+                    <p class="budget-result">
+                        <span class="budget-match"></span>
+                        <a class="budget-cta" href="mailto:info@chamaliwebsolutions.nl"
+                            data-i18n="heroBtnQuote">Vraag een offerte aan</a>
+                    </p>
+                </div>
+
+                <!-- The budget tiers in app.js (BUDGET_TIERS) must match the prices below -->
+                <ul class="packages packages-build">
+                    <li class="package" data-package="basis">
+                        <span class="package-match" data-i18n="budgetBadge">Past bij je budget</span>
+                        <h3 data-i18n="pkgBasisTitle">Basis</h3>
+                        <p class="package-desc" data-i18n="pkgBasisDesc">Voor een <strong>eenvoudige website</strong>
+                            met een paar pagina's.</p>
+                        <p class="package-price" data-i18n="pkgBasisPrice">vanaf <strong>€250</strong> eenmalig</p>
+                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
+                            aan</a>
                         <div class="package-includes">
                             <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
                             <ul class="package-features">
-                                <li><span data-i18n="featureHosting">Hosting en SSL-certificaat</span></li>
-                                <li><span data-i18n="p1Updates">Maandelijkse WordPress- en plugin-updates</span></li>
-                                <li><span data-i18n="p1Backups">Wekelijkse back-ups</span></li>
-                                <li><span data-i18n="featureMonitoring">Beveiligingsscans en uptime-bewaking</span></li>
-                                <li><span data-i18n="p1Changes">30 minuten kleine wijzigingen per maand</span></li>
+                                <li><span data-i18n="pkgBasisF1">Een paar pagina's, zoals home, over ons, diensten en
+                                        contact</span></li>
+                                <li><span data-i18n="pkgBasisF2">Responsive ontwerp voor mobiel, tablet en
+                                        desktop</span></li>
+                                <li><span data-i18n="pkgBasisF3">Contactformulier</span></li>
+                                <li><span data-i18n="pkgBasisF4">Basis-SEO en snelle laadtijd</span></li>
+                                <li><span data-i18n="pkgBasisF5">Zelf teksten aanpassen in WordPress</span></li>
+                                <li><span data-i18n="pkgBasisF6">Uitleg bij de oplevering</span></li>
                                 <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
-                                        inbegrepen:</span> <span data-i18n="featureShop">WooCommerce- en
-                                        Mollie-onderhoud</span></li>
-                                <li><span data-i18n="p1Support">Reactie binnen 1 werkdag</span></li>
+                                        inbegrepen:</span> <span data-i18n="pkgBasisX1">Webshop (WooCommerce)</span>
+                                </li>
                             </ul>
                         </div>
                     </li>
 
-                    <!-- Pakket 2 -->
-                    <li class="package package-featured">
-                        <h3 data-i18n="package2Title">Webshop</h3>
-                        <p class="package-desc" data-i18n="package2Desc">Voor ondernemers die <strong>online
-                                verkopen</strong>.</p>
-                        <p class="package-price" data-i18n="package2Price">vanaf <strong>€100</strong> per maand</p>
-                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                    <li class="package package-featured" data-package="webshop">
+                        <span class="package-match" data-i18n="budgetBadge">Past bij je budget</span>
+                        <h3 data-i18n="pkgShopTitle">Webshop</h3>
+                        <p class="package-desc" data-i18n="pkgShopDesc">Voor een <strong>uitgebreide website</strong>
+                            met webshop.</p>
+                        <p class="package-price" data-i18n="pkgShopPrice">vanaf <strong>€500</strong> eenmalig</p>
+                        <a class="btn btn-cream btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
+                            aan</a>
                         <div class="package-includes">
                             <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
                             <ul class="package-features">
-                                <li><span data-i18n="featureHosting">Hosting en SSL-certificaat</span></li>
-                                <li><span data-i18n="p2Updates">Wekelijkse updates, checkout getest na elke
-                                        update</span></li>
-                                <li><span data-i18n="p2Backups">Dagelijkse back-ups, ook van bestellingen</span></li>
-                                <li><span data-i18n="featureMonitoring">Beveiligingsscans en uptime-bewaking</span></li>
-                                <li><span data-i18n="p2Changes">60 minuten kleine wijzigingen per maand</span></li>
-                                <li><span data-i18n="featureShop">WooCommerce- en Mollie-onderhoud</span></li>
-                                <li><span data-i18n="p2Support">Reactie binnen 1 werkdag, plus spoedhulp bij
-                                        storingen</span></li>
+                                <li><span data-i18n="pkgShopF1">Alles uit Basis</span></li>
+                                <li><span data-i18n="pkgShopF2">Meer pagina's en een complexere opbouw</span></li>
+                                <li><span data-i18n="pkgShopF3">WooCommerce-webshop met productbeheer</span></li>
+                                <li><span data-i18n="pkgShopF4">Betalingen via Mollie (iDEAL, creditcard)</span></li>
+                                <li><span data-i18n="pkgShopF5">Meertalig mogelijk, ook Arabisch</span></li>
+                                <li><span data-i18n="pkgShopF6">Nieuwsbriefkoppeling, bijvoorbeeld Brevo</span></li>
+                                <li><span data-i18n="pkgShopF7">Uitgebreide SEO</span></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="package" data-package="maatwerk">
+                        <span class="package-match" data-i18n="budgetBadge">Past bij je budget</span>
+                        <h3 data-i18n="pkgCustomTitle">Maatwerk</h3>
+                        <p class="package-desc" data-i18n="pkgCustomDesc">Voor een <strong>eigen online
+                                systeem</strong> of cloudapplicatie.</p>
+                        <p class="package-price" data-i18n="pkgCustomPrice">vanaf <strong>€750</strong> eenmalig</p>
+                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
+                            aan</a>
+                        <div class="package-includes">
+                            <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
+                            <ul class="package-features">
+                                <li><span data-i18n="pkgCustomF1">Online systeem op maat, zoals een klantportaal of
+                                        boekingssysteem</span></li>
+                                <li><span data-i18n="pkgCustomF2">Cloudapplicaties zoals Nextcloud, geïnstalleerd en
+                                        draaiend op je eigen VPS</span></li>
+                                <li><span data-i18n="pkgCustomF3">Server inrichten, beveiligen en back-ups</span></li>
+                                <li><span data-i18n="pkgCustomF4">Beheer na de livegang</span></li>
+                                <li><span data-i18n="pkgCustomF5">Alles in overleg met jou afgestemd</span></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
-                <p class="packages-note" data-i18n="packagesNote">Inclusief btw · maandelijks opzegbaar · nog geen
-                    website? Ik bouw hem ook graag, <a href="#contact">vraag een offerte aan</a>.</p>
+                <p class="packages-note" data-i18n="buildNote">Alle prijzen inclusief btw · de definitieve prijs volgt
+                    na een vrijblijvend gesprek.</p>
+
+                <!-- Optional maintenance -->
+                <div class="maintenance">
+                    <header class="maintenance-head">
+                        <h3 data-i18n="maintTitle">Optioneel: onderhoud &amp; hosting</h3>
+                        <p data-i18n="maintIntro">Wil je dat wij je website na de oplevering bijhouden? Kies dan een
+                            onderhoudspakket. Het is niet verplicht.</p>
+                    </header>
+                    <ul class="packages packages-maintenance">
+                        <li class="package package-compact">
+                            <h4 data-i18n="maint1Title">Website-onderhoud</h4>
+                            <p class="package-desc" data-i18n="maint1Desc">Voor bedrijven met een
+                                <strong>informatieve website</strong>.</p>
+                            <p class="package-price" data-i18n="maint1Price">vanaf <strong>€50</strong> per maand</p>
+                            <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                            <div class="package-includes">
+                                <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
+                                <ul class="package-features">
+                                    <li><span data-i18n="featureHosting">Hosting en SSL-certificaat</span></li>
+                                    <li><span data-i18n="p1Updates">Maandelijkse WordPress- en plugin-updates</span>
+                                    </li>
+                                    <li><span data-i18n="p1Backups">Wekelijkse back-ups</span></li>
+                                    <li><span data-i18n="featureMonitoring">Beveiligingsscans en uptime-bewaking</span>
+                                    </li>
+                                    <li><span data-i18n="p1Changes">30 minuten kleine wijzigingen per maand</span></li>
+                                    <li class="excluded"><span class="visually-hidden" data-i18n="notIncluded">Niet
+                                            inbegrepen:</span> <span data-i18n="featureShop">WooCommerce- en
+                                            Mollie-onderhoud</span></li>
+                                    <li><span data-i18n="p1Support">Reactie binnen 1 werkdag</span></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="package package-compact">
+                            <h4 data-i18n="maint2Title">Webshop-onderhoud</h4>
+                            <p class="package-desc" data-i18n="maint2Desc">Voor ondernemers die <strong>online
+                                    verkopen</strong>.</p>
+                            <p class="package-price" data-i18n="maint2Price">vanaf <strong>€100</strong> per maand</p>
+                            <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                            <div class="package-includes">
+                                <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
+                                <ul class="package-features">
+                                    <li><span data-i18n="featureHosting">Hosting en SSL-certificaat</span></li>
+                                    <li><span data-i18n="p2Updates">Wekelijkse updates, checkout getest na elke
+                                            update</span></li>
+                                    <li><span data-i18n="p2Backups">Dagelijkse back-ups, ook van bestellingen</span>
+                                    </li>
+                                    <li><span data-i18n="featureMonitoring">Beveiligingsscans en uptime-bewaking</span>
+                                    </li>
+                                    <li><span data-i18n="p2Changes">60 minuten kleine wijzigingen per maand</span></li>
+                                    <li><span data-i18n="featureShop">WooCommerce- en Mollie-onderhoud</span></li>
+                                    <li><span data-i18n="p2Support">Reactie binnen 1 werkdag, plus spoedhulp bij
+                                            storingen</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="packages-note" data-i18n="packagesNote">Inclusief btw · maandelijks opzegbaar · voor
+                        Maatwerk maken we een beheerafspraak op maat.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container contact">
-                <h2 data-i18n="contactTitle">Blijf &nbsp; in contact!</h2>
-                <p class="lead" data-i18n="contactLead">Op zoek naar een professionele en meedenkende webdeveloper voor
-                    je team of een project?
-                    Neem gerust contact met mij op.</p>
+        <!-- Over -->
+        <section id="over" class="band-alt">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <p class="eyebrow" data-i18n="aboutEyebrow">Over ons</p>
+                    <h2 data-i18n="aboutTitle">Over Chamali</h2>
+                    <p data-i18n="aboutP1"><strong>Chamali</strong> (<span lang="ar" dir="rtl">شمالي</span>) betekent
+                        ‘noordelijk’ en verwijst naar onze roots in het noorden van Marokko. Die roots zie je terug in
+                        onze huisstijl, en vooral in hoe we werken: gastvrij, recht door zee en met oog voor de mensen
+                        achter het bedrijf.</p>
+                    <p data-i18n="aboutP2">Chamali Web Solutions helpt ondernemers, organisaties en verenigingen aan een
+                        professionele online aanwezigheid. We bouwen websites en webshops met WordPress, Elementor en
+                        WooCommerce, en bouwen en beheren cloudapplicaties zoals Nextcloud op een eigen VPS. Wat we
+                        maken, stemmen we altijd samen met jou af.</p>
+                    <ul class="values" aria-label="Waar we voor staan" data-i18n-aria-label="valuesAria">
+                        <li data-i18n="value1">Meedenken vanaf het eerste gesprek</li>
+                        <li data-i18n="value2">Heldere afspraken en eerlijke prijzen</li>
+                        <li data-i18n="value3">Contact in het Nederlands, Arabisch of Engels</li>
+                    </ul>
+                </div>
+                <figure class="founder">
+                    <img class="founder-photo" src="./img/aboubakr.webp"
+                        alt="Portretfoto van Aboubakr Jebbari, oprichter van Chamali Web Solutions" width="480"
+                        height="637" loading="lazy" decoding="async" data-i18n-alt="portraitAlt">
+                    <figcaption class="founder-body">
+                        <p class="eyebrow" data-i18n="founderLabel">De oprichter</p>
+                        <p class="founder-name" data-i18n="founderName">Aboubakr Jebbari</p>
+                        <p class="founder-role" data-i18n="founderRole">Oprichter &amp; webdeveloper</p>
+                        <blockquote class="founder-quote">
+                            <p data-i18n="founderQuote">Ik ben Aboubakr, ook wel Aboe. Ik denk mee vanaf het eerste
+                                gesprek tot de livegang en blijf daarna betrokken, zodat je website veilig, snel en
+                                up-to-date blijft. Mijn Marokkaans-Nederlandse achtergrond en mijn werk als tolk
+                                Arabisch–Nederlands helpen me om helder te communiceren met klanten uit verschillende
+                                culturen.</p>
+                        </blockquote>
+                        <a class="founder-link" href="https://www.linkedin.com/in/a-j-30070740a/" target="_blank" rel="noopener"
+                            aria-label="LinkedIn-profiel van Aboubakr Jebbari" data-i18n-aria-label="founderLinkedinAria">
+                            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor">
+                                <path
+                                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="band-red contact">
+            <div class="zellige" aria-hidden="true"></div>
+            <div class="container contact-inner">
+                <svg class="contact-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                    <use href="#chamali-star" />
+                </svg>
+                <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+                <h2 data-i18n="contactTitle">Klaar voor een website met smaak?</h2>
+                <p class="lead" data-i18n="contactLead">Vertel ons over je plannen. We reageren binnen één werkdag met
+                    eerlijk advies en een vrijblijvende offerte.</p>
                 <div class="actions">
-                    <a class="btn btn-primary" href="mailto:info@chamaliwebsolutions.nl">
+                    <a class="btn btn-cream" href="mailto:info@chamaliwebsolutions.nl">
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -449,8 +757,8 @@
                         </svg>
                         info@chamaliwebsolutions.nl
                     </a>
-                    <a class="btn btn-outline" href="https://www.linkedin.com/in/a-j-30070740a/"
-                        target="_blank" rel="noopener">
+                    <a class="btn btn-ghost" href="https://www.linkedin.com/company/chamali-web-solutions/" target="_blank"
+                        rel="noopener">
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor">
                             <path
                                 d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
@@ -458,18 +766,50 @@
                         LinkedIn
                     </a>
                 </div>
+                <p class="contact-note" data-i18n="contactNote">Rotterdam · op locatie, op afstand of hybride</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; <span class="year">2026</span> Aboubakr Jebbari – <span data-i18n="footerRights">Alle rechten
-                    voorbehouden.</span></p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="#top" aria-label="Chamali Web Solutions, terug naar boven"
+                    data-i18n-aria-label="brandAria">
+                    <svg class="brand-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                        <use href="#chamali-star" />
+                    </svg>
+                    <span class="wordmark" aria-hidden="true">
+                        <span class="wordmark-name">Chamali</span>
+                        <span class="wordmark-sub">Web Solutions</span>
+                    </span>
+                </a>
+                <p class="footer-tagline" data-i18n="footerTagline">Websites en webshops uit Rotterdam.</p>
+            </div>
+            <ul class="footer-nav" aria-label="Footernavigatie" data-i18n-aria-label="footerNavAria">
+                <li><a href="#diensten" data-i18n="navServices">Diensten</a></li>
+                <li><a href="#werkwijze" data-i18n="navProcess">Werkwijze</a></li>
+                <li><a href="#projecten" data-i18n="navProjects">Projecten</a></li>
+                <li><a href="#pakketten" data-i18n="navPackages">Pakketten</a></li>
+                <li><a href="#over" data-i18n="navAbout">Over ons</a></li>
+                <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+            </ul>
+            <div class="footer-meta">
+                <p><a href="mailto:info@chamaliwebsolutions.nl">info@chamaliwebsolutions.nl</a></p>
+                <p><a href="https://www.linkedin.com/company/chamali-web-solutions/" target="_blank" rel="noopener">LinkedIn</a></p>
+                <!-- TODO: KvK-nummer is verplicht op een Nederlandse bedrijfswebsite. Vul in en haal het commentaar weg:
+                <p>KvK 00000000</p>
+                -->
+                <!-- Both years are refreshed by app.js; the Hijri year follows the Umm al-Qura calendar -->
+                <p>&copy; <span class="year">2026</span> · <span class="hijri"><span class="hijri-year">1448</span>
+                        <span data-i18n="hijriSuffix">AH</span></span> Chamali Web Solutions · <span
+                        data-i18n="footerRights">Alle rechten voorbehouden.</span></p>
+            </div>
         </div>
     </footer>
 
+    <script src="./js/i18n.js" defer></script>
     <script src="./js/app.js" defer></script>
 </body>
 
