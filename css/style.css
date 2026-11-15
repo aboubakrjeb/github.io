@@ -1,29 +1,48 @@
 /* =========================================================================
    Chamali Web Solutions
-   Brand kit: assets/Chamali-Brand-Kit (colours, fonts, zellige pattern)
+   Brand kit: assets/Chamali-Brand-Kit (logo, colours)
    All fonts are self-hosted under the SIL Open Font License, see fonts/
    ========================================================================= */
 
-/* Body text: Ysabeau Infant, variable font covering every weight */
+/* Text and headings: Plus Jakarta Sans, a variable font covering weights 200 to 800 */
 @font-face {
-  font-family: "Ysabeau Infant";
+  font-family: "Plus Jakarta Sans";
   font-style: normal;
-  font-weight: 1 1000;
+  font-weight: 200 800;
   font-display: swap;
-  src: url("../fonts/ysabeau-infant-latin.woff2") format("woff2");
+  src: url("../fonts/plus-jakarta-sans-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: "Ysabeau Infant";
+  font-family: "Plus Jakarta Sans";
   font-style: normal;
-  font-weight: 1 1000;
+  font-weight: 200 800;
   font-display: swap;
-  src: url("../fonts/ysabeau-infant-latin-ext.woff2") format("woff2");
+  src: url("../fonts/plus-jakarta-sans-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* "Chamali" in the logo: Fraunces Black (Latin subset) */
+/* Arabic text: IBM Plex Sans Arabic, limited to Arabic so Latin text stays in Plus Jakarta Sans */
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-arabic-400.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-arabic-700.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+/* The logo as live text: "Chamali" in Fraunces Black (Latin subset) */
 @font-face {
   font-family: "Fraunces";
   font-style: normal;
@@ -32,23 +51,13 @@
   src: url("../fonts/fraunces-black.woff2") format("woff2");
 }
 
-/* "WEB SOLUTIONS" in the logo: Unbounded Medium (Latin subset) */
+/* ... and "WEB SOLUTIONS" in Unbounded Medium (Latin subset) */
 @font-face {
   font-family: "Unbounded";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: url("../fonts/unbounded-medium.woff2") format("woff2");
-}
-
-/* The Arabic slogan: Bouazzi Maghribi, limited to Arabic so Latin text falls through */
-@font-face {
-  font-family: "Bouazzi Maghribi";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/bouazzi-maghribi.woff2") format("woff2");
-  unicode-range: U+0021, U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200F, U+FB50-FDFF, U+FE70-FEFF;
 }
 
 /* ---------- Tokens ---------- */
@@ -60,26 +69,29 @@
   --cream: #FAF7F0;
   --gold: #F2C45A;
 
-  /* Light theme */
+  /* Light theme: white and warm grey. Brand red is the main accent (buttons, links, labels),
+     brand green the second colour (Werkwijze band, service icons, ticks). */
   color-scheme: light;
-  --bg: #FAF7F0;
-  --bg-alt: #F2ECE1;
+  --bg: #FFFFFF;
+  --bg-alt: #F6F5F2;
   --surface: #FFFFFF;
-  --text: #1F1A17;
-  --muted: #5E564F;
-  --border: #E4DBCC;
+  --text: #16181D;
+  --muted: #555B66;
+  --border: #E4E2DD;
+  --border-strong: #C9C6BF;
   --accent: var(--red);
   --accent-hover: var(--red-dark);
-  --on-accent: var(--cream);
+  --on-accent: #FFFFFF;
   --link: var(--red);
   --eyebrow: var(--red);
   --icon-bg: var(--green);
   --icon-fg: var(--cream);
   --check: var(--green);
-  --header-bg: rgba(250, 247, 240, .86);
+  --header-bg: rgba(255, 255, 255, .88);
   --slider: var(--red);
-  --badge-bg: var(--green);
-  --badge-fg: var(--cream);
+  --badge-bg: var(--red);
+  --badge-fg: #FFFFFF;
+  --browser-dot: #D6D3CC;
   --wordmark: var(--red);
   --wordmark-sub: var(--green);
 
@@ -90,41 +102,42 @@
   --star-line-opacity: .55;
   --star-glyph: var(--cream);
 
-  /* Eight-pointed star for small bullets, echoing the logo */
-  --star-clip: polygon(50% 0, 63.5% 14.6%, 85.4% 14.6%, 85.4% 36.5%, 100% 50%, 85.4% 63.5%, 85.4% 85.4%, 63.5% 85.4%, 50% 100%, 36.5% 85.4%, 14.6% 85.4%, 14.6% 63.5%, 0 50%, 14.6% 36.5%, 14.6% 14.6%, 36.5% 14.6%);
+  /* List icons, used as masks so they take the background colour of the element */
+  --icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E");
+  --icon-cross: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M6.5 6.5l11 11M17.5 6.5l-11 11'/%3E%3C/svg%3E");
 
-  --radius: 18px;
-  --shadow: 0 1px 2px rgba(31, 26, 23, .05), 0 6px 18px rgba(31, 26, 23, .06);
-  --shadow-lg: 0 2px 4px rgba(31, 26, 23, .06), 0 18px 40px rgba(31, 26, 23, .12);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(22, 24, 29, .04), 0 2px 6px rgba(22, 24, 29, .04);
+  --shadow-lg: 0 2px 6px rgba(22, 24, 29, .05), 0 18px 40px rgba(22, 24, 29, .10);
 
-  --font-body: "Ysabeau Infant", "Noto Naskh Arabic", "Traditional Arabic", system-ui, sans-serif;
-  --font-display: "Fraunces", "Bouazzi Maghribi", Georgia, serif;
-  --font-label: "Unbounded", "Ysabeau Infant", "Noto Naskh Arabic", system-ui, sans-serif;
-  --font-arabic: "Bouazzi Maghribi", "Noto Naskh Arabic", "Traditional Arabic", serif;
+  --font-body: "Plus Jakarta Sans", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/* Dark theme: deep green-black ground, cream text, gold accents.
-   The red bands (hero, contact) stay red in both themes. */
+/* Dark theme, only when the visitor picks it with the toggle (the site opens light):
+   deep Moroccan green with cream text and gold accents. Buttons stay brand red,
+   and the Werkwijze and contact bands keep their reds. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0A1814;
-  --bg-alt: #0E201B;
-  --surface: #12291F;
+  --bg: #0D3B30;
+  --bg-alt: #0F4436;
+  --surface: #124D3E;
   --text: #FAF7F0;
-  --muted: #B6C1BB;
-  --border: #21402F;
-  --accent: var(--red);
+  --muted: #B9CCC4;
+  --border: #22604F;
+  --border-strong: #2F7462;
   --accent-hover: #CC1F2C;
-  --on-accent: var(--cream);
+  --accent-soft: rgba(242, 196, 90, .14);
+  --icon-bg: var(--accent-soft);
   --link: var(--gold);
   --eyebrow: var(--gold);
-  --icon-bg: var(--gold);
-  --icon-fg: #0A1814;
+  --icon-fg: var(--gold);
   --check: var(--gold);
-  --header-bg: rgba(10, 24, 20, .88);
+  --header-bg: rgba(13, 59, 48, .9);
   --slider: var(--gold);
   --badge-bg: var(--gold);
-  --badge-fg: #0A1814;
+  --badge-fg: #0D3B30;
+  --browser-dot: #2F7462;
   --wordmark: var(--cream);
   --wordmark-sub: var(--gold);
 
@@ -133,8 +146,8 @@
   --star-line: var(--gold);
   --star-line-opacity: .9;
 
-  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 18px rgba(0, 0, 0, .3);
-  --shadow-lg: 0 2px 4px rgba(0, 0, 0, .3), 0 18px 40px rgba(0, 0, 0, .45);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 2px 8px rgba(0, 0, 0, .25);
+  --shadow-lg: 0 2px 6px rgba(0, 0, 0, .3), 0 18px 40px rgba(0, 0, 0, .45);
 }
 
 /* ---------- Base ---------- */
@@ -155,8 +168,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -175,25 +188,28 @@ h2,
 h3,
 h4 {
   margin: 0 0 .5em;
-  font-family: var(--font-display);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -.01em;
+  font-family: var(--font-body);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.02em;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.4rem, 5.6vw, 4.1rem);
-  line-height: 1.04;
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
 }
 
 h2 {
-  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  letter-spacing: -.025em;
 }
 
 h3 {
-  font-size: 1.2rem;
-  letter-spacing: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
 }
 
 p {
@@ -208,15 +224,14 @@ ol {
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--link);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 .band-red :focus-visible,
-.band-green :focus-visible,
-.package-featured :focus-visible {
-  outline-color: var(--gold);
+.band-green :focus-visible {
+  outline-color: #FFFFFF;
 }
 
 .container {
@@ -241,7 +256,7 @@ ol {
   padding: .5rem 1rem;
   background: var(--text);
   color: var(--bg);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
 }
 
 .skip-link:focus {
@@ -249,7 +264,7 @@ ol {
 }
 
 /* ---------- Arabic ---------- */
-/* Negative letter-spacing and wide tracking both break Arabic letter connections */
+/* Letter-spacing and capitals break Arabic letter connections */
 [dir="rtl"] h1,
 [dir="rtl"] h2,
 [dir="rtl"] h3,
@@ -257,8 +272,6 @@ ol {
 [dir="rtl"] .eyebrow,
 [dir="rtl"] .budget-label,
 [dir="rtl"] .package-match,
-[dir="rtl"] .hero-tags,
-[dir="rtl"] .step-number,
 [dir="rtl"] .compare-label,
 [dir="rtl"] .founder-role,
 [dir="rtl"] .contact-note {
@@ -266,29 +279,21 @@ ol {
   text-transform: none;
 }
 
-/* Bouazzi Maghribi has tall ascenders: give Arabic display text more room */
+/* Arabic script has taller ascenders and descenders: give headings more room */
 [dir="rtl"] h1,
 [dir="rtl"] h2 {
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
-/* Small headings read better in a plain Naskh than in the Maghribi display face */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
 [dir="rtl"] h3,
-[dir="rtl"] h4,
-[dir="rtl"] .founder-name {
-  font-family: var(--font-body);
+[dir="rtl"] h4 {
   font-weight: 700;
 }
 
-[dir="rtl"] .eyebrow,
-[dir="rtl"] .budget-label,
-[dir="rtl"] .package-match,
-[dir="rtl"] .hero-tags,
-[dir="rtl"] .founder-role,
-[dir="rtl"] .contact-note {
-  font-family: var(--font-body);
-  font-size: .95rem;
-  font-weight: 700;
+[dir="rtl"] .eyebrow {
+  font-size: .9rem;
 }
 
 /* ---------- Wordmark: the logo as live text ---------- */
@@ -332,14 +337,13 @@ ol {
   margin-inline-end: -.42em;
 }
 
-/* Labels above headings, in the "WEB SOLUTIONS" style */
+/* Small label above a heading */
 .eyebrow {
-  margin-bottom: .9rem;
+  margin-bottom: .75rem;
   color: var(--eyebrow);
-  font-family: var(--font-label);
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .2em;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
@@ -387,7 +391,7 @@ ol {
 .nav-links a {
   position: relative;
   color: var(--muted);
-  font-size: .98rem;
+  font-size: .95rem;
   font-weight: 600;
   text-decoration: none;
   transition: color .15s;
@@ -398,7 +402,7 @@ ol {
   color: var(--text);
 }
 
-/* Desktop: a small red bar under the section in view */
+/* Desktop: a small bar under the section in view */
 .nav-links a:not(.nav-cta)::after {
   content: "";
   position: absolute;
@@ -406,13 +410,9 @@ ol {
   bottom: -.3rem;
   height: 2px;
   border-radius: 2px;
-  background: var(--accent);
+  background: var(--link);
   transform: scaleX(0);
   transition: transform .2s ease;
-}
-
-:root[data-theme="dark"] .nav-links a:not(.nav-cta)::after {
-  background: var(--gold);
 }
 
 .nav-links a.is-active::after {
@@ -420,9 +420,9 @@ ol {
 }
 
 .nav-links .nav-cta {
-  padding: .45rem 1rem;
+  padding: .5rem 1rem;
   background: var(--accent);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   color: var(--on-accent);
 }
 
@@ -440,15 +440,53 @@ ol {
   padding: 0;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 50%;
+  border-radius: var(--radius-sm);
   color: var(--text);
   cursor: pointer;
-  transition: transform .15s, border-color .15s;
+  transition: border-color .15s, color .15s;
 }
 
 .icon-btn:hover {
-  transform: translateY(-1px);
-  border-color: var(--muted);
+  border-color: var(--border-strong);
+}
+
+/* Phone: an icon button on smaller screens, the full number on wide screens */
+.nav-phone {
+  text-decoration: none;
+}
+
+.nav-phone svg {
+  color: var(--link);
+}
+
+.nav-phone-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 1200px) {
+  .nav-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    width: auto;
+    padding-inline: .85rem;
+    font-size: .95rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .nav-phone-label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
 }
 
 /* Language dropdown */
@@ -465,7 +503,7 @@ ol {
   padding: .4rem;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   opacity: 0;
   transform: translateY(-6px);
@@ -489,7 +527,7 @@ ol {
   padding: .55rem .65rem;
   background: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   color: var(--text);
   font-family: var(--font-body);
   font-size: .95rem;
@@ -514,11 +552,7 @@ ol {
 
 .lang-option[aria-current="page"]::before {
   content: "✓";
-  color: var(--accent);
-}
-
-:root[data-theme="dark"] .lang-option[aria-current="page"]::before {
-  color: var(--gold);
+  color: var(--link);
 }
 
 .nav-toggle,
@@ -572,7 +606,7 @@ ol {
     padding: .95rem 0;
     border-bottom: 1px solid var(--border);
     color: var(--text);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .nav-links a::after {
@@ -620,10 +654,14 @@ ol {
   }
 }
 
-/* Keep the wordmark and the three header buttons on one line on small phones */
+/* Keep the wordmark and the header buttons on one line on small phones */
 @media (max-width: 419px) {
+  .nav {
+    gap: .5rem;
+  }
+
   .nav-actions {
-    gap: .35rem;
+    gap: .3rem;
   }
 
   .icon-btn {
@@ -645,10 +683,17 @@ ol {
   }
 }
 
+/* The very smallest phones: the number is still in the hero, the contact block and the footer */
+@media (max-width: 359px) {
+  .nav-phone {
+    display: none;
+  }
+}
+
 /* ---------- Sections ---------- */
 section {
   position: relative;
-  padding-block: clamp(4rem, 9vw, 6.5rem);
+  padding-block: clamp(4rem, 8vw, 6rem);
 }
 
 .band-alt {
@@ -656,7 +701,7 @@ section {
 }
 
 .section-head {
-  max-width: 640px;
+  max-width: 680px;
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
@@ -672,45 +717,50 @@ section {
 }
 
 .lead {
-  font-size: 1.2rem;
-  max-width: 54ch;
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: 1.15rem;
 }
 
-/* Red and green bands with the zellige pattern from the brand kit.
-   The tile is black; at 20% it lands on the brand's dark red (#8F0C16) over red. */
-.band-red,
-.band-green {
-  overflow: hidden;
-  isolation: isolate;
-  color: var(--cream);
-}
-
-.band-red {
-  background: var(--red);
-}
-
+/* Green band (Werkwijze). The dark theme is already green, so there it turns dark red. */
 .band-green {
   background: var(--green);
+  color: #FFFFFF;
 }
 
-.zellige {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url("../img/zellige.svg") 0 0 / 80px 80px repeat;
-  opacity: .2;
-  pointer-events: none;
+:root[data-theme="dark"] .band-green {
+  background: var(--red-dark);
 }
 
-.band-red .eyebrow,
+.band-green h2,
+.band-green h3 {
+  color: #FFFFFF;
+}
+
 .band-green .eyebrow {
-  color: var(--gold);
+  color: rgba(255, 255, 255, .82);
 }
 
-.band-red .section-intro,
-.band-green .section-intro,
+.band-green .section-intro {
+  color: rgba(255, 255, 255, .8);
+}
+
+/* Brand red band (Contact), the same in both themes */
+.band-red {
+  background: var(--red);
+  color: #FFFFFF;
+}
+
+.band-red h2 {
+  color: #FFFFFF;
+}
+
+.band-red .eyebrow {
+  color: rgba(255, 255, 255, .82);
+}
+
 .band-red .lead {
-  color: rgba(250, 247, 240, .88);
+  color: rgba(255, 255, 255, .9);
 }
 
 /* ---------- Buttons ---------- */
@@ -719,32 +769,32 @@ section {
   align-items: center;
   justify-content: center;
   gap: .5rem;
-  padding: .85rem 1.4rem;
+  padding: .8rem 1.3rem;
   border: 1.5px solid transparent;
-  border-radius: 999px;
-  font-family: var(--font-body);
-  font-size: 1.02rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
   max-width: 100%;
   overflow-wrap: anywhere;
   text-decoration: none;
-  transition: background-color .15s, color .15s, border-color .15s, transform .15s, box-shadow .15s;
+  cursor: pointer;
+  transition: background-color .15s, color .15s, border-color .15s, box-shadow .15s;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
+.btn svg {
+  flex: none;
 }
 
 .btn-sm {
-  padding: .6rem 1.15rem;
-  font-size: .95rem;
+  padding: .6rem 1.05rem;
+  font-size: .93rem;
 }
 
 .btn-primary {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: 0 6px 16px rgba(179, 18, 30, .22);
 }
 
 .btn-primary:hover {
@@ -752,28 +802,15 @@ section {
   color: var(--on-accent);
 }
 
-/* On red: a cream button with red text, and a cream outline */
-.btn-cream {
-  background: var(--cream);
-  color: var(--red);
-  box-shadow: 0 8px 22px rgba(60, 4, 8, .28);
+.btn-outline {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
 }
 
-.btn-cream:hover {
-  background: #ffffff;
-  color: var(--red-dark);
-}
-
-.btn-ghost {
-  background: transparent;
-  border-color: rgba(250, 247, 240, .7);
-  color: var(--cream);
-}
-
-.btn-ghost:hover {
-  background: var(--cream);
-  border-color: var(--cream);
-  color: var(--red);
+.btn-outline:hover {
+  border-color: var(--text);
+  color: var(--text);
 }
 
 .actions {
@@ -785,18 +822,10 @@ section {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding-block: clamp(4rem, 10vw, 7.5rem) clamp(3.5rem, 8vw, 6rem);
-}
-
-/* Like the banner: a light veil of pattern at the start, full pattern at the end */
-.hero .zellige {
-  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
-  mask-image: linear-gradient(90deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
-}
-
-[dir="rtl"] .hero .zellige {
-  -webkit-mask-image: linear-gradient(270deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
-  mask-image: linear-gradient(270deg, rgba(0, 0, 0, .35), transparent 40%, transparent 62%, #000 88%);
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-grid {
@@ -806,120 +835,109 @@ section {
 }
 
 .hero h1 {
-  max-width: 15ch;
-  color: var(--cream);
+  max-width: 16ch;
 }
 
 .hero .lead strong {
-  color: var(--cream);
+  color: var(--text);
 }
 
-.hero-tags {
+/* Short selling points under the buttons */
+.hero-points {
+  display: grid;
+  gap: .55rem 1.75rem;
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.hero-points li {
   display: flex;
-  flex-wrap: wrap;
-  gap: .55rem 1.6rem;
-  margin-top: 2.5rem;
-  padding-top: 1.1rem;
-  border-top: 2px solid rgba(242, 196, 90, .45);
-  max-width: 40rem;
-  color: var(--cream);
-  font-family: var(--font-label);
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.hero-tags li {
-  display: inline-flex;
   align-items: center;
-  gap: .55rem;
+  gap: .6rem;
 }
 
-/* A small gold eight-pointed star in front of every tag */
-.hero-tags li::before {
+.hero-points li::before,
+.values li::before {
   content: "";
   flex: none;
-  width: .6rem;
-  height: .6rem;
-  background: var(--gold);
-  clip-path: var(--star-clip);
+  width: 1.15rem;
+  height: 1.15rem;
+  background: var(--check);
+  -webkit-mask: var(--icon-check) center / contain no-repeat;
+  mask: var(--icon-check) center / contain no-repeat;
 }
 
-/* The emblem: the star in its "on red" colours, with the slogan underneath */
-.hero-emblem {
-  --star-outer: var(--cream);
-  --star-inner: var(--green);
-  --star-line: var(--gold);
-  --star-line-opacity: .9;
-  --star-glyph: var(--cream);
-  display: grid;
-  justify-items: center;
-  text-align: center;
+@media (min-width: 560px) {
+  .hero-points {
+    grid-template-columns: repeat(2, max-content);
+  }
 }
 
-/* The star with the banner's outline star centred behind it, much larger */
-.hero-star-wrap {
+/* Two browser windows with real client work */
+.hero-visual {
   position: relative;
-  display: grid;
-  place-items: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 600px;
+  padding-bottom: 14%;
 }
 
-.hero-star-outline {
+.browser {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 1.6rem;
+  padding-inline: .7rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+/* The three window buttons stay on the left in every language */
+[dir="rtl"] .browser-bar {
+  flex-direction: row-reverse;
+}
+
+.browser-bar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--browser-dot);
+}
+
+.browser img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+
+.browser-back {
+  width: 88%;
+  margin-inline-start: auto;
+}
+
+.browser-front {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  width: 230%;
-  max-width: none;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 58%;
 }
 
-.hero-star {
-  width: clamp(9rem, 24vw, 17rem);
-  height: auto;
-  aspect-ratio: 1;
-  filter: drop-shadow(0 18px 30px rgba(60, 4, 8, .35));
-}
-
-.slogan {
-  margin: 1.25rem 0 .25rem;
-  color: var(--gold);
-  /* A red halo hides the outline star's lines behind the letters */
-  text-shadow: 0 0 6px var(--red), 0 0 14px var(--red), 0 0 24px var(--red);
-  font-family: var(--font-arabic);
-  font-size: clamp(2rem, 4vw, 2.9rem);
-  line-height: 1.35;
-}
-
-.slogan-caption {
-  margin: 0;
-  text-shadow: 0 0 6px var(--red), 0 0 14px var(--red);
-  color: rgba(250, 247, 240, .82);
-  font-size: .98rem;
-  font-style: italic;
-}
-
-[dir="rtl"] .slogan-caption {
-  font-style: normal;
-}
-
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .hero-grid {
-    grid-template-columns: 1.35fr 1fr;
-    gap: 4rem;
-  }
-}
-
-/* Phones: the emblem moves above the text and shrinks */
-@media (max-width: 899px) {
-  .hero-emblem {
-    order: -1;
-  }
-
-  .hero-star-outline {
-    opacity: .7;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 3.5rem;
   }
 }
 
@@ -930,33 +948,33 @@ section {
 }
 
 .service {
-  padding: 1.6rem 1.5rem 1.4rem;
+  padding: 1.6rem 1.5rem 1.5rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .service:hover {
-  transform: translateY(-3px);
+  border-color: var(--border-strong);
   box-shadow: var(--shadow-lg);
 }
 
 .service-icon {
   display: grid;
   place-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.75rem;
+  height: 2.75rem;
   margin-bottom: 1.1rem;
   background: var(--icon-bg);
-  border-radius: 14px;
+  border-radius: 10px;
   color: var(--icon-fg);
 }
 
 .service p {
   margin: 0;
   color: var(--muted);
+  font-size: .97rem;
 }
 
 /* "Cloud & maatwerk": the odd seventh card lies on its side across the full row */
@@ -970,8 +988,8 @@ section {
 
   .service-wide .service-icon {
     flex: none;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.25rem;
+    height: 3.25rem;
     margin-bottom: 0;
   }
 
@@ -984,67 +1002,64 @@ section {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;
+  gap: .45rem;
 }
 
 .chips {
-  margin-top: 2.25rem;
+  margin-top: 2rem;
 }
 
 .chips li,
 .tags li {
-  padding: .25rem .8rem;
+  padding: .2rem .7rem;
+  background: var(--bg-alt);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: .88rem;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: .84rem;
   font-weight: 600;
 }
 
-.chips li {
-  background: var(--surface);
-}
-
 .tags li {
-  color: var(--muted);
-  font-size: .82rem;
+  font-size: .8rem;
 }
 
 /* ---------- Werkwijze ---------- */
-.band-green h2 {
-  color: var(--cream);
-}
-
 .steps {
   display: grid;
   gap: 1.25rem;
-  counter-reset: none;
 }
 
 .step {
-  position: relative;
-  padding: 1.6rem 1.5rem 1.4rem;
-  background: rgba(250, 247, 240, .06);
-  border: 1px solid rgba(250, 247, 240, .16);
+  padding: 1.6rem 1.5rem 1.5rem;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .16);
   border-radius: var(--radius);
 }
 
 .step-number {
-  display: block;
-  margin-bottom: .75rem;
-  color: var(--gold);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 2.6rem;
-  font-weight: 900;
-  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1.1rem;
+  background: var(--red);
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: .9rem;
+  font-weight: 800;
 }
 
-.step h3 {
-  color: var(--cream);
+/* On the dark red band of the dark theme a red circle would disappear */
+:root[data-theme="dark"] .step-number {
+  background: #FFFFFF;
+  color: var(--red-dark);
 }
 
 .step p {
   margin: 0;
-  color: rgba(250, 247, 240, .85);
+  color: rgba(255, 255, 255, .8);
+  font-size: .97rem;
 }
 
 /* ---------- Projecten ---------- */
@@ -1061,34 +1076,34 @@ section {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
+  border-color: var(--border-strong);
   box-shadow: var(--shadow-lg);
 }
 
-/* Stretch the "Bekijk website" link over the whole card, so the card is clickable too.
-   The button must stay position:static (and untransformed on hover) so its ::after
-   overlay uses the card as containing block instead of the button. */
-.project-card .btn {
-  position: static;
+/* "Bekijk website" stretches over the whole card, so the card is clickable too */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-top: auto;
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.project-card .btn::after {
+.project-link::after {
   content: "";
   position: absolute;
   inset: 0;
 }
 
-.project-card .btn:hover {
-  transform: none;
-}
-
-.project-card:hover .btn-primary {
-  background: var(--accent-hover);
+.project-card:hover .project-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .project-media {
@@ -1106,7 +1121,7 @@ section {
 
 .project-card:hover img,
 .project-card:focus-within img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 .project-body {
@@ -1119,15 +1134,11 @@ section {
 
 .project-body p {
   color: var(--muted);
-  font-size: .98rem;
+  font-size: .97rem;
 }
 
 .project-body .tags {
   margin-bottom: 1.25rem;
-}
-
-.project-body .btn {
-  margin-top: auto;
 }
 
 /* Before/after slider: the new site underneath, the old one on top, cut off at
@@ -1177,7 +1188,7 @@ section {
   left: var(--pos);
   width: 2px;
   margin-left: -1px;
-  background: #ffffff;
+  background: #FFFFFF;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .2), 0 0 12px rgba(0, 0, 0, .35);
   pointer-events: none;
 }
@@ -1192,28 +1203,27 @@ section {
   height: 38px;
   border-radius: 50%;
   background: var(--red);
-  color: var(--cream);
-  border: 2px solid var(--cream);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
   transform: translate(-50%, -50%);
   box-shadow: 0 2px 10px rgba(0, 0, 0, .35);
 }
 
 .compare-range:focus-visible~.compare-line .compare-grip {
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--link);
   outline-offset: 2px;
 }
 
 .compare-label {
   position: absolute;
   top: .7rem;
-  padding: .2rem .65rem;
-  border-radius: 999px;
-  background: rgba(31, 26, 23, .7);
-  color: #ffffff;
-  font-family: var(--font-label);
-  font-size: .62rem;
-  font-weight: 500;
-  letter-spacing: .12em;
+  padding: .15rem .6rem;
+  border-radius: 6px;
+  background: rgba(22, 24, 29, .78);
+  color: #FFFFFF;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
   text-transform: uppercase;
   pointer-events: none;
 }
@@ -1277,7 +1287,7 @@ section {
   }
 
   .project-featured h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1294,23 +1304,21 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.75rem 1.5rem;
+  padding: 2rem 1.5rem 1.75rem;
   text-align: center;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .package:hover {
-  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
 
 .package h3,
 .package h4 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
 
 .package-desc {
@@ -1331,9 +1339,9 @@ section {
 .package-price strong {
   margin-inline: .2rem;
   color: var(--text);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 2.6rem;
-  font-weight: 900;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
   line-height: 1;
 }
 
@@ -1358,19 +1366,21 @@ section {
 
 .package-features li {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: .6rem;
   padding-block: .2rem;
-  font-size: .97rem;
+  font-size: .95rem;
 }
 
 .package-features li::before {
-  content: "✓";
-  content: "✓" / "";
+  content: "";
   flex: none;
   width: 1rem;
-  color: var(--check);
-  font-weight: 700;
+  height: 1rem;
+  margin-top: .3em;
+  background: var(--check);
+  -webkit-mask: var(--icon-check) center / contain no-repeat;
+  mask: var(--icon-check) center / contain no-repeat;
 }
 
 .package-features .excluded {
@@ -1378,45 +1388,23 @@ section {
 }
 
 .package-features .excluded::before {
-  content: "✕";
-  content: "✕" / "";
-  color: var(--muted);
-  font-weight: 400;
+  background: var(--muted);
+  -webkit-mask-image: var(--icon-cross);
+  mask-image: var(--icon-cross);
 }
 
-/* The webshop package: a filled brand-red card with cream text */
+/* The webshop package: a red frame around a white card */
 .package-featured {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--cream);
-  box-shadow: 0 18px 40px rgba(143, 12, 22, .3);
+  border: 2px solid var(--accent);
+  box-shadow: var(--shadow-lg);
 }
 
-.package-featured .package-desc,
-.package-featured .package-price,
-.package-featured .package-features .excluded {
-  color: rgba(250, 247, 240, .85);
-}
-
-.package-featured .package-desc strong,
-.package-featured .package-price strong {
-  color: var(--cream);
-}
-
-.package-featured .package-features li::before {
-  color: var(--gold);
-}
-
-.package-featured .package-includes {
-  border-top-color: rgba(250, 247, 240, .3);
-}
-
-/* Terms under the cards: VAT, notice period, and a pointer for people without a site */
+/* Terms under the cards */
 .packages-note {
   margin: 1.75rem auto 0;
   max-width: 60ch;
   color: var(--muted);
-  font-size: .95rem;
+  font-size: .93rem;
   text-align: center;
 }
 
@@ -1442,17 +1430,20 @@ section {
 
 .budget-label {
   color: var(--eyebrow);
-  font-family: var(--font-label);
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .2em;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
+[dir="rtl"] .budget-label {
+  font-size: .9rem;
+}
+
 .budget-value {
-  font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 800;
+  letter-spacing: -.03em;
   line-height: 1;
 }
 
@@ -1534,9 +1525,8 @@ section {
 }
 
 .budget-match strong {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 900;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
 .budget-cta {
@@ -1549,20 +1539,23 @@ section {
   top: 0;
   left: 50%;
   z-index: 1;
-  padding: .25rem .8rem;
+  padding: .2rem .75rem;
   background: var(--badge-bg);
-  border-radius: 999px;
+  border-radius: 6px;
   color: var(--badge-fg);
-  font-family: var(--font-label);
-  font-size: .6rem;
-  font-weight: 500;
-  letter-spacing: .12em;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 0;
   transform: translate(-50%, -50%);
   transition: opacity .2s ease;
   pointer-events: none;
+}
+
+[dir="rtl"] .package-match {
+  font-size: .8rem;
 }
 
 .package.is-match {
@@ -1588,7 +1581,8 @@ section {
 }
 
 .maintenance-head h3 {
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  font-weight: 800;
 }
 
 .maintenance-head p {
@@ -1597,13 +1591,12 @@ section {
 }
 
 .package-compact {
-  padding: 1.4rem 1.3rem;
+  padding: 1.6rem 1.3rem 1.5rem;
   background: var(--bg-alt);
-  box-shadow: none;
 }
 
 .package-compact h4 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .package-compact .package-price strong {
@@ -1684,22 +1677,8 @@ section {
 .values li {
   display: flex;
   align-items: center;
-  gap: .8rem;
+  gap: .75rem;
   font-weight: 700;
-}
-
-/* The eight-pointed star as bullet */
-.values li::before {
-  content: "";
-  flex: none;
-  width: 1.1rem;
-  height: 1.1rem;
-  background: var(--accent);
-  clip-path: var(--star-clip);
-}
-
-:root[data-theme="dark"] .values li::before {
-  background: var(--gold);
 }
 
 .founder {
@@ -1716,7 +1695,7 @@ section {
   aspect-ratio: 1;
   object-fit: cover;
   object-position: 50% 22%;
-  border-bottom: 5px solid var(--red);
+  border-bottom: 4px solid var(--red);
 }
 
 .founder-body {
@@ -1724,36 +1703,40 @@ section {
 }
 
 .founder-body .eyebrow {
-  margin-bottom: .5rem;
+  margin-bottom: .4rem;
 }
 
 .founder-name {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 1.15;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.2;
 }
 
 .founder-role {
-  margin: .3rem 0 1rem;
+  margin: .2rem 0 1rem;
   color: var(--muted);
-  font-family: var(--font-label);
-  font-size: .62rem;
-  letter-spacing: .14em;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
   text-transform: uppercase;
+}
+
+[dir="rtl"] .founder-role {
+  font-size: .9rem;
 }
 
 .founder-quote {
   margin: 0;
   padding-inline-start: 1rem;
-  border-inline-start: 3px solid var(--gold);
+  border-inline-start: 3px solid var(--accent);
 }
 
 .founder-quote p {
   margin: 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: .97rem;
 }
 
 .founder-link {
@@ -1782,53 +1765,120 @@ section {
 }
 
 /* ---------- Contact ---------- */
-.contact-inner {
+.contact-grid {
   display: grid;
-  justify-items: center;
-  text-align: center;
-}
-
-.contact .zellige {
-  -webkit-mask-image: radial-gradient(ellipse at center, transparent 30%, #000 85%);
-  mask-image: radial-gradient(ellipse at center, transparent 30%, #000 85%);
-}
-
-.contact-star {
-  --star-outer: var(--cream);
-  --star-inner: var(--green);
-  --star-line: var(--gold);
-  --star-line-opacity: .9;
-  width: 4.5rem;
-  height: 4.5rem;
-  margin-bottom: 1.5rem;
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .contact h2 {
-  max-width: 20ch;
-  color: var(--cream);
+  max-width: 18ch;
 }
 
 .contact .lead {
-  margin-inline: auto;
-}
-
-.contact .actions {
-  justify-content: center;
-  margin-top: 1.5rem;
+  margin-bottom: 0;
 }
 
 .contact-note {
-  margin: 2rem 0 0;
-  color: rgba(250, 247, 240, .8);
-  font-family: var(--font-label);
-  font-size: .66rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+  margin: 1.5rem 0 0;
+  color: rgba(255, 255, 255, .82);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* Phone, e-mail and LinkedIn as three large rows; calling comes first */
+.contact-options {
+  display: grid;
+  gap: .75rem;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: var(--radius);
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: background-color .15s, border-color .15s;
+}
+
+.contact-option:hover {
+  background: rgba(255, 255, 255, .14);
+  border-color: rgba(255, 255, 255, .45);
+}
+
+.contact-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: #FFFFFF;
+  border-radius: 50%;
+  color: var(--red);
+}
+
+.contact-option-text {
+  display: grid;
+  min-width: 0;
+}
+
+.contact-option-label {
+  color: rgba(255, 255, 255, .82);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.contact-option-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  justify-self: start;
+}
+
+.contact-option-primary {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #16181D;
+}
+
+.contact-option-primary:hover {
+  background: #F6F5F2;
+  border-color: #F6F5F2;
+}
+
+.contact-option-primary .contact-icon {
+  background: var(--red);
+  color: #FFFFFF;
+}
+
+.contact-option-primary .contact-option-label {
+  color: #555B66;
+}
+
+.contact-option-primary .contact-option-value {
+  font-size: 1.35rem;
+}
+
+.contact-option-primary:focus-visible {
+  outline-offset: 4px;
+}
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+  }
 }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  padding-block: 3rem 2.25rem;
+  padding-block: 3.5rem 2rem;
+  background: var(--bg-alt);
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: .95rem;
@@ -1840,7 +1890,8 @@ section {
 }
 
 .footer-tagline {
-  margin: .8rem 0 0;
+  max-width: 34ch;
+  margin: .9rem 0 0;
 }
 
 .footer-nav {
@@ -1849,39 +1900,41 @@ section {
   gap: .5rem 1.25rem;
 }
 
+.footer-contact li {
+  margin-bottom: .4rem;
+}
+
 .footer-nav a,
-.footer-meta a {
+.footer-contact a {
   color: var(--muted);
   text-decoration: none;
 }
 
 .footer-nav a:hover,
-.footer-meta a:hover {
+.footer-contact a:hover {
   color: var(--text);
   text-decoration: underline;
 }
 
-.footer-meta p {
-  margin: 0 0 .35rem;
+.footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: .88rem;
 }
 
-/* "1448 AH" stays on one line next to the Gregorian year */
-.hijri {
-  white-space: nowrap;
+.footer-bottom p {
+  margin: 0;
 }
 
 @media (min-width: 860px) {
   .footer-grid {
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     align-items: start;
   }
 
   .footer-nav {
     flex-direction: column;
-  }
-
-  .footer-meta {
-    text-align: end;
   }
 }
 

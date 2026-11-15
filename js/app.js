@@ -24,22 +24,10 @@ function toggle_theme() {
     }
 }
 
-// Footer: the current year, and next to it the Hijri year (Umm al-Qura calendar).
-// 'en' keeps Western digits, like everywhere else on the site; the HTML keeps a fallback.
-function fill_years() {
-    const now = new Date();
+// Footer: the current year (the HTML keeps a fallback)
+function fill_year() {
     const year = document.querySelector('.year');
-    if (year) year.textContent = now.getFullYear();
-
-    const hijri_year = document.querySelector('.hijri-year');
-    if (!hijri_year) return;
-    try {
-        const parts = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', { year: 'numeric' }).formatToParts(now);
-        const part = parts.find((p) => p.type === 'year');
-        if (part) hijri_year.textContent = part.value;
-    } catch (e) {
-        // No Islamic calendar support in this browser: keep the year from the HTML.
-    }
+    if (year) year.textContent = new Date().getFullYear();
 }
 
 function set_lang_menu_open(open) {
@@ -145,7 +133,7 @@ function set_nav_open(open) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    fill_years();
+    fill_year();
     init_compare_sliders();
     init_budget_slider();
     init_active_nav();

@@ -9,7 +9,7 @@
     <title>Websites &amp; webshops in Rotterdam | Chamali Web Solutions</title>
     <meta name="description" content="Chamali Web Solutions bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties voor ondernemers, organisaties en verenigingen. Altijd in overleg, vanaf €250.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#B3121E">
+    <meta name="theme-color" content="#FFFFFF">
     <link rel="canonical" href="https://chamaliwebsolutions.nl/">
     <link rel="alternate" hreflang="nl" href="https://chamaliwebsolutions.nl/">
     <link rel="alternate" hreflang="en" href="https://chamaliwebsolutions.nl/en/">
@@ -21,19 +21,19 @@
     <meta property="og:url" content="https://chamaliwebsolutions.nl/">
     <meta property="og:title" content="Websites &amp; webshops in Rotterdam | Chamali Web Solutions">
     <meta property="og:description" content="Chamali Web Solutions bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties voor ondernemers, organisaties en verenigingen. Altijd in overleg, vanaf €250.">
-    <meta property="og:image" content="https://chamaliwebsolutions.nl/img/og-image.png">
+    <meta property="og:image" content="https://chamaliwebsolutions.nl/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Chamali Web Solutions – كود بنكهة شمالية، الخاوا!">
+    <meta property="og:image:alt" content="Chamali Web Solutions – websites en webshops uit Rotterdam">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Websites &amp; webshops in Rotterdam | Chamali Web Solutions">
     <meta name="twitter:description" content="Chamali Web Solutions bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties voor ondernemers, organisaties en verenigingen. Altijd in overleg, vanaf €250.">
-    <meta name="twitter:image" content="https://chamaliwebsolutions.nl/img/og-image.png">
+    <meta name="twitter:image" content="https://chamaliwebsolutions.nl/img/og-image.jpg">
     <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="icon" href="./icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <!-- Structured data for the business only; no personal details on purpose.
-         The offer prices must match the packages (see CLAUDE.md). -->
+         The offer prices and the phone number must match the page (see CLAUDE.md). -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -44,10 +44,10 @@
                 "name": "Chamali Web Solutions",
                 "url": "https://chamaliwebsolutions.nl/",
                 "logo": "https://chamaliwebsolutions.nl/img/logo-512.png",
-                "image": "https://chamaliwebsolutions.nl/img/og-image.png",
-                "slogan": "كود بنكهة شمالية، الخاوا!",
+                "image": "https://chamaliwebsolutions.nl/img/og-image.jpg",
                 "description": "Webbureau in Rotterdam. Bouwt en beheert snelle, strakke en vindbare websites, webshops en cloudapplicaties, altijd in overleg met de klant.",
                 "email": "info@chamaliwebsolutions.nl",
+                "telephone": "+31638613518",
                 "address": { "@type": "PostalAddress", "addressLocality": "Rotterdam", "addressCountry": "NL" },
                 "areaServed": [
                     { "@type": "City", "name": "Rotterdam" },
@@ -93,18 +93,15 @@
         ]
     }
     </script>
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/plus-jakarta-sans-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-black.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="./fonts/ysabeau-infant-latin.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="./fonts/bouazzi-maghribi.woff2" crossorigin>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- Set the theme before the page paints, so there is no flash of the wrong one -->
+    <!-- Set the theme before the page paints, so there is no flash of the wrong one.
+         The site always opens light; dark only when the visitor chose it with the toggle. -->
     <script>
         (function () {
-            var theme;
-            try { theme = localStorage.getItem('theme'); } catch (e) { }
-            if (theme !== 'dark' && theme !== 'light') {
-                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
+            var theme = 'light';
+            try { if (localStorage.getItem('theme') === 'dark') theme = 'dark'; } catch (e) { }
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
@@ -159,6 +156,16 @@
                     <li><a href="#over" data-i18n="navAbout">Over ons</a></li>
                     <li><a class="nav-cta" href="#contact" data-i18n="navContact">Contact</a></li>
                 </ul>
+                <!-- The phone number is also in the hero, the contact block, the footer and the JSON-LD -->
+                <a class="icon-btn nav-phone" href="tel:+31638613518">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+                    </svg>
+                    <span class="nav-phone-label"><span class="visually-hidden" data-i18n="phoneLabel">Bel ons</span>
+                        <span dir="ltr">06 38 61 35 18</span></span>
+                </a>
                 <div class="lang-switch">
                     <button class="icon-btn lang-toggle" type="button" id="lang-toggle-btn" aria-expanded="false"
                         aria-controls="lang-menu" aria-label="Taal wijzigen" data-i18n-aria-label="langToggleAria">
@@ -197,9 +204,8 @@
     </header>
 
     <main id="main">
-        <!-- Hero: brand red with the zellige pattern from the brand kit banner -->
-        <section id="top" class="hero band-red">
-            <div class="zellige" aria-hidden="true"></div>
+        <!-- Hero: the offer, the two ways to get in touch, and real client work on the side -->
+        <section id="top" class="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
                     <p class="eyebrow" data-i18n="heroEyebrow">Webdesign &amp; development · Rotterdam</p>
@@ -209,27 +215,34 @@
                         en verenigingen, en we beheren ze ook. Altijd in overleg met jou, van het eerste gesprek tot
                         ver na de livegang.</p>
                     <div class="actions">
-                        <a class="btn btn-cream" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte aan</a>
-                        <a class="btn btn-ghost" href="#projecten" data-i18n="heroBtnWork">Bekijk ons werk</a>
+                        <a class="btn btn-primary" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte aan</a>
+                        <a class="btn btn-outline" href="tel:+31638613518">
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+                            </svg>
+                            <span data-i18n="heroBtnCall">Bel</span>
+                            <span dir="ltr">06 38 61 35 18</span>
+                        </a>
                     </div>
-                    <ul class="hero-tags" aria-label="Waar we voor staan" data-i18n-aria-label="heroTagsAria">
-                        <li data-i18n="heroTag1">Websites</li>
-                        <li data-i18n="heroTag2">Webshops</li>
-                        <li data-i18n="heroTag5">Cloud-apps</li>
-                        <li data-i18n="heroTag3">Rotterdam, NL</li>
-                        <li data-i18n="heroTag4">Noord-Marokkaanse roots</li>
+                    <ul class="hero-points" aria-label="Waarom Chamali" data-i18n-aria-label="heroPointsAria">
+                        <li data-i18n="heroPoint1">Reactie binnen één werkdag</li>
+                        <li data-i18n="heroPoint2">Eén vast aanspreekpunt</li>
+                        <li data-i18n="heroPoint3">Heldere prijzen, inclusief btw</li>
+                        <li data-i18n="heroPoint4">Gevestigd in Rotterdam</li>
                     </ul>
                 </div>
-                <div class="hero-emblem">
-                    <div class="hero-star-wrap">
-                        <img class="hero-star-outline" src="./img/star-outline.svg" alt="" width="860" height="860">
-                        <svg class="hero-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-                            <use href="#chamali-star" />
-                        </svg>
+                <!-- Decorative: the same screenshots appear with a description under Projecten -->
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="browser browser-back">
+                        <div class="browser-bar"><span></span><span></span><span></span></div>
+                        <img src="./img/bataafsche-leeuw.webp" alt="" width="1100" height="524" fetchpriority="high">
                     </div>
-                    <p class="slogan" lang="ar" dir="rtl">كود بنكهة شمالية، الخاوا!</p>
-                    <p class="slogan-caption" data-i18n="heroSloganCaption">Code met een noordelijk smaakje, broeders!
-                    </p>
+                    <div class="browser browser-front">
+                        <div class="browser-bar"><span></span><span></span><span></span></div>
+                        <img src="./img/faseero.webp" alt="" width="1086" height="688">
+                    </div>
                 </div>
             </div>
         </section>
@@ -347,7 +360,6 @@
 
         <!-- Werkwijze -->
         <section id="werkwijze" class="band-green">
-            <div class="zellige" aria-hidden="true"></div>
             <div class="container">
                 <header class="section-head">
                     <p class="eyebrow" data-i18n="processEyebrow">Werkwijze</p>
@@ -427,31 +439,10 @@
                                 <li>Redesign</li>
                                 <li>Responsive design</li>
                             </ul>
-                            <a class="btn btn-primary btn-sm" href="https://stichtingaljariah.nl/" target="_blank"
+                            <a class="project-link" href="https://stichtingaljariah.nl/" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
                                     aria-hidden="true">↗</span><span class="visually-hidden"
                                     data-i18n="projAljariahHidden"> van Stichting Al Jariah</span></a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-media"><img src="./img/faseero.webp"
-                                alt="Screenshot van de website van Faseero" width="1100" height="688" loading="lazy"
-                                decoding="async" data-i18n-alt="projFaseeroAlt"></div>
-                        <div class="project-body">
-                            <h3 data-i18n="projFaseeroTitle">Faseero – Marokkaanse producten</h3>
-                            <p data-i18n="projFaseeroDesc">Website voor Faseero, dat authentieke Marokkaanse producten
-                                zoals amlou, honing en saffraan rechtstreeks van boeren en ambachtslieden naar Nederland
-                                brengt, met daarnaast reizen naar Marokko en een Msemmen Bar.</p>
-                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
-                                <li>WordPress</li>
-                                <li>Gutenberg</li>
-                                <li>Brevo</li>
-                            </ul>
-                            <a class="btn btn-primary btn-sm" href="https://www.faseero.nl" target="_blank"
-                                rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
-                                    aria-hidden="true">↗</span><span class="visually-hidden"
-                                    data-i18n="projFaseeroHidden"> van Faseero</span></a>
                         </div>
                     </article>
 
@@ -470,7 +461,7 @@
                                 <li>WooCommerce</li>
                                 <li>Mollie</li>
                             </ul>
-                            <a class="btn btn-primary btn-sm" href="https://bataafscheleeuw.nl" target="_blank"
+                            <a class="project-link" href="https://bataafscheleeuw.nl" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
                                     aria-hidden="true">↗</span><span class="visually-hidden"
                                     data-i18n="projLeeuwHidden"> van De Bataafsche Leeuw</span></a>
@@ -490,10 +481,31 @@
                                 <li>Elementor</li>
                                 <li>SEO</li>
                             </ul>
-                            <a class="btn btn-primary btn-sm" href="https://witgoedspecialist010.nl/" target="_blank"
+                            <a class="project-link" href="https://witgoedspecialist010.nl/" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
                                     aria-hidden="true">↗</span><span class="visually-hidden"
                                     data-i18n="projWitgoedHidden"> van Witgoedspecialist010</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-media"><img src="./img/faseero.webp"
+                                alt="Screenshot van de website van Faseero" width="1086" height="688" loading="lazy"
+                                decoding="async" data-i18n-alt="projFaseeroAlt"></div>
+                        <div class="project-body">
+                            <h3 data-i18n="projFaseeroTitle">Faseero – Marokkaanse producten</h3>
+                            <p data-i18n="projFaseeroDesc">Website voor Faseero, dat authentieke Marokkaanse producten
+                                zoals amlou, honing en saffraan rechtstreeks van boeren en ambachtslieden naar Nederland
+                                brengt, met daarnaast reizen naar Marokko en een Msemmen Bar.</p>
+                            <ul class="tags" aria-label="Gebruikte technieken" data-i18n-aria-label="tagsAria">
+                                <li>WordPress</li>
+                                <li>Gutenberg</li>
+                                <li>Brevo</li>
+                            </ul>
+                            <a class="project-link" href="https://www.faseero.nl" target="_blank"
+                                rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
+                                    aria-hidden="true">↗</span><span class="visually-hidden"
+                                    data-i18n="projFaseeroHidden"> van Faseero</span></a>
                         </div>
                     </article>
 
@@ -511,7 +523,7 @@
                                 <li>Elementor</li>
                                 <li>LightBox</li>
                             </ul>
-                            <a class="btn btn-primary btn-sm" href="https://bilalberkane.nl/" target="_blank"
+                            <a class="project-link" href="https://bilalberkane.nl/" target="_blank"
                                 rel="noopener"><span data-i18n="btnView">Bekijk website</span> <span
                                     aria-hidden="true">↗</span><span class="visually-hidden"
                                     data-i18n="projBilalHidden"> van Bilal Berkane</span></a>
@@ -560,7 +572,7 @@
                         <p class="package-desc" data-i18n="pkgBasisDesc">Voor een <strong>eenvoudige website</strong>
                             met een paar pagina's.</p>
                         <p class="package-price" data-i18n="pkgBasisPrice">vanaf <strong>€250</strong> eenmalig</p>
-                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
+                        <a class="btn btn-outline btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
                             aan</a>
                         <div class="package-includes">
                             <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
@@ -586,7 +598,7 @@
                         <p class="package-desc" data-i18n="pkgShopDesc">Voor een <strong>uitgebreide website</strong>
                             met webshop.</p>
                         <p class="package-price" data-i18n="pkgShopPrice">vanaf <strong>€500</strong> eenmalig</p>
-                        <a class="btn btn-cream btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
+                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
                             aan</a>
                         <div class="package-includes">
                             <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
@@ -608,7 +620,7 @@
                         <p class="package-desc" data-i18n="pkgCustomDesc">Voor een <strong>eigen online
                                 systeem</strong> of cloudapplicatie.</p>
                         <p class="package-price" data-i18n="pkgCustomPrice">vanaf <strong>€750</strong> eenmalig</p>
-                        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
+                        <a class="btn btn-outline btn-sm" href="#contact" data-i18n="heroBtnQuote">Vraag een offerte
                             aan</a>
                         <div class="package-includes">
                             <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
@@ -640,7 +652,7 @@
                             <p class="package-desc" data-i18n="maint1Desc">Voor bedrijven met een
                                 <strong>informatieve website</strong>.</p>
                             <p class="package-price" data-i18n="maint1Price">vanaf <strong>€50</strong> per maand</p>
-                            <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                            <a class="btn btn-outline btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
                             <div class="package-includes">
                                 <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
                                 <ul class="package-features">
@@ -664,7 +676,7 @@
                             <p class="package-desc" data-i18n="maint2Desc">Voor ondernemers die <strong>online
                                     verkopen</strong>.</p>
                             <p class="package-price" data-i18n="maint2Price">vanaf <strong>€100</strong> per maand</p>
-                            <a class="btn btn-primary btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
+                            <a class="btn btn-outline btn-sm" href="#contact" data-i18n="packageBtn">Vraag aan</a>
                             <div class="package-includes">
                                 <p class="package-includes-title" data-i18n="includesTitle">Wat is er inbegrepen?</p>
                                 <ul class="package-features">
@@ -695,14 +707,14 @@
                 <div class="about-text">
                     <p class="eyebrow" data-i18n="aboutEyebrow">Over ons</p>
                     <h2 data-i18n="aboutTitle">Over Chamali</h2>
-                    <p data-i18n="aboutP1"><strong>Chamali</strong> (<span lang="ar" dir="rtl">شمالي</span>) betekent
-                        ‘noordelijk’ en verwijst naar onze roots in het noorden van Marokko. Die roots zie je terug in
-                        onze huisstijl, en vooral in hoe we werken: gastvrij, recht door zee en met oog voor de mensen
-                        achter het bedrijf.</p>
-                    <p data-i18n="aboutP2">Chamali Web Solutions helpt ondernemers, organisaties en verenigingen aan een
+                    <p data-i18n="aboutP1">Chamali Web Solutions helpt ondernemers, organisaties en verenigingen aan een
                         professionele online aanwezigheid. We bouwen websites en webshops met WordPress, Elementor en
                         WooCommerce, en bouwen en beheren cloudapplicaties zoals Nextcloud op een eigen VPS. Wat we
                         maken, stemmen we altijd samen met jou af.</p>
+                    <p data-i18n="aboutP2">De naam <strong>Chamali</strong> (<span lang="ar" dir="rtl">شمالي</span>)
+                        betekent ‘noordelijk’ en verwijst naar het noorden van Marokko, waar onze roots liggen. In ons
+                        werk merk je dat aan de aanpak: persoonlijk, recht door zee en met oog voor de mensen achter
+                        het bedrijf.</p>
                     <ul class="values" aria-label="Waar we voor staan" data-i18n-aria-label="valuesAria">
                         <li data-i18n="value1">Meedenken vanaf het eerste gesprek</li>
                         <li data-i18n="value2">Heldere afspraken en eerlijke prijzen</li>
@@ -739,71 +751,99 @@
 
         <!-- Contact -->
         <section id="contact" class="band-red contact">
-            <div class="zellige" aria-hidden="true"></div>
-            <div class="container contact-inner">
-                <svg class="contact-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-                    <use href="#chamali-star" />
-                </svg>
-                <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
-                <h2 data-i18n="contactTitle">Klaar voor een website met smaak?</h2>
-                <p class="lead" data-i18n="contactLead">Vertel ons over je plannen. We reageren binnen één werkdag met
-                    eerlijk advies en een vrijblijvende offerte.</p>
-                <div class="actions">
-                    <a class="btn btn-cream" href="mailto:info@chamaliwebsolutions.nl">
-                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="5" width="18" height="14" rx="2" />
-                            <path d="m3 7 9 6 9-6" />
-                        </svg>
-                        info@chamaliwebsolutions.nl
-                    </a>
-                    <a class="btn btn-ghost" href="https://www.linkedin.com/company/chamali-web-solutions/" target="_blank"
-                        rel="noopener">
-                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor">
-                            <path
-                                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
-                        </svg>
-                        LinkedIn
-                    </a>
+            <div class="container contact-grid">
+                <div class="contact-text">
+                    <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+                    <h2 data-i18n="contactTitle">Benieuwd wat we voor je kunnen betekenen?</h2>
+                    <p class="lead" data-i18n="contactLead">Bel of mail ons over je plannen. We reageren binnen één
+                        werkdag met eerlijk advies en een vrijblijvende offerte.</p>
+                    <p class="contact-note" data-i18n="contactNote">Rotterdam · op locatie, op afstand of hybride</p>
                 </div>
-                <p class="contact-note" data-i18n="contactNote">Rotterdam · op locatie, op afstand of hybride</p>
+                <ul class="contact-options">
+                    <li>
+                        <a class="contact-option contact-option-primary" href="tel:+31638613518">
+                            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20"
+                                    height="20" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+                                </svg></span>
+                            <span class="contact-option-text">
+                                <span class="contact-option-label" data-i18n="phoneLabel">Bel ons</span>
+                                <span class="contact-option-value" dir="ltr">06 38 61 35 18</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="contact-option" href="mailto:info@chamaliwebsolutions.nl">
+                            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20"
+                                    height="20" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                                    <path d="m3 7 9 6 9-6" />
+                                </svg></span>
+                            <span class="contact-option-text">
+                                <span class="contact-option-label" data-i18n="mailLabel">Mail ons</span>
+                                <span class="contact-option-value" dir="ltr">info@chamaliwebsolutions.nl</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="contact-option" href="https://www.linkedin.com/company/chamali-web-solutions/"
+                            target="_blank" rel="noopener">
+                            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18"
+                                    height="18" fill="currentColor">
+                                    <path
+                                        d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+                                </svg></span>
+                            <span class="contact-option-text">
+                                <span class="contact-option-label" data-i18n="linkedinLabel">Volg ons op LinkedIn</span>
+                                <span class="contact-option-value">Chamali Web Solutions</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a class="brand" href="#top" aria-label="Chamali Web Solutions, terug naar boven"
-                    data-i18n-aria-label="brandAria">
-                    <svg class="brand-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-                        <use href="#chamali-star" />
-                    </svg>
-                    <span class="wordmark" aria-hidden="true">
-                        <span class="wordmark-name">Chamali</span>
-                        <span class="wordmark-sub">Web Solutions</span>
-                    </span>
-                </a>
-                <p class="footer-tagline" data-i18n="footerTagline">Websites en webshops uit Rotterdam.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="#top" aria-label="Chamali Web Solutions, terug naar boven"
+                        data-i18n-aria-label="brandAria">
+                        <svg class="brand-star" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                            <use href="#chamali-star" />
+                        </svg>
+                        <span class="wordmark" aria-hidden="true">
+                            <span class="wordmark-name">Chamali</span>
+                            <span class="wordmark-sub">Web Solutions</span>
+                        </span>
+                    </a>
+                    <p class="footer-tagline" data-i18n="footerTagline">Websites en webshops uit Rotterdam.</p>
+                </div>
+                <ul class="footer-nav" aria-label="Footernavigatie" data-i18n-aria-label="footerNavAria">
+                    <li><a href="#diensten" data-i18n="navServices">Diensten</a></li>
+                    <li><a href="#werkwijze" data-i18n="navProcess">Werkwijze</a></li>
+                    <li><a href="#projecten" data-i18n="navProjects">Projecten</a></li>
+                    <li><a href="#pakketten" data-i18n="navPackages">Pakketten</a></li>
+                    <li><a href="#over" data-i18n="navAbout">Over ons</a></li>
+                    <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+                </ul>
+                <ul class="footer-contact" aria-label="Contactgegevens" data-i18n-aria-label="footerContactAria">
+                    <li><a href="tel:+31638613518" dir="ltr">06 38 61 35 18</a></li>
+                    <li><a href="mailto:info@chamaliwebsolutions.nl">info@chamaliwebsolutions.nl</a></li>
+                    <li><a href="https://www.linkedin.com/company/chamali-web-solutions/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <!-- TODO: KvK-nummer is verplicht op een Nederlandse bedrijfswebsite. Vul in en haal het commentaar weg:
+                    <li>KvK 00000000</li>
+                    -->
+                </ul>
             </div>
-            <ul class="footer-nav" aria-label="Footernavigatie" data-i18n-aria-label="footerNavAria">
-                <li><a href="#diensten" data-i18n="navServices">Diensten</a></li>
-                <li><a href="#werkwijze" data-i18n="navProcess">Werkwijze</a></li>
-                <li><a href="#projecten" data-i18n="navProjects">Projecten</a></li>
-                <li><a href="#pakketten" data-i18n="navPackages">Pakketten</a></li>
-                <li><a href="#over" data-i18n="navAbout">Over ons</a></li>
-                <li><a href="#contact" data-i18n="navContact">Contact</a></li>
-            </ul>
-            <div class="footer-meta">
-                <p><a href="mailto:info@chamaliwebsolutions.nl">info@chamaliwebsolutions.nl</a></p>
-                <p><a href="https://www.linkedin.com/company/chamali-web-solutions/" target="_blank" rel="noopener">LinkedIn</a></p>
-                <!-- TODO: KvK-nummer is verplicht op een Nederlandse bedrijfswebsite. Vul in en haal het commentaar weg:
-                <p>KvK 00000000</p>
-                -->
-                <!-- Both years are refreshed by app.js; the Hijri year follows the Umm al-Qura calendar -->
-                <p>&copy; <span class="year">2026</span> · <span class="hijri"><span class="hijri-year">1448</span>
-                        <span data-i18n="hijriSuffix">AH</span></span> Chamali Web Solutions · <span
+            <div class="footer-bottom">
+                <!-- The year is refreshed by app.js -->
+                <p>&copy; <span class="year">2026</span> Chamali Web Solutions · <span
                         data-i18n="footerRights">Alle rechten voorbehouden.</span></p>
             </div>
         </div>

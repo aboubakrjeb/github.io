@@ -18,15 +18,16 @@ python3 -m http.server 8000   # daarna http://localhost:8000, /en/ en /ar/
     - het blok "Optioneel: onderhoud & hosting"
 - `en/index.html`, `ar/index.html`: **gegenereerd**, niet met de hand aanpassen. Ze staan in `.gitignore`; de deploy-workflow maakt ze opnieuw.
 - `js/i18n.js`: alle teksten in nl, ar en en (`translations`). De waarden zijn HTML.
-- `js/app.js`: thema-toggle, taalmenu, offcanvas-menu, voor/na-slider, budgetslider, actieve nav-link, en het jaartal plus Hijri-jaar in de footer.
+- `js/app.js`: thema-toggle, taalmenu, offcanvas-menu, voor/na-slider, budgetslider, actieve nav-link, en het jaartal in de footer.
 - `tools/build-i18n.mjs`: maakt `/en/` en `/ar/` uit `index.html` en `js/i18n.js`.
   - Het script stopt bij een ontbrekende vertaling.
   - Het waarschuwt als de Nederlandse tekst in `index.html` afwijkt van `i18n.js`.
 - `css/style.css`: alle stijlen. De tokens voor licht/donker staan bovenaan in `:root` en `:root[data-theme="dark"]`.
 - `fonts/`: self-hosted woff2-bestanden met hun OFL-licenties.
 - `img/`: web-klare beelden.
-  - `zellige.svg` is de patroontegel, `star-outline.svg` de hero-decoratie.
+  - `og-image.jpg` (1200×630) is de deelafbeelding voor social media.
   - `logo-512.png` is het logo voor de JSON-LD.
+  - De projectscreenshots staan ook als decoratie in de hero.
 - Brandkit-bestanden in de root:
   - `favicon.ico`, `icon.svg`, `apple-touch-icon.png`
 - SEO-bestanden in de root:
@@ -53,16 +54,29 @@ Wat er in de `<head>` per taal verandert, regelt het build-script:
 Houd die head-tags elk op één regel, anders vindt het script ze niet.
 
 ## Huisstijl
-- Kleuren: rood `#B3121E` (hoofdkleur), donkerrood `#8F0C16`, groen `#0B5440`, crème `#FAF7F0`, goud `#F2C45A`.
+- **Uitstraling: zakelijk.** De eigenaar wil een professionele bedrijfssite, geen culturele.
+  - Geen zellige-patronen, sterdecoraties, Arabische slogan of Hijri-jaar op de site.
+  - De Marokkaanse roots komen alleen terug in het logo en in de uitleg van de naam bij "Over ons".
+- Kleuren:
+  - Merkkleuren: rood `#B3121E` (hoofdkleur), donkerrood `#8F0C16`, groen `#0B5440`, crème `#FAF7F0`, goud `#F2C45A`.
+  - Mix van rood en groen, zodat het niet eentonig wordt:
+    - rood is het hoofdaccent: knoppen, links en labels
+    - groen is de tweede kleur: de Werkwijze-band, de dienst-icoontjes en de vinkjes
+  - Licht thema: wit en warm grijs (`--bg-alt: #F6F5F2`), donkere tekst `#16181D`.
+  - Donker thema: diepgroen (`#0D3B30`), crème tekst en goud voor tekstaccenten.
+  - Geen zwart of antraciet: de eigenaar vindt dat deprimerend.
+  - Goud staat in het logo en is het accent in het donkere thema.
+- Thema: de site opent altijd licht en volgt `prefers-color-scheme` bewust niet. Donker kan alleen via de ◐-knop en wordt dan bewaard in `localStorage`.
 - Fonts:
-  - Fraunces Black: koppen en "Chamali"
-  - Unbounded Medium: labels en "WEB SOLUTIONS", in letter-spaced kapitalen. Het font is gesubset zonder `locl`, anders wordt "IJ" de ligatuur Ĳ.
-  - Bouazzi Maghribi: de Arabische slogan en Arabische h1/h2
-  - Ysabeau Infant: broodtekst
-- Slogan: `كود بنكهة شمالية، الخاوا!`
-- Goud op rood haalt ongeveer 3,3:1 contrast. Gebruik het daarom alleen voor grote tekst of decoratie.
+  - Plus Jakarta Sans (variabel, 200–800): alle tekst en koppen
+  - IBM Plex Sans Arabic (400 en 700): Arabische tekst, via `unicode-range`
+  - Fraunces Black en Unbounded Medium: alleen het woordmerk "Chamali / WEB SOLUTIONS". Unbounded is gesubset zonder `locl`, anders wordt "IJ" de ligatuur Ĳ.
 - Het logo-icoon is een inline `<symbol id="chamali-star">`. De kleuren stel je in met `--star-outer`, `--star-inner`, `--star-line`, `--star-line-opacity` en `--star-glyph`.
-- De hero en het contactblok blijven in beide thema's rood.
+- Secties:
+  - De hero is licht.
+  - De werkwijze is groen (`.band-green`). In het donkere thema, dat al groen is, wordt die donkerrood.
+  - Het contactblok is in beide thema's rood (`.band-red`).
+- De brandkit heeft een slogan (`كود بنكهة شمالية، الخاوا!`), maar die staat bewust niet op de site.
 
 ## Regels
 - **Talen en SEO:**
@@ -86,6 +100,9 @@ Houd die head-tags elk op één regel, anders vindt het script ze niet.
   - `js/i18n.js` (drie talen)
   - `BUDGET_TIERS` in `js/app.js`
   - de `hasOfferCatalog` in de JSON-LD in `index.html`
+- **Telefoon**: `06 38 61 35 18`, link `tel:+31638613518`. Het nummer zelf staat niet in `i18n.js`.
+  - Het staat op vijf plekken: de header, de hero, het contactblok, de footer en `telephone` in de JSON-LD.
+  - Zet het nummer altijd in een element met `dir="ltr"`, anders draait de Arabische pagina de cijfergroepen om.
 
 ## Deploy
 - **Repo**: `github.com/aboubakrjeb/github.io`, branch `main`.
